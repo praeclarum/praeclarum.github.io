@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "Quantifying reflection's slowdown in sqlite-net"
+date:   2010-11-14 15:51:00 GMT
+redirect_from:
+  - /post/1572668275
+  - /post/1572668275/quantifying-reflections-slowdown-in-sqlite-net
+---
+
+
+<p>Yesterday I posted R64 of <a href="http://code.google.com/p/sqlite-net/">sqlite-net</a> which included some performance upgrades thanks to <a href="http://twitter.com/#!/joefeser">Joe Feser</a>.</p>
+
+
+<p>The tweet spread and we were asked how this compares to native performance of Sqlite. I had no answer because I&rsquo;ve been drinking the MonoTouch kool-aid for awhile now and don&rsquo;t even think about native performance. But the questions did have me wondering.</p>
+
+
+<p>I know there is nothing I can do about the overhead of a managed runtime like .NET over native code, but I did wonder how much overhead my use of Reflection introduces. To keep the use of sqlite-net simple (no external tool requirements, no on the fly code compilation), I rely on reflection to read and write values from properties. That design probably won&rsquo;t change since I love the ease of use of the library, but I do think its time to measure the overhead.</p>
+
+
+<p>I wrote a little test app that serializes and deserializes 30,000 objects (most of whom&rsquo;s data is textual). The app performs those operations in three ways:</p>
+
+<ol><li>Using .NET&rsquo;s built-in BinaryFormatter and the [Serializable] attribute on the class.</li>
+<li>Using a custom function that uses a BinaryReader/Writer that calls the appropriate Read/Write functions and sets the properties on the objects directly.</li>
+<li>Using BinaryReader/Writer again but using generic reflection code that is very similar to the code that sqlite-net uses to read data from the database.</li>
+</ol>
+<p>Through this, I can compare the performance of the reflection code (#3) vs the non-reflection code (#2). The use of BinaryFormatter is also put in as a control.</p>
+
+
+<p>I ran the code 3 times on my iPhone 3GS using a Release build from MonoTouch. It writes approximately 7 MB files for each method and then reads those files back. Here are the average results:</p>
+
+<ul><li>BinaryFormatter Serialize = <strong>10.74 s</strong></li>
+<li>Explicit BinaryWriter = <strong>1.30 s</strong></li>
+<li>Reflection BinaryWriter = <strong>7.79 s</strong></li>
+</ul><ul><li>BinaryFormatter Deserialize = <strong>50.38 s</strong></li>
+<li>Explicit BinaryReader = <strong>2.93 s</strong></li>
+<li>Reflection BinaryReader = <strong>11.21 s</strong></li>
+</ul>
+<p>Two things are immediately visible in this data: BinaryFormatter is slow, and the reflection code is much slower than the non-reflection code.</p>
+
+
+<p>(I have made the <a href="http://spreadsheets.google.com/ccc?key=0AnbISxDzAVhOdHd4c1V1Sm9uNldhQ1hreVlJczVBdkE&amp;hl=en">Google Spreadsheet</a> with all the data publicly available.)</p>
+
+
+<p>Reflection introduced a slowdown of <strong>3.8x</strong> for reads, and a slowdown of <strong>5.97x</strong> for writes. I knew that the reflection code would be slower, but it&rsquo;s really good to now have that slowdown quantified.</p>
+
+
+<p>And those are not small numbers! I was hoping for 50% slowdowns, but I guess that was too much wishful thinking.</p>
+
+
+<p>Given the static compilation limitation of MonoTouch, the only ways to improve these performance number are to: (1) Force the user to hand-write the serialization code, or (2) Create a tool that generates that code automatically and integrate it into the build process. #1 seems like a really bad idea to me, so that leaves #2.</p>
+
+
+<p>A somewhat related side note: I have finally looked at the Entity Framework CTP4 - specifically their code-first work. They have the same goals of sqlite-net and applaud their effort. I am thinking now of writing a little database that has the intelligence and interface of EF4&rsquo;s code first but that uses a .NET database. That way, you could share code between your iOS, WinPhone, Android devices and your server. A nice thought&hellip;</p>
+

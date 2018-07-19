@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "Introducing NGraphics"
+date:   2015-03-16 21:14:42 GMT
+redirect_from:
+  - /post/113814379658
+  - /post/113814379658/introducing-ngraphics
+---
+
+
+<p>Many moons ago I created a cross platform library for rendering vector graphics called <a href="https://github.com/praeclarum/CrossGraphics">CrossGraphics</a>. It was good. It supported lots of platforms and was fast. Very fast in fact because it was designed for my app iCircuit which was already a CPU hog and had to run on 2010 era mobile hardware. To be fast, I played loosey goosey with cross platform accuracy (they <i>mostly</i> rendered the same) and features (who needs gradients?).</p>
+
+<p>But the times, they are a changin’. My phone’s CPU is 64-bits and massive. Apple now supports GPU based rendering (finally that G stands for something other than Triangle). And, the fact is, though flat is in style, you really do need gradients.</p>
+<figure data-orig-width="128" data-orig-height="128"><img src="https://78.media.tumblr.com/450ed736b6b354b4158abcbb8da203db/tumblr_inline_nlbplfys0E1qbzjil.png" alt="image" data-orig-width="128" data-orig-height="128"/></figure>
+<p>Today, I would like to announce <a href="https://github.com/praeclarum/NGraphics">NGraphics</a>. A cross platform PCL to satisfy your 2D vector drawing needs. It’s <a href="https://www.nuget.org/packages/NGraphics/">available on nuget now</a>!</p>
+
+<p>NGraphics is a big improvement over CrossGraphics. Here’s why I’m excited:</p>
+
+<p><b>Platforms!</b> NGraphics comes out of the box supporting iOS, OS X, Android, and Windows.</p>
+
+<p><b>Gradients!</b> It supports both the linear and radial variety with any number of color stops.</p>
+
+<p><b>Paths!</b> Crazy paths with arcs can now be used and abused.</p>
+
+<p><b>Images!</b> Images can be loaded from streams, created by rendering onto a canvas, or built up pixel by pixel.</p>
+
+<p><b>SVG Reading and Writing!</b> CrossGraphics was able to output SVG, but NGraphics can read &lsquo;em too.</p>
+
+<p><b>Retained Mode and Immediate Mode!</b> NGraphics supports both immediate mode rendering with canvases (DrawLine, FillPath, etc.) along with a retained mode graphics model (Path, Rectangle, Ellipse, &hellip;). This makes caching and serialization easy.</p>
+
+<p><b>Unit Tests!</b> It turns out that getting all the platforms to behave themselves requires more than blind faith. NGraphics has a unit test suite that runs on all the platforms (4) and generates images to easily spot consistency errors.</p>
+
+<p><b>Editor!</b> I love to use code to draw things, but I hate waiting for the compiler (or worse, the IDE). So I wrote a little editor that lets you type C# code and get a live preview of the graphic you are creating. I love this thing&hellip;</p>
+<figure data-orig-width="1080" data-orig-height="560"><img src="https://78.media.tumblr.com/94f5e3df5f94d014154ddc29d34746b5/tumblr_inline_nlbpnaIROY1qbzjil.png" alt="image" data-orig-width="1080" data-orig-height="560"/></figure>
+<p>I hope you’ll check out NGraphics! It’s as simple as going to NuGet and searching for “NGraphics”. If you have the time, I would love bug reports, feature requests, and especially pull requests over at the <a href="https://github.com/praeclarum/NGraphics">NGraphics project</a>.</p>
+

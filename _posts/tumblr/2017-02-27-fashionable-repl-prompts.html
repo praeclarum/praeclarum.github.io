@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "Fashionable REPL Prompts"
+date:   2017-02-27 17:09:52 GMT
+redirect_from:
+  - /post/157784591258
+  - /post/157784591258/fashionable-repl-prompts
+---
+
+
+<p>I was writing a new language the other day and I thought, “this puppy needs a REPL”!</p>
+
+
+
+<p>But before I could write one, I had to decide how it would look and behave. I mean, I knew the basics: take something in, execute it, then display the result. But how do you open the help? How do you handle multi-line input? Can I use terminal colors? <strong>What does the prompt look like?</strong></p>
+
+
+
+<p>To answer that last one, I took a quick survey of my favorite languages - turns out they&rsquo;ve all coalesced to the <code>&gt;</code> prompt, but there are some fun variations:</p>
+
+
+
+<h1>F#</h1>
+
+<pre><code>&gt; 2 + 3;;
+val it : int = 5
+</code></pre>
+
+
+<p>F# is my favorite language, but the REPL is a bit busy for me. First the language dictates this weird crying emoji (<code>;;</code>) in input and the result is always encumbered by <code>val it :</code> noise. But I still &lt;3 you F#.</p>
+
+
+
+<h1>C#</h1>
+
+<pre><code>csharp&gt; 2 + 3
+5
+</code></pre>
+
+
+<p>Much cleaner! No semicolons, and just the answer. Well C# does show its vanity a bit with its name announcement on each line - but heh, it deserves it.</p>
+
+
+
+<h1>Python</h1>
+
+<pre><code>&gt;&gt;&gt; 2 + 3
+5
+</code></pre>
+
+
+<p>Elegant and bold at the same time. The <code>&gt;&gt;&gt;</code> means Python, but you don&rsquo;t actually say &ldquo;Python&rdquo;. So hipster, so cool. I&rsquo;m sure I could copy <code>&gt;&gt;&gt;</code> as remixing is hip these days; but no, I&rsquo;d be trying too hard.</p>
+
+
+
+<h1>Ruby</h1>
+
+<pre><code>irb(main):009:0&gt; 2 + 3
+=&gt; 5
+</code></pre>
+
+
+<p>OK, I get what you&rsquo;re going for here Ruby. Part of me even likes it. But no. Too much. I would expect this kind of complexity and technical jargon when logging into my refrigerator - but my dev environments should have a little more refinement.</p>
+
+
+
+<p>On the plus side - Ruby outputs the answer in yellow. I&rsquo;m totally stealing that.</p>
+
+
+
+<p>Oh and geeze, they use the same symbol as <a href="http://calca.io">Calca</a> - so how could I not love that?</p>
+
+
+
+<h1>JavaScript</h1>
+
+<pre><code>&gt; 2 + 3
+5
+</code></pre>
+
+
+<p>Look at you. Simple, reasonable, well thought out. It&rsquo;s like staring at an oil on canvas painting containing only the lowercase Helvetica <code>a</code>.</p>
+
+
+
+<h1>Conclusion</h1>
+
+
+<p>While we have standardized on <code>&gt;</code> as the one prompt to rule them all, there is a fair amount of diversity as to what comes before it.</p>
+
+
+
+<p>I&rsquo;m a fan of simplicity and in the end, I went with C#&rsquo;s <code>vanity&gt;</code> prompt. Cause, like, I&rsquo;m vain.</p>
+

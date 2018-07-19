@@ -1,0 +1,179 @@
+---
+layout: post
+title:  "Calca - the text editor for engineers"
+date:   2013-07-09 19:22:00 GMT
+redirect_from:
+  - /post/55019743936
+  - /post/55019743936/calca-the-text-editor-for-engineers
+---
+
+
+<p><a href="http://calca.io"><img alt="image" src="https://78.media.tumblr.com/2f860f465315c002368f3148d4c2534d/tumblr_inline_mpoofw1Cuh1qz4rgp.png"/></a></p>
+
+
+
+<p>I am very pleased to announce the availability of <a href="http://calca.io">Calca</a>, my newest iOS app (and soon OS X app).</p>
+
+
+<p>It&rsquo;s available on the App Store now for iPhone and iPad: it&rsquo;s cheap and crazy powerful. <a href="https://itunes.apple.com/us/app/calca/id635757879?ls=1&amp;mt=8">Get it on the iOS App Store</a>.</p>
+
+
+<p>Calca has been my obsession over the last three months - one that grew out of a frustration.</p>
+
+
+<p>I work with mathematics every day. As a programmer, this is natural - it&rsquo;s very difficult to write an app without ever using addition! But I also write complicated apps - I often wonder if I will release an app that doesn&rsquo;t require the calculation of a <a href="http://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant">Jacobian</a>. Other times, I&rsquo;m just trying to avoid off-by-one indexing errors in my code!</p>
+
+
+<p>These simple mathematics often get relegated to Sublime Text or Text Mate. I write out equations and then, line be line, manipulate them into useful forms.</p>
+
+
+<p>This is tedious.</p>
+
+
+<p>When it becomes too tedious, I resort to pen and paper. It&rsquo;s sad that I can write and manipulate mathematics on a sheet of paper more efficiently than I can with a computer in front of me.</p>
+
+
+<p>One day, when it came time for me to write the Jacobian of a system of six functions each involving a quaternion with six different variables, I decided that neither Sublime Text nor the physical pen and paper were adequate. It was time to write a better tool.</p>
+
+
+<p>And so, Calca was born with these goals:</p>
+
+<ol><li>As easy to use and as fast as a text editor.</li>
+<li>Live updating like Excel.</li>
+<li>Streamlined and forgiving math syntax.</li>
+<li>Symbolic manipulation of expressions.</li>
+<li>Plain text data.</li>
+</ol>
+<p>Please allow me to elaborate on these goals:</p>
+
+
+<p><strong>A text editor?</strong></p>
+
+
+<p>Computer algebra systems are well defined: they&rsquo;re <a href="http://en.wikipedia.org/wiki/REPL">REPLs</a>. Like Perl, Python, and Prolog. You get one line of input and the program dumps text out on a console at you.</p>
+
+
+<p>I have always had a love/hate relationship with REPLs. I love them for their convenience and speed. What&rsquo;s 2 + 2? That&rsquo;s about all I have to type to get an answer.</p>
+
+
+<p>But one line for input? Even with <a href="http://web.mit.edu/gnu/doc/html/rlman_2.html">readline</a>, I get frustrated.</p>
+
+
+<p>And then there is that issue of saving your work. Some REPLs make this easy, others laugh at you. It&rsquo;s telling that most serious users of REPLs couple them to a text editor so that their work can always be saved. Emacs seems designed for this. Newer editors, less so.</p>
+
+
+<p>I figured that we might as well just build the REPL into the text editor itself.</p>
+
+
+<p>In Calca, you can edit anywhere (it&rsquo;s a text editor!). You signal to Calca that you want it to do some work using the =&gt; operator. When Calca sees that, it figures out what you want it to do, does it, and prints the result to the right of the operator. Sounds weird huh? You need to try it (did I mention <a href="https://itunes.apple.com/us/app/calca/id635757879?ls=1&amp;mt=8">Calca is cheap</a>?)</p>
+
+
+<p>Hanselman calls this the Anders operator. I have used it in all my work to mean &ldquo;therefore&rdquo;. I&rsquo;m fine with both names.</p>
+
+
+<p><strong>Goal: Live Updates</strong></p>
+
+
+<p>I also have an issue with REPLs when I make a mistake. Let&rsquo;s say I define a function, then do some calculations in Python:</p>
+
+
+<p>&gt;&gt;&gt; def average(a, b): return (a + b) / 3</p>
+
+
+<p>&gt;&gt;&gt; average(100, 200)</p>
+
+
+<p>100</p>
+
+
+<p>Oops, I made a mistake! Let&rsquo;s fix the average function:</p>
+
+
+<p>&gt;&gt;&gt; def average(a, b): return (a + b) / 2</p>
+
+
+<p>&gt;&gt;&gt; average(100, 200)</p>
+
+
+<p>150</p>
+
+
+<p>But I still have a lot of answers on the screen that reflect the old definition! This can be distracting or even harmful if my eyes wonder off.</p>
+
+
+<p>This was fine in the 1960s when REPLs printed out to pieces of paper and companies could afford battalions of interns with whiteout. But it&rsquo;s the year 2013 and interns frustratingly demand to be paid - so I think it&rsquo;s time our computer tools deal with our errors better.</p>
+
+
+<p>In that light, Calca works like Excel: as you make changes to earlier parts of the calculation, those updates are propagated throughout the entire document instantly. No interns needed. You really must <a href="https://itunes.apple.com/us/app/calca/id635757879?ls=1&amp;mt=8">give it a try</a>.</p>
+
+
+<p><strong>Goal: Humane Syntax</strong></p>
+
+
+<p>Mathematical syntax is, well, politely speaking, without using cuss words, sometimes <em>slightly</em> ambiguous.</p>
+
+
+<p>Humans love ambiguity and computers can&rsquo;t deal with it at all. Too bad for the computers, Calca uses a humane syntax.</p>
+
+
+<p>The syntax was developed using an LALR(1) parser generator.  LALR(1) parsers can only look ahead one symbol at a time. This necessitates creating unambiguous and simple grammars. That&rsquo;s my fancy way of saying that Calca&rsquo;s syntax is not complicated and is very easy to learn.</p>
+
+
+<p>In addition to this, Calca has lots of convenience syntax. For example:</p>
+
+<ul><li><strong>f = 2x</strong> is a function even though I didn&rsquo;t bother with any parenthesis</li>
+<li><strong>2x</strong> is shorthand for <strong>2 * x</strong></li>
+<li>You can type <strong>33%</strong> instead of <strong>0.33</strong></li>
+<li>Numbers can be written with grouping separators because I&rsquo;m getting old: <strong>100,033,234.56</strong></li>
+<li>Names can include spaces so we can write <strong>dist to the moon</strong> instead of <strong>dist_to_the_moon</strong> or <strong>distToTheMoon</strong></li>
+</ul>
+<p>Take a look at the <a href="http://calca.io/examples/">Examples</a> and <a href="http://calca.io/support/">Reference</a> to get a feel for its syntax.</p>
+
+
+<p><strong>Goal: Symbolic Manipulation</strong></p>
+
+
+<p>Sometimes, we just don&rsquo;t know something. What is the tax rate? How far is the moon? How many clowns will fit in that car?</p>
+
+
+<p>We use variables for these quantities, but most calculation systems (desktop calculators, programming languages, etc.) require we know a value for all variables. Ludicrous!</p>
+
+
+<p>Calca loves undefined variables. It will treat them, properly, as unknowns and otherwise just carry on.</p>
+
+
+<p>For example let&rsquo;s say we&rsquo;re trying to understand how much money the man takes from us. I know how much I, ostensibly, make per year, and I know how much my check is per month. We can write this equation:</p>
+
+
+<p><strong>(yearly salary / 12) * tax percent / 100 = monthly take</strong></p>
+
+
+<p>There is only two numbers in that equation and three variables, but we can still ask Calca for the tax rate:</p>
+
+
+<p><strong>tax percent =&gt; 1200monthly take/yearly salary</strong></p>
+
+
+<p>Of course, if we give those variables numeric values, then Calca can reciprocate with numeric answers.</p>
+
+
+<p><strong>Goal: Plain Text</strong></p>
+
+
+<p>All of Calc&rsquo;s documents are stored as plain UTF-8 text. This makes them as easy to move around and manage as possible. Git loves plain text. Email loves it. They can be edited in Emacs or vi. All your Text Expander shortcuts work.</p>
+
+
+<p>There is nothing more frustrating than performing a lot of work only to realize you can&rsquo;t share it. Proprietary file formats are plagues imposed on us by evil software developers. With plain text, you control the data, not Calca.</p>
+
+
+<p><strong>Conclusion</strong></p>
+
+
+<p>Thanks for reading!</p>
+
+
+<p>Calca is the tool that I needed for years and I am so happy that I now have it to assist me day to day.</p>
+
+
+<p>I hope that I convinced you that it will be useful for you too. So <a href="http://calca.io">go grab a copy</a> and let me know!</p>
+

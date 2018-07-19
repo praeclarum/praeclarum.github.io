@@ -1,0 +1,111 @@
+---
+layout: post
+title:  "Stop Crashing!"
+date:   2014-11-07 16:28:00 GMT
+redirect_from:
+  - /post/102015518373
+  - /post/102015518373/stop-crashing
+---
+
+
+<p><strong>TL;DR</strong> I wrote a script that lists functions in your Xamarin app that could cause it to crash. <a href="http://github.com/praeclarum/StopCrashing">StopCrashing.fsx on github</a>.</p>
+
+
+<p><strong>We’ve all had apps crash.</strong> It’s annoying, it’s stressful, and you feel cheated. Most people give up on apps that crash more than a couple times, or they leave 1 star reviews. Crashing is bad.</p>
+
+
+<p>One of the benefits of using a managed runtime like .NET and Xamarin is that one of the most common causes of a crash - pointer corruption - is just not possible. Great! My apps should crash a lot less you think.</p>
+
+
+<p>This is indeed true, but there is a catch: .NET uses exceptions as its error communication mechanism - just like every other modern runtime. That is fine, we all love exceptions.</p>
+
+
+<p>Well, everyone loves them except old fuddy duddy operating systems from 1970 (i.e. every OS). They only know how to deal with unhandled exceptions by crashing. (Queue Hitchcock’s theme.)</p>
+
+
+<p>What a world we live in! Our error communication mechanism actually causes our apps to shut down? Madness!</p>
+
+
+<p>But that is indeed the world we live in. Hi, my name is Frank, and my apps crash. I hate it, I test and test but still manage to miss some exception handling in my code.</p>
+
+
+<p>I’m tired of it. While crash reporting solutions exist, I would prefer to just not crash at all.</p>
+
+
+<p>So I wrote a script.</p>
+
+
+<h2 id="stopcrashing.fsx">StopCrashing.fsx</h2>
+
+<p>I wrote a script that looks for possible ways the OS can call <strong>into</strong> my code. These entrypoints are the potential origins for crashes because there is no useful exception handler on the stack at that time.</p>
+
+
+<p>What are these calls? Well, there are a lot of them:</p>
+
+<ol><li>Any time you override members of UI objects</li>
+<li>Any time you export functions to the OS (as in, the responder chain)</li>
+<li>Any callbacks you register with the OS</li>
+<li>I’m sure there are more…</li>
+</ol>
+<p>My script uses <a href="http://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/">Mono.Cecil</a> to scan all the byte code of your application to find these entrypoints. (Well, I’ve only implemented #1 and #2. #3 is a harder problem to detect.)</p>
+
+
+<p>It then detects whether you have any exception handling in that code. If you do not, it yells at you.</p>
+
+
+<p>The idea is that we don’t want to bloat our software with exception handlers everywhere. This certainly makes coding more tedious but also introduces a lot of ambiguity. Instead, we still want to fail fast by leaving the majority of our code free of handlers. We will only catch exceptions where we must do so to prevent crashes.</p>
+
+
+<p><a href="http://github.com/praeclarum/StopCrashing">The script is available on github</a>. I put a little effort into making it easy to run: just pass it the path of your solution and it will go find the latest binaries automatically. It also returns an exit code so that it can be easily integrated into your CI server. (It is currently configured only to detect iOS and OS X calls. Android and Win RT support can be added if anyone is interested.)</p>
+
+
+<p>Let’s run it on <a href="http://calca.io">Calca</a> and see what it has to say:</p>
+
+
+<p><code>fsharpi --exec StopCrashing.fsx Calca.Mac.sln</code></p>
+
+<pre><code>30 UI METHODS IN Calca.Mac.sln NEED EXCEPTION HANDLERS
+    Calca.Mac.Editor.InsertText
+    Calca.Mac.Preferences.MakeKeyAndOrderFront
+    Calca.Mac.TextEditorDelegate.DidChangeSelection
+    Calca.Mac.TextEditorDelegate.GetCompletions
+    Calca.Mac.TextEditorDelegate.LinkClicked
+    Calca.Mac.TextEditorDelegate.ShouldSetSpellingState
+    Calca.Mac.TextEditorDelegate.WillChangeSelection
+    ...
+</code></pre>
+
+<p>Wow, it looks like there are 30 methods where an errant exception could crash my app! While I’ve done my best to make sure Calca doesn’t error, it’s just impossible to cover every possible situation. These 30 methods need to handle exceptions.</p>
+
+
+<p>I have always <em>tried</em> to put good error handling in my code, but did a hap-hazard job of it. If the app doesn’t crash for my beta testers then it probably won’t crash for everyone else. Right? Well, no. I have come to the conclusion that you have to be more proactive. You have to defend against the unknown and this script ups my defenses significantly.</p>
+
+
+<h2 id="handlingexceptions">Handling Exceptions</h2>
+
+<p>Well, if you’re going to handle errors, then you better do it responsibly. I find that a few types of functions repeatedly show up.</p>
+
+<ol><li>
+
+<p><strong>Simple UI actions like clicking a button or entering text</strong> These can be handled simply by catching all exceptions and popping up an alert to the user.</p>
+
+</li>
+<li>
+
+<p><strong>System events</strong> Since these can occur at random times, you may not want to alert the user (or at least not interrupt them with an alert). Random alerts popping up out of the blue will only confuse your users.</p>
+
+</li>
+<li>
+
+<p><strong>Methods that return values</strong> These are often feeding data into other APIs and need to be treated delicately. I try to allocate some safe defaults when the object is first constructed and then return those in error conditions.</p>
+
+</li>
+</ol>
+<p>Test your error handling! When I’m bored (that is, when I’m procrastinating over a difficult feature or bug) I often put random exceptions into my code just to test the error handling. What if this critical function fails, what will my app do? What if this seemingly innocent function fails, what will my app do? These little experiments can convince you that those 1 star reviews will at least be earned.</p>
+
+
+<p>Of course, you can still benefit from crash loggers if your users don’t mind submitting error reports. The nice thing is, instead of crash reports, you’ll be delivering error reports.</p>
+
+
+<p>As a last tip, may I remind you to be careful of loops. Displaying an error is bad and can annoy the user. Displaying the same error 100 times while your loop continually executes is catastrophically bad and you’ll be lucky if that user ever uses your app again.</p>
+

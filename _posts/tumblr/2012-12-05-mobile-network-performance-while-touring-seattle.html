@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "Mobile Network Performance while Touring Seattle"
+date:   2012-12-05 19:15:00 GMT
+redirect_from:
+  - /post/37273215875
+  - /post/37273215875/mobile-network-performance-while-touring-seattle
+---
+
+
+<p><a href="https://dl.dropbox.com/u/6908183/Blog/Images/Results%402x.png"><img src="https://78.media.tumblr.com/tumblr_mekoccptd41qbzjil.png"/></a></p>
+
+
+<p>I recently journeyed around Seattle to get a sense of the impact motion has on the network performance of mobile applications.</p>
+
+
+<p>The image above is a graph of how long it took to download the homepage of Google News (588 KB) while I was traveling by bus and train throughout the city. Blue bars are successful downloads and red bars (and time entries with no bars at all) represent errors. The height of the bar shows how long it took to find out if it was successful download or an error.</p>
+
+
+<p>I wrote the <a href="https://gist.github.com/4210793">test app</a> using <a href="http://xamarin.com">MonoTouch</a> and ran it on an iPhone 5 with Verizon LTE.</p>
+
+
+<h2 id="observations">Observations</h2>
+
+<h3 id="when-youre-standing-still-performance-is-pretty-consistent-and-error-free">When you&rsquo;re standing still, performance is pretty consistent and error free</h3>
+
+<p>Whenever I gave the phone time enough to pair with a cell tower, the performance was pretty consistent with 2.5 second response times with 588 KB of data (240 KB/s). I never received errors (go TCP!).</p>
+
+
+<h3 id="you-will-get-spikes-errors-when-moving">You will get spikes errors when moving</h3>
+
+<p>While most downloads took 2.5s, I received many 5s spikes. This is <strong>100% increase</strong> in time. There was a even a time (look in the last 1/3rd of the chart) where 5s became the average and I received 10s spikes.</p>
+
+
+<p>The spikes happened quite spuriously so I can only guess that they occured in cell tower transition zones.</p>
+
+
+<p>While TCP is an insanely resiliant protocol, it would still fail from time to time. In a 2 hour interval, I recorded 2 errors that weren&rsquo;t tunnel-related. This means that there was a <strong>1% error rate</strong> while moving. My only guess is that these happened whenever I was switching towers and the request happened just then.</p>
+
+
+<h3>3G sucks compared to LTE</h3>
+
+<p>Do you see those blue spikes near the center just after a little gap (the Mount Baker tunnel)? The one that peaks at more than 50s? That&rsquo;s 3G my friends: slower downloads by an order of magnitude and a huge variance increase. I can only wonder what this graph would be like if I was stuck on 3G the whole time&hellip;</p>
+
+
+<h3 id="timeout-and-readwritetimeout-control-these-spikes">Timeout and ReadWriteTimeout control these spikes</h3>
+
+<p>For the test, I used a <a href="http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.timeout.aspx">WebRequest.Timeout</a> of 20 s and a <a href="http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.readwritetimeout.aspx">ReadWriteTimeout</a> of 20s.</p>
+
+
+<p>You can see the affect of Timeout with all the errors that cap at 20s. Mono gave a &ldquo;System.Net.WebException: The request timed out&rdquo; at that mark. This is great because it&rsquo;s very predictable.</p>
+
+
+<p>So, how do bars go above 20s? That&rsquo;s the effect of ReadWriteTimeout. This is the timeout that affects each Read and Write call to the response object. I was using a 16 KB buffer for my reads so this means that I did about 37 read operations. Since each of these had a timeout of 20s I could have ended up waiting up to 740s (12 minutes)! Thankfully that never happened.</p>
+
+
+<p>About 50% of the time, ReadWriteTimeout was able to finish the download. On the other 50%, I ended up receiving &ldquo;System.Net.WebException: The operation has timed out.&rdquo; exceptions. I&rsquo;m not sure if I see much value in setting it up - I would prefer that errors come sooner rather than later.</p>
+
+
+<p>The system default of 300s (5 minutes) seems beyond ridiculous to me. Don&rsquo;t use that value.</p>
+
+
+<p>TL;DR ReadWriteTimeout is an important value that you should think about.</p>
+
+
+<h3 id="thank-god-for-connectfailures">Thank God for ConnectFailures</h3>
+
+<p>While travelling through a tunnel, the request would fail immediately with &ldquo;System.Net.WebException: Error: ConnectFailure (No route to host)&rdquo;.</p>
+
+
+<p>These errors are represented by the white gaps in the chart. In the face of those 38 s errors, this is wonderful.</p>
+
+
+<h3 id="all-errors-were-represented-by-webexceptions">All errors were represented by WebExceptions</h3>
+
+<p>I&rsquo;ve always wondered if a try-catch block of:</p>
+
+<pre>try {
+    // Do some System.Net.WebRequest stuff
+} catch (System.Net.WebException) {
+    // OMG. OMG. OMG.
+}</pre>
+
+<p>one that caught only <a href="http://msdn.microsoft.com/en-us/library/system.net.webexception.aspx">WebException</a> - was sufficient to catch all network related errors when using <a href="http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx">WebRequest</a>. It turns out that yes, yes it is. One less thing to think about&hellip;</p>
+
+
+<p>Here are <em>all</em> the errors MonoTouch emitted during this test (in Type.Name + Exception.Message format):</p>
+
+<ul><li>System.Net.WebException: Error: ConnectFailure (No route to host)</li>
+<li>System.Net.WebException: The request timed out</li>
+<li>System.Net.WebException: The operation has timed out.</li>
+</ul>
+<h2 id="code-setup">Code Setup</h2>
+<ul><li><strong>Request Class:</strong> <code>System.Net.HttpWebRequest</code></li>
+<li><strong>URL:</strong> <a href="http://news.google.com">http://new.google.com</a></li>
+<li><strong><a href="http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.timeout.aspx">Timeout</a>:</strong> 20 s</li>
+<li><strong><a href="http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.readwritetimeout.aspx">ReadWriteTimeout</a>:</strong> 20 s</li>
+<li><strong>HTTP Keep-Alive:</strong> No</li>
+<li><strong>ReadBuffer:</strong> 16 KB</li>
+<li><strong>Request Interval:</strong> 30 s</li>
+</ul>
+<p>The actual code for the netowork request can be found in the <code>HandleTimer</code> method in the <a href="https://gist.github.com/4210793#L98">gist for the test app</a>.</p>
+
+
+<p>The app disabled the idle timer of the phone so that it could run continuously in the foreground. Every 30 seconds, it would download the full 588 KB of Google News. In all, I figure I burnt through 8% of my monthly data allowance.</p>
+
+
+<h2 id="test-procedure">Test Procedure</h2>
+<ul><li><strong>Device:</strong> iPhone 5 (white)</li>
+<li><strong>Carrier:</strong> Verizon (LTE, usually)</li>
+</ul>
+<p>I started the test by getting a slice of pizza at <a href="https://maps.google.com/maps?q=4529+University+Way+NE+Seattle,+WA+98105&amp;hl=en&amp;sll=47.775216,-122.310617&amp;sspn=0.007153,0.010343&amp;hnear=4529+University+Way+NE,+Seattle,+Washington+98105&amp;t=m&amp;z=17">Pagliacci</a>&rsquo;s in the University District of Seattle. I figured this would be a good way to establish a baseline for staying still, and I was very hungry. I then took a bus to <a href="http://www.soundtransit.org/Rider-Guide/Westlake-Station.xml">Westlake</a>, downtown, wherein we entered the transit tunnels and I transferred to the light rail. I took the light rail through the tunnel and back into the open air as far as <a href="http://www.soundtransit.org/Rider-Guide/Columbia-City-Station.xml">Columbia City</a>. This journey consumed the first hour of the test. There, I switched trains to head back into the city. The trip back was essentially the same and even included another stop for pizza in the name of consistency (at <a href="https://maps.google.com/maps?q=400+PINE+ST.+%23332,SEATTLE,WA,98101">Sbarro</a> this time).</p>
+

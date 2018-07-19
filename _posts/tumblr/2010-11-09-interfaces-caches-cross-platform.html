@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "Interfaces + caches = Cross Platform"
+date:   2010-11-09 00:19:31 GMT
+redirect_from:
+  - /post/1520024382
+  - /post/1520024382/interfaces-caches-cross-platform
+---
+
+
+<p>iCircuit is a mobile app that lets you experiment with circuits on your iOS devices. Well, soon, it will also let you do it on your WinPhone7.</p>
+
+
+<p>It was implemented using the innovative and very rewarding <a href="http://monotouch.net">MonoTouch</a> system. MonoTouch lets you write native iOS apps in C# with full access to .NET. MonoTouch + the iPhone made programming fun again. It was the best decision I&rsquo;ve made in a long time.</p>
+
+
+<p>On the evening of Jul 21, I was frantic waiting for Apple to approve my baby, and somewhat curious as to how much effort it would take to port the app to Silverlight.</p>
+
+
+<p>The engine ported immediately, without change, since it was written in pure .NET and only communicated with the UI through interfaces. (Well, properly said, the UI only communicated with the engine through interfaces.)</p>
+
+
+<p>After that, I only had to port the UI which was broken into two nice big chunks: The graphical circuit editor and the &ldquo;chrome&rdquo; which handled file management and all that boring stuff that makes apps &ldquo;apps&rdquo;.</p>
+
+
+<p>The graphical UI was again coded against interfaces only. So to port it to a new platform, I would merely (haha, &ldquo;merely&rdquo;) have to implement those interfaces. Because drawing on the iPhone is immediate mode (DrawCircle(); DrawLine(); &hellip;) I designed that interface along those lines. Nearly every graphic interface in existence is immediate mode: iOS, CoreGraphics, Windows GDI, GDI+, OpenGL, DirectX, whatever you call the rendering system on Android, the Canvas element in HTML, &hellip; the list goes on and on. But there are two huge exceptions: Silverlight and WPF!</p>
+
+
+<p>Here I had a perfectly abstracted graphics driver that fit every platform in the world except Microsoft&rsquo;s new platform. Yawn. So I never got around to porting the app.</p>
+
+
+<p>But on July 21, again, I was frantic and needed to code something. So I remembered the golden rule of programming: caches fix everything. I went about writing an implementation of my immediate mode interface that translated all those Draw*() calls to the retained mode of Silverlight (line = new Line(), Add(line)). What followed was the following check ins:</p>
+
+
+<p><code> </code></p>
+
+<pre><code>changeset:   305:ea9de0ac4a9e
+user:        Frank A. Krueger 
+date:        Wed Jul 21 17:49:19 2010 -0700
+summary:     OMFG it's actually working
+
+changeset:   304:7c5b310e602c
+user:        Frank A. Krueger 
+date:        Wed Jul 21 17:27:11 2010 -0700
+summary:     Fixed bug in my crazy algo, now it works!!!
+
+changeset:   303:fe1bd8e4a3be
+user:        Frank A. Krueger 
+date:        Wed Jul 21 17:17:08 2010 -0700
+summary:     Work toward making the silverlight circuit render. Amazed that my idea actually seems to be working.
+
+changeset:   301:0f223a67e40d
+user:        Frank A. Krueger 
+date:        Wed Jul 21 15:04:02 2010 -0700
+summary:     Began the Silverlight port. CircuitLib is compiling. Yeah. Now I need to reimplement the actual UI :-(</code></pre>
+
+<p><code> </code></p>
+
+
+<p>In a little less than 3 hours I had it working. God I love caches and interfaces.</p>
+
+
+<p>Making it work on the phone was just a matter of setting up the project in Visual Studio and recreating the chrome (something I&rsquo;m still working on today).</p>
+
+
+<p>Today, Nov 8, I got to find out if my method worked - and oh boy did it! The phone is chugging along right now rendering circuits.</p>
+
+
+<p>In conclusion: I love .NET. I love MonoTouch. My WinPhone7 is sweet. It&rsquo;s a great time to be a developer!</p>
+

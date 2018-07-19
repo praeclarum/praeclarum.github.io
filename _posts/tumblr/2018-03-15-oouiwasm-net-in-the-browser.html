@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "Ooui.Wasm - .NET in the browser"
+date:   2018-03-15 15:20:33 GMT
+redirect_from:
+  - /post/171899388348
+  - /post/171899388348/oouiwasm-net-in-the-browser
+---
+
+
+<p>I’ve been obsessing over my little <a href="https://github.com/praeclarum/Ooui">.NET web framework Ooui</a> and am excited to announce that it is now capable of running fully in the browser as a web assembly. This means that Xamarin.Forms apps can run completely in the browser - without a smart server - giving .NET developers even more reach and options for distributing their apps. Try the <a href="https://s3.amazonaws.com/praeclarum.org/wasm/index.html">Xamarin.Forms XAML editor demo</a> online or <a href="https://github.com/praeclarum/Ooui/wiki/Xamarin.Forms-with-Web-Assembly">read the getting started guide</a> if you want to try it yourself.</p>
+
+
+
+<h3>Demo</h3><figure data-orig-width="1862" data-orig-height="1198" class="tmblr-full"><img src="https://78.media.tumblr.com/8458a2f3696958fb49525861285f3835/tumblr_inline_p5lwt0hLDu1qbzjil_540.png" alt="image" data-orig-width="1862" data-orig-height="1198"/></figure>
+<p>
+
+This simple <a href="https://s3.amazonaws.com/praeclarum.org/wasm/index.html">XAML Editor running as a web assembly</a> demonstrates the power of web assembly nicely. It demos Xamarin.Forms running in the browser and shows that all logic is working by enabling you to edit the displayed XAML.</p>
+
+
+
+<p>I&rsquo;m hosting it on S3 to drive home the point that this app is distributed as just a bunch of static files - all execution is done in the client browser. Once the app is loaded, you can turn off your network and everything will keep working. You can also inspect the HTML source to see that it&rsquo;s just a shell of an app.</p>
+
+
+
+<p>You may be asking how this works. Web assembly is the latest browser tech to enable non-JavaScript languages to execute in the browser. In the past, the only way to create HTML5 web apps was to write JavaScript or to compile your app down to JavaScript (like <a href="https://github.com/praeclarum/Netjs">Netjs</a> and <a href="https://github.com/fable-compiler/Fable">Fable</a> do). This obviously works but has limitations because JS wasn&rsquo;t designed to be a low-level target language. Fortunately, the browser cabal that runs the internet has recognized this shortcoming and have created web assembly - a proper low-level target for programming languages to compile down to.</p>
+
+
+
+<p>Web developers are no longer forced to work with JavaScript and thanks to the <a href="https://github.com/mono/mono/tree/master/sdks/wasm">amazing work of the mono team</a>, we can run full .NET code (.NET Standard 2.0) in the browser! This even works on mobile browsers. Wild!</p>
+
+
+
+<h3>Easy as 1-2-3</h3>
+<p>You can now create a .NET web assembly app with just 3 commands:</p>
+<pre>dotnet new console
+dotnet add package Ooui.Wasm
+dotnet build</pre>
+<p>This will create web assembly build of your app ready to be run in any modern browser. The build is tucked away in a <b>dist</b> subdirectory of your <b>bin</b> directory.</p>
+
+<p>Now that app is quite boring and will just print “Hello World!” to the console instead of displaying the words. To fix this, we can edit the program:</p>
+<pre>UI.Publish("/", new Span("Hello World!"));</pre>
+<p>That one line of code will add a span to the HTML document to display the greeting. Every Ooui.Wasm app declares its initial UI by publishing that root element. Of course, the app is free to change things afterward. Check out the <a href="https://github.com/praeclarum/Ooui/wiki/Web-DOM-with-Web-Assembly">getting started guide</a> for a longer example.</p>
+
+<h3>Xamarin.Forms in Web Assembly</h3>
+<p>
+
+Since Ooui.Forms already implements a backend for Xamarin.Forms, Xamarin.Forms works out of the box in web assembly!
+
+
+</p>
+
+<p>I wrote a <a href="https://github.com/praeclarum/Ooui/wiki/Xamarin.Forms-with-Web-Assembly">getting started guide for Xamarin.Forms</a> that walks you through a complete example.</p>
+
+<h3>Pros and Cons of Web Assembly</h3>
+<p>Let’s compare writing an app with web assembly to writing a more traditional web app with Ooui.</p>
+
+<p><b>Traditional</b></p>
+<ul><li><b>Pro:</b> Uses billion-year-old HTML that works everywhere in the known universe. Google can read it, bots can read it, and it probably might work in Internet Explorer.<br/></li>
+<li><b>Con:</b> You need to run a web server that can execute code and that server will have to scale as your users increase.<br/></li>
+<li><b>Pro/Con:</b> Data is shared by default between users (since it’s all coming from the server)</li>
+</ul>
+<p><b>Web Assembly</b></p>
+<ul><li><b>Pro:</b> No smart server needed - you can host your app on a static web server such as Amazon S3, Azure Blob, another CDN, or a low-power device.<br/></li>
+<li><b>Pro:</b> Apps can be cached to be able to run in disconnected scenarios.<br/></li>
+<li><b>Con:</b> Relies on fancy new support in modern browsers. Fortunately support is ubiquitous today, but this won’t be working on Windows XP.<br/></li>
+<li><b>Pro/Con:</b> Data is private by default between users (since everything is running locally)<br/></li>
+</ul>
+<p>The last items were marked pro/con because it really depends on your app whether data between users should be easily shared. If you’re making a social network, then yes you want easy sharing. If you’re making a private journaling app, maybe local is right.</p>
+
+
+
+<h3>Comparison with Blazor</h3>
+
+
+<p><a href="https://blogs.msdn.microsoft.com/webdev/2018/02/06/blazor-experimental-project/">Blazor</a> is an amazing <strike>product</strike> experiment from Microsoft that also uses mono&rsquo;s web assembly support. Instead of exposing the DOM and classes and objects as Ooui does, it uses Razor templates composed through &ldquo;components&rdquo; to build your UI.</p>
+
+
+
+<p>You can think of Ooui.Wasm and Blazor as application frameworks running atop a common runtime (mono wasm). Ooui was designed to feel like classical native object oriented UI development which enables it to run even higher-level app frameworks like Xamarin.Forms. Blazor was designed to feel like modern React-style web development where you&rsquo;re writing HTML templates. Pick your poison.</p>
+
+
+
+<h3>Big Thanks</h3>
+<p>It’s surprising how little of Ooui had to change in order to work as a web assembly. This is thanks to the amazing effort of the mono team. I want to especially thank <a href="https://github.com/kumpera">Rodrigo Kumpera</a> for helping me get everything working.</p>
+

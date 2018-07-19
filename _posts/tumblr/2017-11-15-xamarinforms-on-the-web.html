@@ -1,0 +1,129 @@
+---
+layout: post
+title:  "Xamarin.Forms on the Web"
+date:   2017-11-15 19:13:57 GMT
+redirect_from:
+  - /post/167525842703
+  - /post/167525842703/xamarinforms-on-the-web
+---
+
+
+<p>TLDR: I implemented a web backend for Xamarin.Forms so that it can run in any browser. It achieves this without javascript recompilation by turning the browser into a dumb terminal fully under the control of the server (through web sockets using a library I call <a href="https://github.com/praeclarum/Ooui">Ooui</a>). This crazy model turns out to have a lot of advantages. <a href="http://ooui.mecha.parts">Try it here!</a></p>
+
+
+
+<h2>A Need</h2>
+
+
+<p>I have been enjoying building small IoT devices lately. I&rsquo;ve been building toys, actual household appliances, and other ridiculous things. Most of these devices don&rsquo;t have a screen built into them and I have found that the best UI for them is a self-hosted website. As long as the device can get itself on the network, I can interact with it with any browser.</p>
+
+
+
+<p>There&rsquo;s just one problem&hellip;</p>
+
+
+
+<h2>The Web Demands Sacrifice</h2>
+
+
+<p>The web is the best application distribution platform ever made. Anyone with an internet connection can use your app and you are welcome to monetize it however you want. Unfortunately, the price of using this platform is acuquiecense to &ldquo;web programming&rdquo;. In &ldquo;web programming&rdquo;, your code and data are split between the client that presents the UI in a browser and the server that stores and executes application data and logic. The server is a dumb data store while the client executes UI logic - only communicating with the server at very strategic points (because synchronization is hard yo). This means that you spend the majority of your time implementing ad-hoc and buggy synchronization systems between the two. This is complex but is only made more complex when the server decides to get in on the UI game by rendering templates - now your UI is split along with your data.</p>
+
+
+
+<p>Getting this right certainly is possible but it takes a lot of work. You will write two apps - one server and one client. You will draw diagrams and think about data state flows. You will argue about default API parameters. You will struggle with the DOM and CSS because of their richness in both features and history. You will invent your own security token system and it will be hilarious. The web is great, but it demands sacrifices.</p>
+
+
+
+<p>(And, oh yes, the server and client are usually written in different languages - you have that barrier to deal with too. The node.js crew saw all the challenges of writing a web app and decided that the language barrier was an unnecessary complication and removed that. Bravo.)</p>
+
+
+
+<h2>Something Different</h2>
+
+
+<p>I was getting tired of writing HTML templates, CSS, REST APIs, and all that other &ldquo;stuff&rdquo; that goes into writing a web app. I just wanted to write an app - I didn&rsquo;t want to write all this boilerplate.</p>
+
+
+
+<p>I decided that what I really wanted was a way to write web apps that was indistinguishable (from the programmer&rsquo;s perspective) from writing native UI apps. If I wanted a button, I would just <code>new</code> it up and add it to other UI elements. If I wanted to handle a click event, I wanted to be able to just subscribe to the event and move on. What I needed was a little magic - something to turn my simple app into the server/client split required by web apps.</p>
+
+
+
+<p>That magic is a library I call <a href="https://github.com/praeclarum/Ooui">Ooui</a>. Ooui is a small .NET Standard 2.0 library that contains three interesting pieces of technology:</p>
+
+
+<ol><li>
+<p>A shadow DOM that gives a .NET interfaces to the web DOM. It has all the usual suspects <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;input&gt;</code>, etc. along with a styling system that leverages all the power of CSS.</p>
+</li>
+<li>
+<p>A state-synchronization system. This is where the magic happens. All shadow DOM elements record all the operations that have ever been performed on them. This includes changes to their state (setting their inner text for example) but also methods that have been called (for instance, drawing commands to <code>&lt;canvas&gt;</code>). This state can then be transmitted to the client at any time to fully mirror the server state on the client. With this system, all logic is executed on the server while the client renders the UI. Of course, it also allows for the client to transmit events back to the server so that click events and other DOM events can be handled. This is the part of Ooui that I am the most proud of.</p>
+</li>
+<li>
+<p>A self-hosting web server (with web sockets) or ASP.NET Core action handlers to make running Ooui very easy. If I want to self-host a button, I simply write:</p>
+</li>
+</ol><pre><code class="csharp">var button = new Button { Text = "Click Me!" };
+button.Clicked += (s, e) =&gt; button.Text = "Thanks!";
+
+// Start a web server and serve the interactive button at /button
+UI.Publish("/button", button); 
+</code></pre>
+
+
+<p>I can do this from any platform that supports .NET Standard 2. I can run this on a Mac, Linux, Windows, Raspberry PI, etc.</p>
+
+
+
+<p>Alternatively, you can host it on an ASP.NET MVC page if you want it up on the internet:</p>
+
+
+<pre><code class="csharp">public class HomeController : Controller
+{
+    public IActionResult Index()
+    {
+        var button = new Button { Text = "Click Me!" };
+        button.Clicked += (s, e) =&gt; button.Text = "Thanks!";
+
+        // Return interactive elements using the new ElementResult
+        return new ElementResult(button);
+    }
+}
+</code></pre>
+
+
+<p>Pretty neat huh?</p>
+
+
+
+<p>But one more thing&hellip;</p>
+
+
+
+<h2>Xamarin.Forms Support</h2>
+
+
+<p>The DOM is great and all, but what do .NET developers really love when you get right down to it? XAML. This little serialization-format-that-could has become the standard way to build .NET UIs. Whether you&rsquo;re writing a Windows, UWP, or mobile app, you expect there to be XAML support.</p>
+
+
+
+<p>So I made XAML work on the web by implementing a new web platform for Xamarin.Forms. Now, any of your Xamarin.Forms apps can run on the web using ASP.NET.</p>
+
+
+
+<p>Xamarin.Forms was not at all on my radar when I was building Ooui. Eventually though I realized that it was the perfect basis for a web version of Forms. I thought the idea to be a little silly to be honest - web developers love their CSS and I didn&rsquo;t think there was much point. But one day I heard someone ask for just that feature and I thought &ldquo;now we&rsquo;re two&rdquo;.</p>
+
+
+
+<p>I had never written a backend for Xamarin.Forms but found the process very straightforward and very easy given its open sourceness (e.g. I copied a lot of code from the iOS implementation :-)). There&rsquo;s still a bit of work to be done but Xamarin.Forms and Ooui are getting along like long-lost cousins.</p>
+
+
+
+<p>Animations work, pages and layouts work, styling works (as far as I have implemented), and control renders are currently being implemented. Fonts of course are an annoyance and cause a little trouble right now, but it&rsquo;s nothing that can&rsquo;t be fixed.</p>
+
+
+
+<p>Once I got Xamarin.Forms working on the web I realized how wrong I was for thinking this to be a silly technology. Writing web apps with the Forms API is a real pleasure that I hope you&rsquo;ll get to experience for yourself.</p>
+
+
+
+<p>Now that I am officially releasing Ooui, I want to work on a roadmap. But for now I mostly just want to hear people&rsquo;s opinions. What do you think about all this? What are your concerns? How do you think you could use it? Do you think it&rsquo;s as cool as I do? (Sorry, that last one is a little leading&hellip;)</p>
+
