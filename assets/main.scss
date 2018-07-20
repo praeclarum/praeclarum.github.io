@@ -1,0 +1,21 @@
+---
+---
+
+$brand-color:      #be4767;
+
+@import "minima";
+
+.site-header { border-top: none; }
+
+.site-nav .page-link { background-color: $brand-color; padding: 0.5em; color: white; border-radius: 5px; }
+.site-nav .page-link:hover { text-decoration: none; background-color: $grey-color-dark; }
+.site-nav .page-link:not(:last-child) { margin-right: 0.5em; }
+
+.post-link:visited { color: $brand-color; }
+.post-list h3 { margin-bottom: 0.1em; }
+
+.post-content img { border-radius: 5px; }
+.post-content h2 { margin-top: 1em; margin-bottom: 0.25em; }
+
+h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Black", Gadget, sans-serif }
+
