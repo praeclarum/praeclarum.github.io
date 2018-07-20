@@ -279,7 +279,7 @@ void ShowObservation (VNClassificationObservation observation)
 
 And that’s it, we now have an app that can detect hot dogs (or not)!
 
-![image]({{ "/assets/tumblr/165799177168_7.png" | absolute_url }})
+![image]({{ "/assets/tumblr/165799177168_7.jpg" | absolute_url }})
 
 You can find the [complete source code on GitHub](https://github.com/praeclarum/HotDogOrNot).
 

@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-![image]({{ "/assets/tumblr/141449935588_0.png" | absolute_url }})
+![image]({{ "/assets/tumblr/141449935588_0.jpg" | absolute_url }})
 
 Today I’m pleased to release **[Calca 1.4 for iOS](https://itunes.apple.com/us/app/calca/id635757879?ls=1&mt=8)**. This is an exciting release for me for two reasons.
 

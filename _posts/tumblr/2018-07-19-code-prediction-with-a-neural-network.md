@@ -21,7 +21,7 @@ My desktop computer features a 108 key keyboard while the iPad’s on-screen key
 
 To ease the problem of code entry, Continuous has always shipped with a “keyboard accessory” that gives access to lots of missing characters used while programming.
 
-![image]({{ "/assets/tumblr/176055701618_0.png" | absolute_url }})
+![image]({{ "/assets/tumblr/176055701618_0.gif" | absolute_url }})
 
 I made this list of keys by scanning a bunch of code and seeing the most popular characters used. I sorted that list by popularity and added some order to it so it wouldn’t seem too random to users.
 
@@ -78,7 +78,7 @@ So just how do you predict what code comes next? It’s not a trivial problem an
 
 When I first worked on this problem, I did everything at the character level. I just fed the network code file after code file and told it: learn C#. Here is some of the silly code it generated:
 
-![image]({{ "/assets/tumblr/176055701618_1.png" | absolute_url }})
+![image]({{ "/assets/tumblr/176055701618_1.jpg" | absolute_url }})
 
 [https://twitter.com/praeclarum/status/985575617310539776](https://twitter.com/praeclarum/status/985575617310539776)
 
@@ -196,7 +196,7 @@ This was pretty easy given how the IDE works. Whenever the user edits text, the 
 
 Those predictions are passed to the keyboard accessory which is just a UICollectionView. And that’s that; as you move the cursor around, the predictions appear above the keyboard.
 
-![image]({{ "/assets/tumblr/176055701618_5.png" | absolute_url }})
+![image]({{ "/assets/tumblr/176055701618_5.gif" | absolute_url }})
 
 Keep an eye on the black bar above the keyboard and note how it changes based on the cursor position. It’s not perfect, but its top couple matches are usually right.
 
