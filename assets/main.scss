@@ -21,8 +21,9 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
     max-width: 128px;
     max-height: 128px;
     float: left;
-    margin-right: 1em;
+    margin-right: 0.75em;
     margin-bottom: 1em;
+    margin-top: 0.25em;
 }
 
 .post-list li {
@@ -32,5 +33,6 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
 .post-content img { border-radius: 5px; }
 .post-content h2 { margin-top: 1em; margin-bottom: 0.25em; }
 
-.home .content { background-color: rgb(241, 241, 241); border-radius: 5px; padding: 1em; padding-bottom: 0.5em; margin-bottom: 2em; text-align: center; font-family: "Georgia"; font-size: 125%; }
+.home .content { background-color: rgb(242, 242, 242); border-radius: 5px; padding: 1em; padding-bottom: 0.5em; margin-bottom: 2em; text-align: center; font-family: "Georgia"; font-size: 125%; }
 .home .content img { width: 128px; border-radius: 64px; text-align: center; }
+
