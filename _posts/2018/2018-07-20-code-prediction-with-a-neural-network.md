@@ -1,15 +1,15 @@
 ---
 layout: post
 title:  "Code Prediction with a Neural Network"
-date:   2018-07-19 13:59:30 GMT
+date:   2018-07-20 12:32:58 GMT
 redirect_from:
-  - /post/176055701618
-  - /post/176055701618/code-prediction-with-a-neural-network
+  - /post/176088256628
+  - /post/176088256628/code-prediction-with-a-neural-network
 ---
 
 
 
-TLDR; I used Python to create a neural network that implements an F# function to predict C# code. The network was compiled to a CoreML model and runs on iOS to be used in my app [Continuous](http://continuous.codes) to provide keyboard suggestions.
+**TLDR;** I used Python to create a neural network that implements an F# function to predict C# code. The network was compiled to a CoreML model and runs on iOS to be used in my app [Continuous](http://continuous.codes) to provide keyboard suggestions.
 
 
 ## The Problem
@@ -21,7 +21,7 @@ My desktop computer features a 108 key keyboard while the iPad’s on-screen key
 
 To ease the problem of code entry, Continuous has always shipped with a “keyboard accessory” that gives access to lots of missing characters used while programming.
 
-![image]({{ "/assets/tumblr/176055701618_0.gif" | absolute_url }})
+![image]({{ "/assets/tumblr/176088256628_0.gif" | absolute_url }})
 
 I made this list of keys by scanning a bunch of code and seeing the most popular characters used. I sorted that list by popularity and added some order to it so it wouldn’t seem too random to users.
 
@@ -33,9 +33,9 @@ I wanted a new suggestion engine that tried to guess what you intend to type nex
 ## A Neural Solution
 
 
-I’ve spent the last year deep diving into neural networks and machine learning in general. I find it be a refreshing alternative to the rigid confines of programming while also being a whole new and exciting solution space to wander around in.
+I’ve spent the last year deep diving into neural networks and machine learning in general. I find it be a refreshing alternative to the rigid confines of programming while also being a whole new and unexplored solution space to wander around in.
 
-I’m not the only one enchanted by this new tech - Apple has pushed ML forward with its CoreML library that ties to its hardware promising efficient execution. It’s exciting to think that my mobile devices are now powerful enough to run very sophisticated networks. This also means that I have an easy path to create networks and write apps that use them - it’s an exciting time!
+I’m not the only one enchanted by this new tech - Apple has pushed ML forward with its CoreML library that ties to its hardware promising efficient execution. It’s liberating to know that my mobile devices are now powerful enough to run very sophisticated networks. This also means that I have an easy path to create networks and write apps that use them - it’s an exciting time!
 
 The decision to use a neural network to solve my code prediction problem was an easy one given all of this. Now I just need to choose *what kind* of network to use.
 
@@ -78,7 +78,7 @@ So just how do you predict what code comes next? It’s not a trivial problem an
 
 When I first worked on this problem, I did everything at the character level. I just fed the network code file after code file and told it: learn C#. Here is some of the silly code it generated:
 
-![image]({{ "/assets/tumblr/176055701618_1.jpg" | absolute_url }})
+![image]({{ "/assets/tumblr/176088256628_1.jpg" | absolute_url }})
 
 [https://twitter.com/praeclarum/status/985575617310539776](https://twitter.com/praeclarum/status/985575617310539776)
 
@@ -143,9 +143,9 @@ While training, you’re also balancing the size (and therefore speed) of the ne
 
 In the end I trained a network with **67% accuracy** and that required 8 history samples to make its prediction (using 16 samples only got it up to 69%). Here’s its summary:
 
-![image]({{ "/assets/tumblr/176055701618_2.png" | absolute_url }})
+![image]({{ "/assets/tumblr/176088256628_2.png" | absolute_url }})
 
-![image]({{ "/assets/tumblr/176055701618_3.png" | absolute_url }})
+![image]({{ "/assets/tumblr/176088256628_3.png" | absolute_url }})
 
 What does **67% accuracy** mean? Is it good?
 
@@ -174,7 +174,7 @@ I created a function with a simple interface to act as the entry point, or bridg
 
 This means that it’s a function that takes an array of SyntaxKinds (what I keep calling tokens) and produces and array of guesses and their probability. (The actual code also returns other data needed by the IDE.)
 
-![image]({{ "/assets/tumblr/176055701618_4.png" | absolute_url }})
+![image]({{ "/assets/tumblr/176088256628_4.png" | absolute_url }})
 
 [https://gist.github.com/praeclarum/7b5029656962864936d7667ae2f4a624](https://gist.github.com/praeclarum/7b5029656962864936d7667ae2f4a624)
 
@@ -196,7 +196,7 @@ This was pretty easy given how the IDE works. Whenever the user edits text, the 
 
 Those predictions are passed to the keyboard accessory which is just a UICollectionView. And that’s that; as you move the cursor around, the predictions appear above the keyboard.
 
-![image]({{ "/assets/tumblr/176055701618_5.gif" | absolute_url }})
+![image]({{ "/assets/tumblr/176088256628_5.gif" | absolute_url }})
 
 Keep an eye on the black bar above the keyboard and note how it changes based on the cursor position. It’s not perfect, but its top couple matches are usually right.
 
