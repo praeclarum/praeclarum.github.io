@@ -21,6 +21,12 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: praeclarum
 github_username:  praeclarum
+google_analytics: UA-123035852-1
+
+show_excerpts: true
+
+feed:
+  path: rss
 
 # Build settings
 markdown: kramdown
@@ -29,20 +35,13 @@ plugins:
   - jekyll-feed
   - jekyll-redirect-from
 
-show_excerpts: true
-
-feed:
-  path: rss
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
+# Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - README.md
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
