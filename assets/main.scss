@@ -6,6 +6,7 @@ $brand-color:      #be4767;
 @import "minima";
 
 .site-header { border-top: none; }
+.site-header .site-title { color: $brand-color !important; }
 
 .site-nav .page-link { background-color: $brand-color; padding: 0.5em; color: white; border-radius: 5px; }
 .site-nav .page-link:hover { text-decoration: none; background-color: $grey-color-dark; }
