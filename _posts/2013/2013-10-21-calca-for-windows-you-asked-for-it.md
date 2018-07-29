@@ -5,15 +5,16 @@ date:   2013-10-21 22:25:00 GMT
 redirect_from:
   - /post/64717121779
   - /post/64717121779/calca-for-windows-you-asked-for-it
+thumbnail: "/images/tumblr/64717121779_0.png"
 ---
 
 
 
-![image]({{ "/images/tumblr/64717121779_0.png" | absolute_url }})
-
 [Calca for Windows](http://calca.io/store/calca-for-windows) has been the [#1 asked for "feature"](https://calca.uservoice.com/forums/216746-general/suggestions/4247892-windows-version) since [Calca for iOS](http://calca.io) debuted in July. Today, I'm happy to announce that it's finally available for purchase! For just $9.99 you can own this powerhouse of a calculator.
 
-**A very Windows app**
+![image]({{ "/images/tumblr/64717121779_0.png" | absolute_url }})
+
+## A very Windows app
 
 Calca for Windows was designed to be fast and light weight. It ships as a single executable that doesn't need to be installed (don't worry, there's an installer too if you want it) and presents a minimalist user interface. There is no drama of loading a big IDE or massive spreadsheets. Calca pops right up and begs you for something to do.
 
@@ -21,7 +22,7 @@ And, oh, it works on Windows XP. Yep, that's right: Calca was designed to work w
 
 If you're just getting started with Calca, make sure you read the Introduction and Examples under the Help menu to get started.
 
-**A more powerful engine**
+## A more powerful engine
 
 One of the most exciting things about this release is that it ships with version 1.2 of the Calca engine. In addition to numerous bug fixes, this version also has fantastic units and currency support.
 
@@ -43,7 +44,7 @@ There are lots of other improvements, but since this is a new release, I won't b
 
 (And don't worry Mac and iOS friends, updates are being submitted to Apple this week so that you will get these new features too.)
 
-**Code reuse numbers**
+## Code reuse numbers
 
 For my developer friends out there who like to keep tabs on me, I was able to **reuse 18,000 lines of code** from the previous Calca versions and only had to **write 3,000**. The majority of that code is implementing a document-based application architecture.
 

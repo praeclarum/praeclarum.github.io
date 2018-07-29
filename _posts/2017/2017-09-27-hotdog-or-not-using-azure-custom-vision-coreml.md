@@ -5,6 +5,7 @@ date:   2017-09-27 16:19:08 GMT
 redirect_from:
   - /post/165799177168
   - /post/165799177168/hotdog-or-not-using-azure-custom-vision-coreml
+thumbnail: "/images/tumblr/165799177168_3.png"
 ---
 
 

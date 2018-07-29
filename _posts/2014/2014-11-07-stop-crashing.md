@@ -75,15 +75,11 @@ I have always *tried* to put good error handling in my code, but did a hap-hazar
 
 Well, if you’re going to handle errors, then you better do it responsibly. I find that a few types of functions repeatedly show up.
 
-1. 
+**1. Simple UI actions like clicking a button or entering text** These can be handled simply by catching all exceptions and popping up an alert to the user.
 
-**Simple UI actions like clicking a button or entering text** These can be handled simply by catching all exceptions and popping up an alert to the user.
-2. 
+**2. System events** Since these can occur at random times, you may not want to alert the user (or at least not interrupt them with an alert). Random alerts popping up out of the blue will only confuse your users.
 
-**System events** Since these can occur at random times, you may not want to alert the user (or at least not interrupt them with an alert). Random alerts popping up out of the blue will only confuse your users.
-3. 
-
-**Methods that return values** These are often feeding data into other APIs and need to be treated delicately. I try to allocate some safe defaults when the object is first constructed and then return those in error conditions.
+**3. Methods that return values** These are often feeding data into other APIs and need to be treated delicately. I try to allocate some safe defaults when the object is first constructed and then return those in error conditions.
 
 Test your error handling! When I’m bored (that is, when I’m procrastinating over a difficult feature or bug) I often put random exceptions into my code just to test the error handling. What if this critical function fails, what will my app do? What if this seemingly innocent function fails, what will my app do? These little experiments can convince you that those 1 star reviews will at least be earned.
 

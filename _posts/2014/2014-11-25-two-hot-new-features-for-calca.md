@@ -5,14 +5,13 @@ date:   2014-11-25 16:35:00 GMT
 redirect_from:
   - /post/103559633748
   - /post/103559633748/two-hot-new-features-for-calca
+thumbnail: "/images/tumblr/103559633748_0.png"
 ---
 
 
-
-[<img alt="See Calca 1.3 on the Mac App Store" src="http://static.squarespace.com/static/51969d17e4b04e94848c1da1/5196a2f0e4b074099d71b663/5474b626e4b063269d8ec5d0/1416934951823/Blog.png?format=1500w" width="768" />](https://itunes.apple.com/us/app/calca/id635758264)
-
 [Calca 1.3 has hit the Mac App Store](https://itunes.apple.com/us/app/calca/id635758264) and it contains two features that I hope you'll love: **plotting** and **quick entry**.
 
+[![See Calca 1.3 on the Mac App Store]({{ "/images/tumblr/103559633748_0.png" | absolute_url }})](https://itunes.apple.com/us/app/calca/id635758264)
 
 ## Plotting
 

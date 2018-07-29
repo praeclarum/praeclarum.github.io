@@ -5,14 +5,13 @@ date:   2015-09-14 20:22:32 GMT
 redirect_from:
   - /post/129094397488
   - /post/129094397488/drone-builder-a-story-of-drones-react-and-f
+thumbnail: "/images/tumblr/129094397488_0.png"
 ---
 
-
+[Drone Builder](http://drone.mecha.parts) is a site I created to
+play with different DIY drone (multicopter) designs. I wrote it using F# and React.
 
 [![image]({{ "/images/tumblr/129094397488_0.png" | absolute_url }})](http://drone.mecha.parts)
-
-[Drone Builder](http://drone.mecha.parts) is a site I created to
-play with different DIY drone (multicopter) designs.
 
 Building a drone isn't rocket science but there is a lot to learn when making
 your first one. You first have to learn what parts you need and what all their

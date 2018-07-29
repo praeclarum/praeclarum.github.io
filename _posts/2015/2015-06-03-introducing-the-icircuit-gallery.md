@@ -5,13 +5,14 @@ date:   2015-06-03 18:14:47 GMT
 redirect_from:
   - /post/120625815178
   - /post/120625815178/introducing-the-icircuit-gallery
+thumbnail: "/images/tumblr/120625815178_0.png"
 ---
 
 
 
-![image]({{ "/images/tumblr/120625815178_0.png" | absolute_url }})
-
 **TLDR;** I wrote a [website to share circuits made with my app iCircuit](http://gallery.icircuitapp.com) and I hope you’ll check it out.
+
+![image]({{ "/images/tumblr/120625815178_0.png" | absolute_url }})
 
 
 ## Finally, a place to share

@@ -5,6 +5,7 @@ date:   2015-03-16 21:14:42 GMT
 redirect_from:
   - /post/113814379658
   - /post/113814379658/introducing-ngraphics
+thumbnail: "/images/tumblr/113814379658_0.png"
 ---
 
 
