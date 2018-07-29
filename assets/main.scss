@@ -5,6 +5,8 @@ $brand-color:      #be4767;
 
 @import "minima";
 
+h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Black", Gadget, sans-serif }
+
 .site-header { border-top: none; }
 .site-header .site-title { color: $brand-color !important; }
 
@@ -15,8 +17,20 @@ $brand-color:      #be4767;
 .post-link:visited { color: $brand-color; }
 .post-list h3 { margin-bottom: 0.1em; }
 
+.post-list .post-thumbnail {
+    max-width: 128px;
+    max-height: 128px;
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.post-list li {
+    clear: both;
+}
+
 .post-content img { border-radius: 5px; }
 .post-content h2 { margin-top: 1em; margin-bottom: 0.25em; }
 
-h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Black", Gadget, sans-serif }
-
+.home .content { background-color: rgb(241, 241, 241); border-radius: 5px; padding: 1em; padding-bottom: 0.5em; margin-bottom: 2em; text-align: center; font-family: "Georgia"; font-size: 125%; }
+.home .content img { width: 128px; border-radius: 64px; text-align: center; }

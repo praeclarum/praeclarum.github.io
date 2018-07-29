@@ -7,7 +7,9 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
-  {{ content }}
+  <div class="content">
+    {{ content }}
+  </div>
 
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
@@ -22,6 +24,11 @@ layout: default
           </a>
         </h3>
         {%- if site.show_excerpts -%}
+          {%- if post.thumbnail -%}
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            <img class="post-thumbnail" src="{{ post.thumbnail | relative_url }}" />
+          </a>
+          {%- endif -%}
           {{ post.excerpt }}
           <a href="{{ post.url | relative_url }}">Read more...</a>
         {%- endif -%}

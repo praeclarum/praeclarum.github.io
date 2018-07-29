@@ -6,6 +6,8 @@ layout: home
 list_title: "All Posts"
 ---
 
-Hello, I'm Frank.
+![Selfie of Frank](/assets/me.jpg)
+
+Hi! I'm Frank - a software developer living in Seattle specializing in mobile apps that do weird and nerdy things. My blog is a random assortment of technical articles, app announcements, and other silly thoughts.
 
 
