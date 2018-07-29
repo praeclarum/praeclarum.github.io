@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-![image]({{ "/assets/tumblr/45690317491_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/45690317491_0.png" | absolute_url }})
 
 Layout has changed in iOS 6. We no longer are supposed to calculate `RectangleF`s and set springs and struts (`AutoresizingMask`), we are to use this very advanced constraint solving system.
 

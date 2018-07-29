@@ -28,7 +28,7 @@ We can see that Calca's engine - the shared code - is 11,337 lines of code. One 
 
 Here is a picture showing that same data. The code in green is shared, while the code in red had to be written specifically for that platform.
 
-![image]({{ "/assets/tumblr/55529252776_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/55529252776_0.png" | absolute_url }})
 
 This is showing that the UI code of the iOS version is nearly 3,000 lines of code compared to 1,000 lines for the Mac version. The iOS version's UI is 3 times as big as the Mac's.
 

@@ -11,7 +11,7 @@ redirect_from:
 
 [Calca](https://calca.io) is my crazy symbolic math calculator/markdown editor designed specifically for mad scientists. Today, I am very pleased to announce that [Calca 1.5 is available in the Microsoft Store](https://www.microsoft.com/store/productId/9NHXZ5159N41)!
 
-![image]({{ "/assets/tumblr/174121951203_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/174121951203_0.png" | absolute_url }})
 
 This is exciting for me on two fronts.
 

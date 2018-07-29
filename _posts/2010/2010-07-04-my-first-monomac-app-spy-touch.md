@@ -17,7 +17,7 @@ Windows developers have an app called [Spy++](http://msdn.microsoft.com/en-us/li
 
 We don't have anything like these tools for [MonoTouch](http://monotouch.net/). Well, now we do! (And by like, I mean: has 1/100th the features.)
 
-![image]({{ "/assets/tumblr/770071583_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/770071583_0.png" | absolute_url }})
 
 This little app (can I say little enough?) displays the active visual tree of your app while it is running. As you navigate the visual tree, the active view gets highlighted in a little visualizer on the right hand side.
 

@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-[![image]({{ "/assets/tumblr/37273215875_0.png" | absolute_url }})](https://dl.dropbox.com/u/6908183/Blog/Images/Results%402x.png)
+[![image]({{ "/images/tumblr/37273215875_0.png" | absolute_url }})](https://dl.dropbox.com/u/6908183/Blog/Images/Results%402x.png)
 
 I recently journeyed around Seattle to get a sense of the impact motion has on the network performance of mobile applications.
 

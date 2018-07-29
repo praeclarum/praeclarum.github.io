@@ -15,7 +15,7 @@ I’ve been obsessing over my little [.NET web framework Ooui](https://github.co
 ### Demo
 
 
-![image]({{ "/assets/tumblr/171899388348_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/171899388348_0.png" | absolute_url }})
 
 
 

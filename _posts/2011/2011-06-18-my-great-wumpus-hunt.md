@@ -21,7 +21,7 @@ iCircuit uses a [UIScrollView](http://developer.apple.com/library/ios/#documenta
 
 **Symptom 1: Everything is all blurry!**
 
-![image]({{ "/assets/tumblr/6663989742_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/6663989742_0.png" | absolute_url }})
 
 When you zoom in to the circuit, everything becomes blurry. This is due to the simple nature of UIScrollView and the fact that I don't change the view hierarchy at all after a zoom operation. This is the default behavior of UIScrollView and drives me absolutely batty.
 

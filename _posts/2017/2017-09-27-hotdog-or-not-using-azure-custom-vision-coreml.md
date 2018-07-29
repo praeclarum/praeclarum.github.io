@@ -78,7 +78,7 @@ You will want a project for each network you train. Projects hold all of your im
 1. Create an account on [https://www.customvision.ai](https://www.customvision.ai). It’s free!
 2. Create a **New Project**.
 
-![image]({{ "/assets/tumblr/165799177168_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/165799177168_0.png" | absolute_url }})
 
 I named the project **MyHotDogOrNot**, gave it a banal description, and then chose the domain **General (compact)**.
 
@@ -95,11 +95,11 @@ When you’re viewing your project, you will see a list of tags. We need to make
 1. Click the **+** at the top of the **Tags** list.
 2. Create two tags: **hotdog** and **not-hotdog**.
 
-![image]({{ "/assets/tumblr/165799177168_1.png" | absolute_url }})
+![image]({{ "/images/tumblr/165799177168_1.png" | absolute_url }})
 
 When you’re done, you’ll see a list of your tags. The (0) means there are no images yet associated with the tags.
 
-![image]({{ "/assets/tumblr/165799177168_2.png" | absolute_url }})
+![image]({{ "/images/tumblr/165799177168_2.png" | absolute_url }})
 
 
 ## Step 4. Upload Training Data
@@ -112,7 +112,7 @@ You can upload all the images with the same tag using just one command.
 3. Click **Upload files**.
 4. Repeat for the tag **not-hotdog**.
 
-![image]({{ "/assets/tumblr/165799177168_3.png" | absolute_url }})
+![image]({{ "/images/tumblr/165799177168_3.png" | absolute_url }})
 
 
 ## Step 5. Train the Model
@@ -123,7 +123,7 @@ So let’s train this thing already.
 1. Click the big green **Train** button.
 2. Go to the **Performance** tab and wait for your “Iteration” to finish.
 
-![image]({{ "/assets/tumblr/165799177168_4.png" | absolute_url }})
+![image]({{ "/images/tumblr/165799177168_4.png" | absolute_url }})
 
 When training is complete you will see the performance screen with the overall Precision and Recall of the model. In my case, I get slightly better results detecting not-hotdog than hotdog but they’re both great numbers so why fret.
 
@@ -144,7 +144,7 @@ You will now have a fancy **.mlmodel** model file. Rename it to something nice.
 
 If you open it with Xcode you will see its inputs and outputs.
 
-![image]({{ "/assets/tumblr/165799177168_5.png" | absolute_url }})
+![image]({{ "/images/tumblr/165799177168_5.png" | absolute_url }})
 
 We can see that its input is a 227 x 227 pixel image named **data** and its output includes a **classLabel** string that will be the model’s best judgement and also a **loss** output that will give a closeness measure for each of our tags.
 
@@ -198,7 +198,7 @@ public override void ViewWillDisappear (bool animated)
 
 Add the model to the resources section of your app.
 
-![image]({{ "/assets/tumblr/165799177168_6.png" | absolute_url }})
+![image]({{ "/images/tumblr/165799177168_6.png" | absolute_url }})
 
 Add code to load the model. Models need to be compiled before they can be loaded. If you have access to Xcode, you can pre-compile your models. Compiling on the device is pretty fast so we won’t bother with that optimization. (I do this loading in the view controller’s `ViewDidLoad` method but you should architect your app better by doing this work on a background task.)
 
@@ -279,7 +279,7 @@ void ShowObservation (VNClassificationObservation observation)
 
 And that’s it, we now have an app that can detect hot dogs (or not)!
 
-![image]({{ "/assets/tumblr/165799177168_7.jpg" | absolute_url }})
+![image]({{ "/images/tumblr/165799177168_7.jpg" | absolute_url }})
 
 You can find the [complete source code on GitHub](https://github.com/praeclarum/HotDogOrNot).
 

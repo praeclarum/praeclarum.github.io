@@ -21,7 +21,7 @@ My desktop computer features a 108 key keyboard while the iPad’s on-screen key
 
 To ease the problem of code entry, Continuous has always shipped with a “keyboard accessory” that gives access to lots of missing characters used while programming.
 
-![image]({{ "/assets/tumblr/176088256628_0.gif" | absolute_url }})
+![image]({{ "/images/tumblr/176088256628_0.gif" | absolute_url }})
 
 I made this list of keys by scanning a bunch of code and seeing the most popular characters used. I sorted that list by popularity and added some order to it so it wouldn’t seem too random to users.
 
@@ -78,7 +78,7 @@ So just how do you predict what code comes next? It’s not a trivial problem an
 
 When I first worked on this problem, I did everything at the character level. I just fed the network code file after code file and told it: learn C#. Here is some of the silly code it generated:
 
-![image]({{ "/assets/tumblr/176088256628_1.jpg" | absolute_url }})
+![image]({{ "/images/tumblr/176088256628_1.jpg" | absolute_url }})
 
 [https://twitter.com/praeclarum/status/985575617310539776](https://twitter.com/praeclarum/status/985575617310539776)
 
@@ -143,9 +143,9 @@ While training, you’re also balancing the size (and therefore speed) of the ne
 
 In the end I trained a network with **67% accuracy** and that required 8 history samples to make its prediction (using 16 samples only got it up to 69%). Here’s its summary:
 
-![image]({{ "/assets/tumblr/176088256628_2.png" | absolute_url }})
+![image]({{ "/images/tumblr/176088256628_2.png" | absolute_url }})
 
-![image]({{ "/assets/tumblr/176088256628_3.png" | absolute_url }})
+![image]({{ "/images/tumblr/176088256628_3.png" | absolute_url }})
 
 What does **67% accuracy** mean? Is it good?
 
@@ -174,7 +174,7 @@ I created a function with a simple interface to act as the entry point, or bridg
 
 This means that it’s a function that takes an array of SyntaxKinds (what I keep calling tokens) and produces and array of guesses and their probability. (The actual code also returns other data needed by the IDE.)
 
-![image]({{ "/assets/tumblr/176088256628_4.png" | absolute_url }})
+![image]({{ "/images/tumblr/176088256628_4.png" | absolute_url }})
 
 [https://gist.github.com/praeclarum/7b5029656962864936d7667ae2f4a624](https://gist.github.com/praeclarum/7b5029656962864936d7667ae2f4a624)
 
@@ -196,7 +196,7 @@ This was pretty easy given how the IDE works. Whenever the user edits text, the 
 
 Those predictions are passed to the keyboard accessory which is just a UICollectionView. And that’s that; as you move the cursor around, the predictions appear above the keyboard.
 
-![image]({{ "/assets/tumblr/176088256628_5.gif" | absolute_url }})
+![image]({{ "/images/tumblr/176088256628_5.gif" | absolute_url }})
 
 Keep an eye on the black bar above the keyboard and note how it changes based on the cursor position. It’s not perfect, but its top couple matches are usually right.
 

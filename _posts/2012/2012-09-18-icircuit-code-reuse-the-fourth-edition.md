@@ -17,7 +17,7 @@ That means it's time to run that [code reuse script](https://gist.github.com/160
 
 Here is a visualization of the code reuse. The percentage in green is the amount of code reused while the code in red is code I had to write for each platform.
 
-![image]({{ "/assets/tumblr/31799384896_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/31799384896_0.png" | absolute_url }})
 
 We can see that Android was only ("only", haha) an 81% code reuse - I had to write nearly 7,000 lines of code to port iCircuit to it. This is great, but I was aiming for closer to the 90% mark as the Mac was able to achieve.
 

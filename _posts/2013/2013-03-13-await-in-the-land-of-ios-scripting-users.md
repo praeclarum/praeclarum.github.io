@@ -21,7 +21,7 @@ An alternative help system, one that I think is superior, integrates with the UI
 
 Check out the help system in Apple’s iPhoto app:
 
-![image]({{ "/assets/tumblr/45277337108_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/45277337108_0.png" | absolute_url }})
 
 We have attractive tooltips describing the actions of the various toolbar items.
 

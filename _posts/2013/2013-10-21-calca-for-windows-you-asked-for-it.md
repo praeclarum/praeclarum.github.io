@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-![image]({{ "/assets/tumblr/64717121779_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/64717121779_0.png" | absolute_url }})
 
 [Calca for Windows](http://calca.io/store/calca-for-windows) has been the [#1 asked for "feature"](https://calca.uservoice.com/forums/216746-general/suggestions/4247892-windows-version) since [Calca for iOS](http://calca.io) debuted in July. Today, I'm happy to announce that it's finally available for purchase! For just $9.99 you can own this powerhouse of a calculator.
 
@@ -49,6 +49,6 @@ For my developer friends out there who like to keep tabs on me, I was able to **
 
 Here the code reuse stats in picture form:
 
-![image]({{ "/assets/tumblr/64717121779_1.png" | absolute_url }})
+![image]({{ "/images/tumblr/64717121779_1.png" | absolute_url }})
 
 **86% code reuse** is great, though I do with it was in the 90s. The Mac is able to achieve this because of the powerful Cocoa library that has first-class support for document based applications. On Windows, I used Win Forms and had to implement all the file management by hand just like with iOS. Speaking of iOS, it's numbers have grown a bit because I have some nice surprises in store for its updates.

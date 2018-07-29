@@ -17,7 +17,7 @@ In July, I released [Calca](http://calca.io) - a text editor based calculator th
 
 But we have none of that on iOS. On iOS, you get an uncontrollable keyboard and the ability to give it an ugly appendix. Calca takes advantage of this and makes a helpful appendix with common symbols and auto completion options.
 
-![image]({{ "/assets/tumblr/65701122908_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/65701122908_0.png" | absolute_url }})
 
 The appendix (technically a “keyboard accessory”) does a lot to help input, does nothing for *editing*. You were still stuck with slow cursor movement and tricky block selection.
 
@@ -25,7 +25,7 @@ I wanted to make editing easier and ended up implementing three small features t
 
 **Tapping a Number Selects It**
 
-![image]({{ "/assets/tumblr/65701122908_1.gif" | absolute_url }})
+![image]({{ "/images/tumblr/65701122908_1.gif" | absolute_url }})
 
 When you tap an arbitrary location while editing, the cursor will jump to the beginning or end of a nearby word. This is almost always what you want to happen.
 
@@ -35,7 +35,7 @@ To make selection easier, Calca will select the whole number when it is tapped. 
 
 **Swiping Left and Right Move the Cursor**
 
-![image]({{ "/assets/tumblr/65701122908_2.gif" | absolute_url }})
+![image]({{ "/images/tumblr/65701122908_2.gif" | absolute_url }})
 
 Fine cursor movement is normally achieved by tapping, holding, and waiting (forever) for the magnifying glass to appear.
 
@@ -47,7 +47,7 @@ Calca allows the gesture in the editor and the keyboard accessory giving you ple
 
 **Swiping Left and Right to Modify Numbers**
 
-![image]({{ "/assets/tumblr/65701122908_3.gif" | absolute_url }})
+![image]({{ "/images/tumblr/65701122908_3.gif" | absolute_url }})
 
 Editing a number usually involves typing in a new value using the keyboard. Thanks to the number selection gesture, this is now very easy.
 

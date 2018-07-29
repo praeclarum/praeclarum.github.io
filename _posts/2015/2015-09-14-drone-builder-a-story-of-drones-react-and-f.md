@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-[![image]({{ "/assets/tumblr/129094397488_0.png" | absolute_url }})](http://drone.mecha.parts)
+[![image]({{ "/images/tumblr/129094397488_0.png" | absolute_url }})](http://drone.mecha.parts)
 
 [Drone Builder](http://drone.mecha.parts) is a site I created to
 play with different DIY drone (multicopter) designs.

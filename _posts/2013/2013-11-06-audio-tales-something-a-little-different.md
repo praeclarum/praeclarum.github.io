@@ -17,7 +17,7 @@ This was the iOS 7 WWDC and everyone's minds were filled with hairlines, supersa
 
 [**Audio Tales: The eBook Reader**](https://itunes.apple.com/us/app/audio-tales/id701575885?ls=1&mt=8)
 
-![image]({{ "/assets/tumblr/66199377379_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/66199377379_0.png" | absolute_url }})
 
 
 

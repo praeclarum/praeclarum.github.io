@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-[![image]({{ "/assets/tumblr/55019743936_0.png" | absolute_url }})](http://calca.io)
+[![image]({{ "/images/tumblr/55019743936_0.png" | absolute_url }})](http://calca.io)
 
 I am very pleased to announce the availability of [Calca](http://calca.io), my newest iOS app (and soon OS X app).
 

@@ -35,7 +35,7 @@ iOS     37518   11532   25986   30.74 % 69.26 %
 
 And here are some pie charts to make that data easier to visualize.
 
-![image]({{ "/assets/tumblr/15789866032_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/15789866032_0.png" | absolute_url }})
 
 Green code is shared, and Red code is unique to the app. Lines of code and percentages are shown.
 

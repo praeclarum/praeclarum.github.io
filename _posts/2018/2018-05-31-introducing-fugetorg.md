@@ -15,7 +15,7 @@ I love nuget and the wonder of diversity of packages in it, but I didn’t love 
 
 Today, I’m pleased to announce [fuget.org](https://www.fuget.org) - a new site for browsing nuget packages. It is my best attempt to build a tool to help you both discover new packages and to dig in deep to learn them once found.
 
-![image]({{ "/assets/tumblr/174440517348_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/174440517348_0.png" | absolute_url }})
 
 [Fuget.org](https://www.fuget.org) shows you most of what nuget.org shows you, but adds these exciting features:
 
@@ -27,7 +27,7 @@ Have you ever wondered if the library your using has been customized for a certa
 
 This doubt is removed by displaying - in full technicolor - all the frameworks that the library supports.
 
-![image]({{ "/assets/tumblr/174440517348_1.png" | absolute_url }})
+![image]({{ "/images/tumblr/174440517348_1.png" | absolute_url }})
 
 They’re color coded so you can see at a glance:
 
@@ -60,7 +60,7 @@ In the modern world of release many, release often library development, it’s s
 
 To solve that problem, [fuget.org](https://www.fuget.org) can automatically generate API diffs between any two versions of a nuget package.
 
-![image]({{ "/assets/tumblr/174440517348_2.png" | absolute_url }})
+![image]({{ "/images/tumblr/174440517348_2.png" | absolute_url }})
 
 It looks at the public API - all the types and all their members - in both versions of the library and shows you what was added and removed through a cute little hyperlinked diff.
 

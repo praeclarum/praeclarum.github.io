@@ -11,7 +11,7 @@ redirect_from:
 
 I have toiled away with the new Windows 8 OS, the new Visual Studio 2012, and the new Office 13/365 to present you, dear reader, with this fine set of charts:
 
-![image]({{ "/assets/tumblr/42378027611_0.png" | absolute_url }})
+![image]({{ "/images/tumblr/42378027611_0.png" | absolute_url }})
 
 (This post is the 5th in a series where I describe the code reuse of [iCircuit](http://icircuitapp.com) while porting it from platform to platform. Check out the [previous](http://praeclarum.org/post/15789866032/icircuit-code-reuse-part-trois)[posts](http://praeclarum.org/post/31799384896/icircuit-code-reuse-the-fourth-edition).)
 
