@@ -5,6 +5,7 @@ date:   2018-05-31 17:50:19 GMT
 redirect_from:
   - /post/174440517348
   - /post/174440517348/introducing-fugetorg
+thumbnail: "/images/tumblr/174440517348_0.png"
 ---
 
 
