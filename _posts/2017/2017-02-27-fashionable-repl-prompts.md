@@ -19,7 +19,7 @@ To answer that last one, I took a quick survey of my favorite languages - turns 
 ## F#
 
 
-```csharp
+```fsharp
 > 2 + 3;;
 val it : int = 5
 ```
@@ -43,7 +43,7 @@ Much cleaner! No semicolons, and just the answer. Well C# does show its vanity a
 ## Python
 
 
-```csharp
+```python
 >>> 2 + 3
 5
 ```
@@ -55,7 +55,7 @@ Elegant and bold at the same time. The `>>>` means Python, but you don't actuall
 ## Ruby
 
 
-```csharp
+```ruby
 irb(main):009:0> 2 + 3
 => 5
 ```
@@ -71,7 +71,7 @@ Oh and geeze, they use the same symbol as [Calca](http://calca.io) - so how coul
 ## JavaScript
 
 
-```csharp
+```js
 > 2 + 3
 5
 ```

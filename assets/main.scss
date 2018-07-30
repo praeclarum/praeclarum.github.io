@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
 
 .post-list li {
     clear: both;
-    margin-bottom: 4em;
+    margin-bottom: 2em;
 }
 
 .post-content img { border-radius: 5px; }
@@ -47,6 +47,11 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
 .home .content { background-color: rgb(242, 242, 242); border-radius: 5px; padding: 1em; padding-bottom: 0.5em; margin-bottom: 2em; text-align: center; font-family: "Georgia"; font-size: 125%; }
 .home .content img { width: 128px; border-radius: 64px; text-align: center; }
 
+
+code {
+    background-color: rgb(242, 242, 242);
+    border: none;
+}
 
 .highlighter-rouge .highlight, .highlighter-rouge pre.highlight code {
     background-color: rgb(242, 242, 242);

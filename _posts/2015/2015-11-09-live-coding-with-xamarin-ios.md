@@ -58,12 +58,9 @@ Thanks to this tool, I find myself doing full app builds far less often.
 
 Builds are the enemy for two reasons:
 
-1. 
+1. They lock up the IDE as you wait for big compilers to do their thing and as you wait for your app to restart. Of course, the IDE isn't frozen, but my mental state is. I cannot edit code because I might screw up the compilation and because the debugger will get lost. So I go into a mental spin-loop watching the progress bar. It's not healthy. (I used to check Twitter, but fixed that with an edit to `/etc/hosts`.)
 
-They lock up the IDE as you wait for big compilers to do their thing and as you wait for your app to restart. Of course, the IDE isn't frozen, but my mental state is. I cannot edit code because I might screw up the compilation and because the debugger will get lost. So I go into a mental spin-loop watching the progress bar. It's not healthy. (I used to check Twitter, but fixed that with an edit to `/etc/hosts`.)
-2. 
-
-Second, they re-initialize your context. If I'm working on one part of my app that's far removed from the initial screens, then I have to dig back through the app to get to seeing what I'm actually interested in. If I was a better automated test writer, or a better designer, or a better planner, this wouldn't be such a problem. But back to the real world...
+2. Second, they re-initialize your context. If I'm working on one part of my app that's far removed from the initial screens, then I have to dig back through the app to get to seeing what I'm actually interested in. If I was a better automated test writer, or a better designer, or a better planner, this wouldn't be such a problem. But back to the real world...
 
 A little while ago, I took a stab at doing something different from the REPL and wrote [Calca](http://calca.io). After some futzing around I found an environment that allowed me to see results as quickly as I could type them and it didn't have the annoying necessity to keep *sending code* to the evaluator.
 
@@ -121,12 +118,9 @@ With live code, we can have the best of both worlds. We write the UI using code,
 
 It is able to do two things:
 
-1. 
+1. Send code to the iOS simulator to be evaluated and then visualized. This is to enable classic scenarios where I sometimes just want to know the value of a particular expression.
 
-Send code to the iOS simulator to be evaluated and then visualized. This is to enable classic scenarios where I sometimes just want to know the value of a particular expression.
-2. 
-
-Monitor whole classes that are evaluated and visualized whenever they are edited. This makes creating UIs super fun and is the part I'm most excited about.
+2. Monitor whole classes that are evaluated and visualized whenever they are edited. This makes creating UIs super fun and is the part I'm most excited about.
 
 [Please go follow the instructions to run it and let me know what you think.](https://github.com/praeclarum/LiveCode/Continuous/master/README.md) (This only works in Xamarin Studio.)
 

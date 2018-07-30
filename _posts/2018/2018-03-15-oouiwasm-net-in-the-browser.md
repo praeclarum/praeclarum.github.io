@@ -34,7 +34,7 @@ Web developers are no longer forced to work with JavaScript and thanks to the [a
 
 You can now create a .NET web assembly app with just 3 commands:
 
-```csharp
+```bash
 dotnet new console
 dotnet add package Ooui.Wasm
 dotnet build
