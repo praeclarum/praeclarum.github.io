@@ -6,6 +6,7 @@ redirect_from:
   - /post/37273215875
   - /post/37273215875/mobile-network-performance-while-touring-seattle
 thumbnail: "/images/tumblr/37273215875_0.png"
+tags: article
 ---
 
 

@@ -5,6 +5,7 @@ date:   2013-03-13 00:54:00 GMT
 redirect_from:
   - /post/45231096776
   - /post/45231096776/await-in-the-land-of-ios-drag-n-drop
+tags: article
 ---
 
 

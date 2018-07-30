@@ -5,6 +5,7 @@ date:   2010-11-09 00:19:31 GMT
 redirect_from:
   - /post/1520024382
   - /post/1520024382/interfaces-caches-cross-platform
+tags: article
 ---
 
 

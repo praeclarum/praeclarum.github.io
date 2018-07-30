@@ -6,6 +6,7 @@ redirect_from:
   - /post/141449935588
   - /post/141449935588/calca-14-for-ios-awesome-and-free
 thumbnail: "/images/tumblr/141449935588_0.jpg"
+tags: announcement
 ---
 
 

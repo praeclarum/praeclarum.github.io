@@ -6,6 +6,7 @@ redirect_from:
   - /post/55019743936
   - /post/55019743936/calca-the-text-editor-for-engineers
 thumbnail: "/images/tumblr/55019743936_0.png"
+tags: announcement
 ---
 
 

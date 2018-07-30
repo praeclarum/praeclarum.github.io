@@ -5,6 +5,7 @@ date:   2014-07-11 18:04:00 GMT
 redirect_from:
   - /post/91470574883
   - /post/91470574883/my-xamarin-studio-f-wishlist
+tags: article
 ---
 
 

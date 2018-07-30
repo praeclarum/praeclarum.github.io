@@ -6,6 +6,7 @@ redirect_from:
   - /post/15789866032
   - /post/15789866032/icircuit-code-reuse-part-trois
 thumbnail: "/images/tumblr/15789866032_0.png"
+tags: article
 ---
 
 
@@ -20,17 +21,12 @@ I wrote a little script to calculate the stats I'm about to present. Here is [gi
 
 The raw output from that script is as follows:
 
-``
-
-```csharp
+```
 app     t       u       s       u%      s%
 Mac     29954   3901    26053   13.02 % 86.98 %
 WP7     30744   5760    24984   18.74 % 81.26 %
 iOS     37518   11532   25986   30.74 % 69.26 %
 ```
-
-
-``
 
 (t is Total lines of code, u is Unique lines of code, and s in Shared lines of code. Lines of code include comments and white space. I have a fairly consistent coding style, so this simple metric is adequate.)
 

@@ -5,6 +5,7 @@ date:   2013-10-30 21:42:26 GMT
 redirect_from:
   - /post/65554168335
   - /post/65554168335/buttons-considered-harmful
+tags: article
 ---
 
 

@@ -6,6 +6,7 @@ redirect_from:
   - /post/174121951203
   - /post/174121951203/calca-in-the-microsoft-store
 thumbnail: "/images/tumblr/174121951203_0.png"
+tags: announcement
 ---
 
 

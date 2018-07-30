@@ -6,6 +6,7 @@ redirect_from:
   - /post/64717121779
   - /post/64717121779/calca-for-windows-you-asked-for-it
 thumbnail: "/images/tumblr/64717121779_0.png"
+tags: announcement
 ---
 
 

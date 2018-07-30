@@ -6,6 +6,7 @@ redirect_from:
   - /post/176088256628
   - /post/176088256628/code-prediction-with-a-neural-network
 thumbnail: "/images/tumblr/176088256628_5.gif"
+tags: article
 ---
 
 

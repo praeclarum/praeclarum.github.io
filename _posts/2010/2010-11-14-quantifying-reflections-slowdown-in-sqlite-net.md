@@ -5,6 +5,7 @@ date:   2010-11-14 15:51:00 GMT
 redirect_from:
   - /post/1572668275
   - /post/1572668275/quantifying-reflections-slowdown-in-sqlite-net
+tags: article
 ---
 
 

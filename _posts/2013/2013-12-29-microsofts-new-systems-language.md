@@ -5,6 +5,7 @@ date:   2013-12-29 14:57:00 GMT
 redirect_from:
   - /post/71521660942
   - /post/71521660942/microsofts-new-systems-language
+tags:
 ---
 
 

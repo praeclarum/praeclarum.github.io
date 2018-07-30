@@ -6,6 +6,7 @@ redirect_from:
   - /post/42378027611
   - /post/42378027611/icircuit-code-reuse-part-cinq
 thumbnail: "/images/tumblr/42378027611_0.png"
+tags: article
 ---
 
 

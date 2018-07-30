@@ -6,6 +6,7 @@ redirect_from:
   - /post/66199377379
   - /post/66199377379/audio-tales-something-a-little-different
 thumbnail: "/images/tumblr/66199377379_0.png"
+tags: announcement
 ---
 
 

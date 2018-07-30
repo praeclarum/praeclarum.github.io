@@ -6,6 +6,7 @@ redirect_from:
   - /post/103559633748
   - /post/103559633748/two-hot-new-features-for-calca
 thumbnail: "/images/tumblr/103559633748_0.png"
+tags: announcement
 ---
 
 

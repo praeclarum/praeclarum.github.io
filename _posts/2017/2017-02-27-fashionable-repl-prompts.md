@@ -5,6 +5,7 @@ date:   2017-02-27 17:09:52 GMT
 redirect_from:
   - /post/157784591258
   - /post/157784591258/fashionable-repl-prompts
+tags: article
 ---
 
 

@@ -5,6 +5,7 @@ date:   2015-05-28 14:52:24 GMT
 redirect_from:
   - /post/120107368103
   - /post/120107368103/coding-in-your-head
+tags: article
 ---
 
 

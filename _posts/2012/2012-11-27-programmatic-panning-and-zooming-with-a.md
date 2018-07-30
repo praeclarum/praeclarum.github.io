@@ -5,6 +5,7 @@ date:   2012-11-27 17:57:00 GMT
 redirect_from:
   - /post/36673962005
   - /post/36673962005/programmatic-panning-and-zooming-with-a
+tags: article
 ---
 
 

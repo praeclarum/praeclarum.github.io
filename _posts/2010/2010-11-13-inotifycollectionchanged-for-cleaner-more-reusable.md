@@ -5,6 +5,7 @@ date:   2010-11-13 20:22:32 GMT
 redirect_from:
   - /post/1564455979
   - /post/1564455979/inotifycollectionchanged-for-cleaner-more-reusable
+tags: article
 ---
 
 

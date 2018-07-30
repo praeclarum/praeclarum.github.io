@@ -6,6 +6,7 @@ redirect_from:
   - /post/31799384896
   - /post/31799384896/icircuit-code-reuse-the-fourth-edition
 thumbnail: "/images/tumblr/31799384896_0.png"
+tags: article
 ---
 
 

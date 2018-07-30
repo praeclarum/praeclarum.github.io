@@ -6,6 +6,7 @@ redirect_from:
   - /post/129094397488
   - /post/129094397488/drone-builder-a-story-of-drones-react-and-f
 thumbnail: "/images/tumblr/129094397488_0.png"
+tags: announcement article
 ---
 
 [Drone Builder](http://drone.mecha.parts) is a site I created to

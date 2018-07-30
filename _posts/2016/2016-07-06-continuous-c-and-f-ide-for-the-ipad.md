@@ -6,6 +6,7 @@ redirect_from:
   - /post/147003028753
   - /post/147003028753/continuous-c-and-f-ide-for-the-ipad
 thumbnail: "http://continuous.codes/images/continuous_app.png"
+tags: announcement
 ---
 
 

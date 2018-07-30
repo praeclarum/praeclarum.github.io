@@ -5,6 +5,7 @@ date:   2015-02-09 17:58:00 GMT
 redirect_from:
   - /post/110552954728
   - /post/110552954728/building-and-running-nets-coreclr-on-os-x
+tags: article
 ---
 
 

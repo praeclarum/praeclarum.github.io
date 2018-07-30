@@ -6,6 +6,7 @@ redirect_from:
   - /post/770071583
   - /post/770071583/my-first-monomac-app-spy-touch
 thumbnail: "/images/tumblr/770071583_0.png"
+tags: announcement
 ---
 
 

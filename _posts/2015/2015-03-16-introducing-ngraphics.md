@@ -6,6 +6,7 @@ redirect_from:
   - /post/113814379658
   - /post/113814379658/introducing-ngraphics
 thumbnail: "/images/tumblr/113814379658_0.png"
+tags: announcement
 ---
 
 

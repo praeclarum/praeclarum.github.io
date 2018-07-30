@@ -5,6 +5,7 @@ date:   2010-05-29 16:24:19 GMT
 redirect_from:
   - /post/644077933
   - /post/644077933/obligatory-first-post
+tags:
 ---
 
 

@@ -6,6 +6,7 @@ redirect_from:
   - /post/65701122908
   - /post/65701122908/calca-12-experiments-in-text-editing
 thumbnail: "/images/tumblr/65701122908_0.png"
+tags: announcement
 ---
 
 

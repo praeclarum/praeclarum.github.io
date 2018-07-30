@@ -6,6 +6,7 @@ redirect_from:
   - /post/132881570743
   - /post/132881570743/live-coding-with-xamarin-ios
 thumbnail: "https://img.youtube.com/vi/uani1bvOEIQ/default.jpg"
+tags: announcement
 ---
 
 

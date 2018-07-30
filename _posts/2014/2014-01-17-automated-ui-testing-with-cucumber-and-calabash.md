@@ -5,6 +5,7 @@ date:   2014-01-17 23:02:34 GMT
 redirect_from:
   - /post/73655359097
   - /post/73655359097/automated-ui-testing-with-cucumber-and-calabash
+tags: article
 ---
 
 

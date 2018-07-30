@@ -5,6 +5,7 @@ date:   2013-04-24 18:40:00 GMT
 redirect_from:
   - /post/48787944305
   - /post/48787944305/asynchronous-talk-proposal-for-monkeyspace-2013
+tags:
 ---
 
 

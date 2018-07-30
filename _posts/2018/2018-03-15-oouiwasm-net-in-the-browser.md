@@ -6,6 +6,7 @@ redirect_from:
   - /post/171899388348
   - /post/171899388348/oouiwasm-net-in-the-browser
 thumbnail: "/images/tumblr/171899388348_0.png"
+tags: announcement
 ---
 
 

@@ -5,6 +5,7 @@ date:   2017-11-15 19:13:57 GMT
 redirect_from:
   - /post/167525842703
   - /post/167525842703/xamarinforms-on-the-web
+tags: announcement
 ---
 
 

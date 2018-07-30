@@ -5,6 +5,7 @@ date:   2015-03-20 18:16:35 GMT
 redirect_from:
   - /post/114145886388
   - /post/114145886388/functional-gui-apps-with-f-at-fringe
+tags:
 ---
 
 

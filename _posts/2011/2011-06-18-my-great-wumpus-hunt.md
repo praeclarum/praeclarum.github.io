@@ -6,6 +6,7 @@ redirect_from:
   - /post/6663989742
   - /post/6663989742/my-great-wumpus-hunt
 thumbnail: "/images/tumblr/6663989742_0.png"
+tags: article
 ---
 
 

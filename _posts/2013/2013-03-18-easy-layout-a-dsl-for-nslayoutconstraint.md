@@ -6,6 +6,7 @@ redirect_from:
   - /post/45690317491
   - /post/45690317491/easy-layout-a-dsl-for-nslayoutconstraint
 thumbnail: "/images/tumblr/45690317491_0.png"
+tags: announcement article
 ---
 
 
@@ -56,7 +57,9 @@ Apple must have gotten tired of writing this kind of code because they developed
 
 In this new system you layout views *relative* to one another instead of using absolute coordinates, and you specify those relations using equations and inequalities:
 
-View1`.`Property1 (= | <= | >=) View2`.`Property2 `*` mul `+` constant
+```
+View1.Property1 (== | <= | >=) View2.Property2 * mul + constant
+```
 
 That is to say, any layout property of a view can be constrained to be dependent on another property of another view. The power (and trouble) with this system derives from this generality.
 
@@ -75,15 +78,11 @@ text.Top = button.Top
 
 These 6 constraints lay out the UI in the same way as the springs and struts code above. But it is superior in a lot of way:
 
-1. 
+1. It makes no assumptions about sizes. When using the new layout systems, Views can control their minimum size. This means that I don’t have to guess at the two heights anymore.
 
-It makes no assumptions about sizes. When using the new layout systems, Views can control their minimum size. This means that I don’t have to guess at the two heights anymore.
-2. 
+2. There is no math involved. As much as I like measuring pixels and flexing my algebra skills, I am relieved to not have to do RectangleF math.
 
-There is no math involved. As much as I like measuring pixels and flexing my algebra skills, I am relieved to not have to do RectangleF math.
-3. 
-
-It’s easy enough to read this code that I would even feel confident editing it over time. That is to say, it’s not read-only code. While it’s still not easy to get a picture of the UI from these constraints, they are much easier *to reason about* than the prior pixel math.
+3. It’s easy enough to read this code that I would even feel confident editing it over time. That is to say, it’s not read-only code. While it’s still not easy to get a picture of the UI from these constraints, they are much easier *to reason about* than the prior pixel math.
 
 But there’s an issue. I haven’t actually shown you the code you need to write to implement these constraints. Without further ado:
 

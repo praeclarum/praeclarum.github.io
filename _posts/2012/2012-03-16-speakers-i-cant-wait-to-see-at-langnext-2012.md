@@ -5,6 +5,7 @@ date:   2012-03-16 21:16:00 GMT
 redirect_from:
   - /post/19412873505
   - /post/19412873505/speakers-i-cant-wait-to-see-at-langnext-2012
+tags: article
 ---
 
 

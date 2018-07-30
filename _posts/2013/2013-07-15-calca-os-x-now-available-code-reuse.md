@@ -6,6 +6,7 @@ redirect_from:
   - /post/55529252776
   - /post/55529252776/calca-os-x-now-available-code-reuse
 thumbnail: "/images/tumblr/55529252776_0.png"
+tags: announcement
 ---
 
 

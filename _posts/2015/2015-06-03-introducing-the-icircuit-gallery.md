@@ -6,6 +6,7 @@ redirect_from:
   - /post/120625815178
   - /post/120625815178/introducing-the-icircuit-gallery
 thumbnail: "/images/tumblr/120625815178_0.png"
+tags: announcement
 ---
 
 

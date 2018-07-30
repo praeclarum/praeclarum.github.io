@@ -3,11 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-list_title: "Blog Posts"
+list_title: "All Posts"
 ---
 
 ![Selfie of Frank](/assets/me.jpg)
 
-Hi! I'm Frank - a software developer living in Seattle specializing in mobile apps that do weird and nerdy things. My blog is a random assortment of technical articles and app and library announcements.
+Hi! I'm Frank - a software developer living in Seattle specializing in mobile apps that do weird and nerdy things. My blog is a collection of [technical articles](/tag/article), [presentations](/tag/presentation), and [app and library announcements](/tag/announcement).
 
 
