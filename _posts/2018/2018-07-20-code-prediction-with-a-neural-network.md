@@ -97,12 +97,19 @@ I decided to switch to “token types” as an item in a training sequence. I u
 
 Such a stream looks something like this:
 
-> UsingKeyword IdentifierToken SemicolonToken NamespaceKeyword IdentifierToken OpenBraceToken PublicKeyword ClassKeyword IdentifierToken OpenBraceToken PublicKeyword VoidKeyword IdentifierToken OpenParenToken CloseParenToken OpenBraceToken CloseBraceToken CloseBraceToken CloseBraceToken ...
+```text
+UsingKeyword IdentifierToken SemicolonToken NamespaceKeyword IdentifierToken
+OpenBraceToken PublicKeyword ClassKeyword IdentifierToken OpenBraceToken
+PublicKeyword VoidKeyword IdentifierToken OpenParenToken CloseParenToken
+OpenBraceToken CloseBraceToken CloseBraceToken CloseBraceToken ...
+```
 
 
 This corresponds with the code:
 
-> using X; namespace X { public class X { public void X() {} } }
+```csharp
+using X; namespace X { public class X { public void X() {} } }
+```
 
 
 As you can see it loses the concept of whitespace, loses all knowledge of variable names (identifiers), and doesn’t learn literals - it’s quite dumb in fact. It is still however learning the syntax of C# and common patterns that developers use.

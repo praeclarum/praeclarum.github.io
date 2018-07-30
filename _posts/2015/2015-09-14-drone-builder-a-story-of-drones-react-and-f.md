@@ -296,7 +296,7 @@ Drone Builder's architecture.
 Let's with the data model. The usual product-based suspects are
 declared:
 
-```csharp
+```fsharp
 type Component =
     | Frame of FrameOptions
     | Motor of MotorOptions
@@ -349,7 +349,7 @@ calculated from an `analyze` function. More on that later...
 There are also the `Options` types - these are just additional bags of data
 attached to each component class. Here's the `MotorOption` to give you a flavor:
 
-```csharp
+```fsharp
 type MotorOptions =
     {
         Weight : float
@@ -365,7 +365,7 @@ type MotorOptions =
 
 Products are assembled together into a big global variable called `products`:
 
-```csharp
+```fsharp
 let products : Product[] =
     [|
         {
@@ -420,7 +420,7 @@ then deriving stats.
 
 A sketch of it looks something like:
 
-```csharp
+```fsharp
 type SelectedProduct =
     {
         ComponentKey : CompKey
@@ -450,7 +450,7 @@ that calculate Jacobians on the fly to do linear extrapolation.
 Again, I'm thankful I had F# to
 help me through writing that code. Here's a little snippet:
 
-```csharp
+```fsharp
 let getMaxThrust (v : float) (c : float</a><a>) (d : float) (p : float) (m : MotorModel) : float * float =
 
     let nearestPoints : MotorModelPoint[] = ...
@@ -490,7 +490,7 @@ This tree gets transformed into the React component tree by the JSX declarations
 Let's look at one of the nodes on that tree. Here is the view model for
 the component selectors on the right side of the app:
 
-```csharp
+```fsharp
 type ComponentView =
     {
         Key : CompKey
@@ -503,7 +503,7 @@ type ComponentView =
 
 This view model is then paired up with a React JSX class (this is JavaScript):
 
-```csharp
+```js
 var ComponentSelector = React.createClass({
     shouldComponentUpdate: function(nextProps, nextState) {
         return !componentEq (this.props.component) (nextProps.component);
@@ -526,19 +526,15 @@ var ComponentSelector = React.createClass({
 
 That JSX declaration does a lot of things:
 
-1. 
-
-It tests if it even needs to be updated by comparing its old binding
+1. It tests if it even needs to be updated by comparing its old binding
 to the new one. Doing these checks drastically improve's React's performance.
 In fact, it's the whole reason we're using immutable data structures to begin
 with (and, therefore, the whole reason I'm writing this article).
 The comparison is done by the `componentEq` global function; more on that later.
-2. 
 
-The render function declares the outputted HTML.
-3. 
+2. The render function declares the outputted HTML.
 
-It also continues the mapping process by combining React classes with F#
+3. It also continues the mapping process by combining React classes with F#
 view models.
 
 It's pretty simple huh? Your UI layer becomes very straight-forward to write.
@@ -552,7 +548,7 @@ and then messing with CSS to get everything to look nice.
 The most important interaction in the app is the user toggling whether a product
 is selected. This is handled in the Product React class:
 
-```csharp
+```js
 var Product = React.createClass({
     handleClick: function(event) {
         setProductSel (this.props.productView.ComponentKey) (this.props.productView.ProductKey) (!this.props.productView.Selected);
@@ -579,7 +575,7 @@ var Product = React.createClass({
 When a product is clicked, the global function `setProductSel` is called.
 Let's take a look at it:
 
-```csharp
+```fsharp
 let setProductSel ck pk s =
     let k = ck, pk
     if s = TheApp.SelectedProducts.Contains k then ()
@@ -594,7 +590,7 @@ let setProductSel ck pk s =
 
 where `TheApp` is a global variable of type:
 
-```csharp
+```fsharp
 type AppState =
     {
         SelectedOptions : Set
@@ -607,7 +603,7 @@ type AppState =
 selected. It then recreates the global app state with that new information.
 If passes that app state onto the `updateAppState` function:
 
-```csharp
+```fsharp
 let updateAppState newState =
     TheApp <- newState
     TheAnalysis <- analyze newState
@@ -631,7 +627,7 @@ I've described how the app runs, but how does it get started?
 This is the final bit of glue that merges the React class world with
 my F# view model world:
 
-```csharp
+```js
 var DroneApplication = React.createClass({
     getInitialState: function () {
         var t = this;
@@ -689,7 +685,7 @@ our logic or do other wacky things.
 It's also necessary to have an *app* and not a library because someone has to
 call FunScript to generate JavaScript.
 
-```csharp
+```fsharp
 []
 let main argv =
     let js = FunScript.Compiler.compileWithoutReturn <@ appMain() @>
@@ -707,7 +703,7 @@ My `appMain` function acts like a standard JavaScript module and exports
 a set of functions. Since I'm doing this in the browser, "export" means
 that I assign it to the `window` object (it's fine).
 
-```csharp
+```fsharp
 []
 let external (n : string) (f : 'a) = ()
 
@@ -754,7 +750,7 @@ a **168 KB minified file**. Magic.
 
 Yes, I still use Makefiles. Here's what building the app looks like:
 
-```csharp
+```text
 OPTIMIZATIONS = ADVANCED_OPTIMIZATIONS
 
 all: public/index.html public/site.js
