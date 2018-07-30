@@ -5,9 +5,10 @@ date:   2013-03-13 17:47:55 GMT
 redirect_from:
   - /post/45277337108
   - /post/45277337108/await-in-the-land-of-ios-scripting-users
+thumbnail: "https://img.youtube.com/vi/TmAOeGToFeE/default.jpg"
 ---
 
-
+**TLDR;** I show how to use the `await` keyword in C# to build an interactive help system.
 
 
 ### Help!

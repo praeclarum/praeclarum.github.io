@@ -5,6 +5,7 @@ date:   2011-06-18 19:53:27 GMT
 redirect_from:
   - /post/6663989742
   - /post/6663989742/my-great-wumpus-hunt
+thumbnail: "/images/tumblr/6663989742_0.png"
 ---
 
 

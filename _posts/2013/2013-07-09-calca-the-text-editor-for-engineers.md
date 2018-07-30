@@ -5,15 +5,16 @@ date:   2013-07-09 19:22:00 GMT
 redirect_from:
   - /post/55019743936
   - /post/55019743936/calca-the-text-editor-for-engineers
+thumbnail: "/images/tumblr/55019743936_0.png"
 ---
 
 
 
-[![image]({{ "/images/tumblr/55019743936_0.png" | absolute_url }})](http://calca.io)
-
 I am very pleased to announce the availability of [Calca](http://calca.io), my newest iOS app (and soon OS X app).
 
 It's available on the App Store now for iPhone and iPad: it's cheap and crazy powerful. [Get it on the iOS App Store](https://itunes.apple.com/us/app/calca/id635757879?ls=1&mt=8).
+
+[![image]({{ "/images/tumblr/55019743936_0.png" | absolute_url }})](http://calca.io)
 
 Calca has been my obsession over the last three months - one that grew out of a frustration.
 

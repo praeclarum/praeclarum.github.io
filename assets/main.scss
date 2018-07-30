@@ -22,12 +22,23 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
     max-height: 128px;
     float: left;
     margin-right: 0.75em;
-    margin-bottom: 1em;
-    margin-top: 0.25em;
+    margin-bottom: 2em;
+    margin-top: 0.2em;
 }
+.post-list a>img.post-thumbnail {
+    border: solid 3px $background-color;
+    border-radius: 5px;
+}
+
+.post-list a:hover>img.post-thumbnail {
+    border: solid 3px $brand-color;
+    border-radius: 5px;
+}
+
 
 .post-list li {
     clear: both;
+    margin-bottom: 4em;
 }
 
 .post-content img { border-radius: 5px; }

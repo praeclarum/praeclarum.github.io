@@ -5,6 +5,7 @@ date:   2012-01-13 21:26:04 GMT
 redirect_from:
   - /post/15789866032
   - /post/15789866032/icircuit-code-reuse-part-trois
+thumbnail: "/images/tumblr/15789866032_0.png"
 ---
 
 

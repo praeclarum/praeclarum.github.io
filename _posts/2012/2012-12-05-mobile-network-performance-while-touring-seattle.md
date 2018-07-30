@@ -5,13 +5,13 @@ date:   2012-12-05 19:15:00 GMT
 redirect_from:
   - /post/37273215875
   - /post/37273215875/mobile-network-performance-while-touring-seattle
+thumbnail: "/images/tumblr/37273215875_0.png"
 ---
 
 
+I recently journeyed around Seattle to get a sense of the impact motion has on the network performance of mobile applications.
 
 [![image]({{ "/images/tumblr/37273215875_0.png" | absolute_url }})](https://dl.dropbox.com/u/6908183/Blog/Images/Results%402x.png)
-
-I recently journeyed around Seattle to get a sense of the impact motion has on the network performance of mobile applications.
 
 The image above is a graph of how long it took to download the homepage of Google News (588 KB) while I was traveling by bus and train throughout the city. Blue bars are successful downloads and red bars (and time entries with no bars at all) represent errors. The height of the bar shows how long it took to find out if it was successful download or an error.
 

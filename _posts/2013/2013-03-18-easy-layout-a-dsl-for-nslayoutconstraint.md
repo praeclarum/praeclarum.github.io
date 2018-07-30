@@ -5,13 +5,14 @@ date:   2013-03-18 19:36:00 GMT
 redirect_from:
   - /post/45690317491
   - /post/45690317491/easy-layout-a-dsl-for-nslayoutconstraint
+thumbnail: "/images/tumblr/45690317491_0.png"
 ---
 
 
 
-![image]({{ "/images/tumblr/45690317491_0.png" | absolute_url }})
+Layout has changed in iOS 6. We no longer are supposed to calculate `RectangleF`s and set springs and struts (`AutoresizingMask`), we are to use this very advanced constraint solving system. I wrote a library to make writing constraint-based UIs easier.
 
-Layout has changed in iOS 6. We no longer are supposed to calculate `RectangleF`s and set springs and struts (`AutoresizingMask`), we are to use this very advanced constraint solving system.
+![image]({{ "/images/tumblr/45690317491_0.png" | absolute_url }})
 
 That’s wonderful! Springs and struts, for those unfamiliar, is a lot like Anchors in Win Forms programming. It’s a really great model while you’re using an interactive design tool for layout, but if you want to do all your UI construction in code, then it’s a bit of work and relies on a lot of assumptions.
 

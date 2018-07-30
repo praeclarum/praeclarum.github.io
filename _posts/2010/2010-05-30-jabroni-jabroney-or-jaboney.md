@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-**Long story short:***Jabroni* is the modern form of *Jaboney*, American slang used to mock someone, somewhat vaguely, since at least 1931. The [online etymology dictionary](http://www.etymonline.com/index.php?term=jabroni) defines a jaboney as a "naive person, immigrant, hoodlum."
+**Long story short:** *Jabroni* is the modern form of *Jaboney*, American slang used to mock someone, somewhat vaguely, since at least 1931. The [online etymology dictionary](http://www.etymonline.com/index.php?term=jabroni) defines a jaboney as a "naive person, immigrant, hoodlum."
 
 **The Long Story**
 

@@ -5,6 +5,7 @@ date:   2013-02-05 21:53:09 GMT
 redirect_from:
   - /post/42378027611
   - /post/42378027611/icircuit-code-reuse-part-cinq
+thumbnail: "/images/tumblr/42378027611_0.png"
 ---
 
 
