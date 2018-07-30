@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Code Prediction with a Neural Network"
+title:  "C# Code Prediction with a Neural Network"
 date:   2018-07-20 12:32:58 GMT
 redirect_from:
   - /post/176088256628

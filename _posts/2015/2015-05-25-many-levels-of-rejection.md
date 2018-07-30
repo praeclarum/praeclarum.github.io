@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Many Levels of Rejection"
+title:  "Many Levels of App Store Rejection"
 date:   2015-05-25 16:24:32 GMT
 redirect_from:
   - /post/119858556338
