@@ -28,15 +28,19 @@ One of the most exciting things about this release is that it ships with version
 
 You can easily convert simple values:
 
-> 12 tbsp in cups => 0.75 cups
-
+```
+12 tbsp in cups => 0.75 cups
+```
 
 Units have been implemented in a very general manner allowing you to do some pretty advanced computations.
 
 Here is one of my favorites: how to calculate how much water falls on your land throughout the year.
 
-> land area = 0.25 acreavg annual precip = 36.15 inch / yeardaily rain accumulation     = avg annual precip * land area in gallon/day     =>671.9012 gallon/day
-
+```
+land area = 0.25 acre
+avg annual precip = 36.15 inch / year
+daily rain accumulation = avg annual precip * land area in gallon/day => 671.9012 gallon/day
+```
 
 In order to perform this calculation, Calca had to know how to convert between acres, inches, days, years, and gallons and it does it all with a minimal amount of typing.
 
