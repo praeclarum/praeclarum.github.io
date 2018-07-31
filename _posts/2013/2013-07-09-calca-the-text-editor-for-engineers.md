@@ -39,7 +39,7 @@ And so, Calca was born with these goals:
 
 Please allow me to elaborate on these goals:
 
-**A text editor?**
+## A text editor?
 
 Computer algebra systems are well defined: they're [REPLs](http://en.wikipedia.org/wiki/REPL). Like Perl, Python, and Prolog. You get one line of input and the program dumps text out on a console at you.
 
@@ -55,23 +55,27 @@ In Calca, you can edit anywhere (it's a text editor!). You signal to Calca that 
 
 Hanselman calls this the Anders operator. I have used it in all my work to mean "therefore". I'm fine with both names.
 
-**Goal: Live Updates**
+## Goal: Live Updates
 
 I also have an issue with REPLs when I make a mistake. Let's say I define a function, then do some calculations in Python:
 
+```python
 >>> def average(a, b): return (a + b) / 3
 
 >>> average(100, 200)
 
 100
+```
 
 Oops, I made a mistake! Let's fix the average function:
 
+```python
 >>> def average(a, b): return (a + b) / 2
 
 >>> average(100, 200)
 
 150
+```
 
 But I still have a lot of answers on the screen that reflect the old definition! This can be distracting or even harmful if my eyes wonder off.
 
@@ -79,7 +83,7 @@ This was fine in the 1960s when REPLs printed out to pieces of paper and compani
 
 In that light, Calca works like Excel: as you make changes to earlier parts of the calculation, those updates are propagated throughout the entire document instantly. No interns needed. You really must [give it a try](https://itunes.apple.com/us/app/calca/id635757879?ls=1&mt=8).
 
-**Goal: Humane Syntax**
+## Goal: Humane Syntax
 
 Mathematical syntax is, well, politely speaking, without using cuss words, sometimes *slightly* ambiguous.
 
@@ -89,15 +93,15 @@ The syntax was developed using an LALR(1) parser generator.  LALR(1) parsers ca
 
 In addition to this, Calca has lots of convenience syntax. For example:
 
-* **f = 2x** is a function even though I didn't bother with any parenthesis
-* **2x** is shorthand for **2 * x**
-* You can type **33%** instead of **0.33**
-* Numbers can be written with grouping separators because I'm getting old: **100,033,234.56**
-* Names can include spaces so we can write **dist to the moon** instead of **dist_to_the_moon** or **distToTheMoon**
+* `f = 2x` is a function even though I didn't bother with any parenthesis
+* `2x` is shorthand for `2 * x`
+* You can type `33%` instead of `0.33`
+* Numbers can be written with grouping separators because I'm getting old: `100,033,234.56`
+* Names can include spaces so we can write `dist to the moon` instead of `dist_to_the_moon` or `distToTheMoon`
 
 Take a look at the [Examples](http://calca.io/examples/) and [Reference](http://calca.io/support/) to get a feel for its syntax.
 
-**Goal: Symbolic Manipulation**
+## Goal: Symbolic Manipulation
 
 Sometimes, we just don't know something. What is the tax rate? How far is the moon? How many clowns will fit in that car?
 
@@ -107,21 +111,25 @@ Calca loves undefined variables. It will treat them, properly, as unknowns and o
 
 For example let's say we're trying to understand how much money the man takes from us. I know how much I, ostensibly, make per year, and I know how much my check is per month. We can write this equation:
 
-**(yearly salary / 12) * tax percent / 100 = monthly take**
+```
+(yearly salary / 12) * tax percent / 100 = monthly take
+```
 
 There is only two numbers in that equation and three variables, but we can still ask Calca for the tax rate:
 
-**tax percent => 1200monthly take/yearly salary**
+```
+tax percent => 1200monthly take/yearly salary
+```
 
 Of course, if we give those variables numeric values, then Calca can reciprocate with numeric answers.
 
-**Goal: Plain Text**
+## Goal: Plain Text
 
 All of Calc's documents are stored as plain UTF-8 text. This makes them as easy to move around and manage as possible. Git loves plain text. Email loves it. They can be edited in Emacs or vi. All your Text Expander shortcuts work.
 
 There is nothing more frustrating than performing a lot of work only to realize you can't share it. Proprietary file formats are plagues imposed on us by evil software developers. With plain text, you control the data, not Calca.
 
-**Conclusion**
+## Conclusion
 
 Thanks for reading!
 
