@@ -1,12 +1,13 @@
 ---
-layout: post
+layout: presentation
 title:  "Live Coding with Xamarin iOS"
 date:   2015-11-09 18:25:21 GMT
 redirect_from:
   - /post/132881570743
   - /post/132881570743/live-coding-with-xamarin-ios
 thumbnail: "https://img.youtube.com/vi/uani1bvOEIQ/0.jpg"
-tags: announcement
+youtube: uani1bvOEIQ
+tags: announcement video
 ---
 
 
@@ -126,10 +127,6 @@ It is able to do two things:
 [Please go follow the instructions to run it and let me know what you think.](https://github.com/praeclarum/LiveCode/Continuous/master/README.md) (This only works in Xamarin Studio.)
 
 I am not sure how well words can describe the tool, so I took the time to record a video of me using it. The video's a bit long, but I think you can get the general idea after just a few minutes (and if you skip the first 6 minutes describing installation).
-
-Check it out:
-
-<iframe width="420" height="315" src="https://www.youtube.com/embed/uani1bvOEIQ?rel=0&amp;start=384" frameborder="0"></iframe>
 
 
 
