@@ -5,7 +5,7 @@ date:   2013-03-13 17:47:55 GMT
 redirect_from:
   - /post/45277337108
   - /post/45277337108/await-in-the-land-of-ios-scripting-users
-thumbnail: "https://img.youtube.com/vi/TmAOeGToFeE/default.jpg"
+thumbnail: "https://img.youtube.com/vi/TmAOeGToFeE/0.jpg"
 tags: article
 ---
 

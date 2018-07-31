@@ -2,25 +2,23 @@
 layout: post
 ---
 
-<div class="presentation-header">
-{%- if page.code -%}
-Code: <a href="{{page.code | absolute_url}}">{{page.code}}</a>
-{%- endif -%}
-</div>
-
 <div class="content">
-    {{ content }}
-
     {%- if page.youtube -%}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{page.youtube}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{page.youtube}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
     {%- endif -%}
-
 
     {%- if page.slideshare -%}
-    <h2>Slides</h2>
-    <iframe src="//www.slideshare.net/slideshow/embed_code/key/{{page.slideshare}}" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-    {%- else -%}
-    <img alt="First slide" src="{{page.thumbnail | absolute_url}}" />
+    <div class="slides">
+        <iframe src="//www.slideshare.net/slideshow/embed_code/key/{{page.slideshare}}" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+    </div>
     {%- endif -%}
+
+    {%- if page.code -%}
+    <p><b>Code:</b> <a href="{{page.code | absolute_url}}">{{page.code}}</a></p>
+    {%- endif -%}
+        
+    {{ content }}
 </div>
 
