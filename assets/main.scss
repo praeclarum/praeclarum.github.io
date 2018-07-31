@@ -18,8 +18,8 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
 .post-list h3 { margin-bottom: 0.1em; }
 
 .post-list .post-thumbnail {
-    max-width: 128px;
-    max-height: 128px;
+    max-width: 196px;
+    max-height: 196px;
     float: left;
     margin-right: 0.75em;
     margin-bottom: 2em;
@@ -31,8 +31,7 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
 }
 
 .post-list a:hover>img.post-thumbnail {
-    border: solid 3px $brand-color;
-    border-radius: 5px;
+    border-color: $background-color;
 }
 
 
@@ -45,7 +44,7 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
 .post-content h2 { margin-top: 1em; margin-bottom: 0.25em; }
 
 .home .content { background-color: rgb(242, 242, 242); border-radius: 5px; padding: 1em 2em 0.5em 2em; margin-bottom: 2em; text-align: center; font-family: "Georgia"; font-size: 125%; }
-.home .content img { width: 128px; border-radius: 64px; text-align: center; }
+.home .content img { width: 128px; clip-path: circle(64px at center); -webkit-clip-path: circle(64px at center); }
 .home .content a { font-weight: bold; font-family: $base-font-family; }
 .home .content a:visited { color: $brand-color !important; }
 
