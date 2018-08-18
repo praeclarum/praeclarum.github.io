@@ -2,7 +2,7 @@
 layout: presentation
 title:  "Music Generation on iOS"
 thumbnail: "https://img.youtube.com/vi/KCoEqOG1OdU/0.jpg"
-tags: article video
+tags: article video announcement
 code: "https://github.com/praeclarum/NMusic"
 youtube: KCoEqOG1OdU
 ---
