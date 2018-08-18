@@ -3,13 +3,16 @@ layout: presentation
 title:  "Music Generation on iOS"
 thumbnail: "https://img.youtube.com/vi/KCoEqOG1OdU/0.jpg"
 tags: article video
-code: "https://github.com/praeclarum/Lullabies"
+code: "https://github.com/praeclarum/NMusic"
 youtube: KCoEqOG1OdU
 ---
 
 Four years ago I was struggling with insomnia and wrote an app to generate lullabies.
 I never did get to sleep, but I did end up writing a fun music generation
 library in C#.
+
+This post will introduce you to the library so you can add a 
+bit of music to your own apps.
 
 
 ## Playing Instruments
