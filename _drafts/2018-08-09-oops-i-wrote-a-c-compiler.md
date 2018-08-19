@@ -238,18 +238,20 @@ Eight years is a long time and it's funny how memories distort.
 I was working on the feature set for iCircuit 2 and Arduino was first on that list.
 I knew I had a compiler capable of making an LED blink, and my memory
 told me the compiler was nearly done it just needed a *bit* more work.
+This time I reopened the code reluctantly, without hubris, mostly
+curious to see what I would find.
 
-I reopened the code and was pleasantly suprised at how much ground I had covered
+I was pleasantly suprised to see how much ground I had covered
 so long ago. I also realized that my memory betrayed me - the compiler had some
 serious defects (no support for strings as a prime example) and that it was
-going to be a lot of work to finish it.
+going to be a lot of work to finish it. I remembered why I stopped 8 years ago.
 
-However, I decided that it was still useful and certainly allowed you to use
-the majority of features in Arduino. 
-So much so that I decided to release that compiler in **iCircuit 1.9** to 
-finally provide the most requested feature for the app.
-I built the Arduino component that interfaces with the compiler and simulator,
-fixed a few bugs, and shipped it.
+However, after some thought, I decided that it was still useful.
+It allowed you to use
+the majority of the features of the Arduino and provided all the basics
+you needed to write fun programs. 
+I decided to release that compiler in **iCircuit 1.9** to 
+finally provide the most requested feature of the app.
 
 I was nervous, but very pleased to see that the 
 Arduino component quickly became one of the most-used components in the app
@@ -259,7 +261,7 @@ and users seemed to love it.
 ### Back to Work
 
 The enthusiasm for the Arduino component made me want to improve it
-and I set about fixing its most glaring defects:
+and I set about fixing its most glaring defects.
 
 #### Numbers
 
@@ -274,27 +276,33 @@ I have since concluded that 95% of a C compiler's job is to convert between data
 #### Pointers and Arrays
 
 Pointers and array support exposed the most glaring defect in my virtual machine -
-the use of a stack-based machine with separate memory spaces.
+the use of separate memory spaces.
 
-Unfortunately, C++ assumes a unified memory space - you can create pointers to
-global data, heap data, local variables, even function arguments. Supporting separate
-memory spaces becomes tricky because C++ (annoyingly) supports pointer arithmetic
+Unfortunately, C++ programmers assume a unified memory space - you can create pointers to
+global data, heap data, local variables, even function arguments and they
+all work they same way. Worse, C supports pointer arithmetic
 and people can do terrible things by casting pointers to integers.
 
 I decided to stop fighting and to unify my memory model. Before, the function call
 stack was separate from the heap and kept its own private memory spaces for
 arguments and local variables. I had to integrate that call stack onto the 
 main memory stack by using a "frame pointer" register that remembers where in memory
-each functions stack begins. I also had to emit relative addresses for function
-locals and arguments that got offset by this frame pointer. Such a mess!
+each function's value (computation) stack begins. I also had to emit relative addresses for
+local functions and arguments that got offset by this frame pointer. Such a mess!
 
-But the pain was again worth it as my compiler and virtual machine now could
+But the pain was worth it as my compiler and virtual machine now could
 handle pointers and arrays of any variety and acted as the user expects.
+
+And thanks to C#, all this pointer work is safe. The entire heap for the program
+is stored in a C# array. When a pointer is de-referenced, that array is safely
+accessed and I have no fear of breaking the simulation just because some code
+is incorrect.
+
 
 #### Classes
 
 While most Arduino programs take advantage of C features, Arduino *libraries*
-tend to take advantage of C++ features, namely, classes.
+tend to take advantage of C++ features; namely, classes.
 
 Everyone's favorite Arduino line:
 
