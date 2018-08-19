@@ -27,14 +27,16 @@ needed a C/C++ compiler and I needed to re-implement Wiring. Oh, and that compil
 run on iOS, integrate into my circuit simulation, handle
 bad code such as infinite loops and bad pointers, and all
 work within the sandbox (which means interpretation instead
-of real execution). Like I said, it was a big request.
+of real execution).
 
-As tough as all that sounds, I still personally wanted the
-feature. Way back in 2010, I started work.
+Like I said, it was a big request. As tough as all that sounds,
+I still personally wanted the feature and decided to find a way
+to make it happen. Way back in 2010, I started work.
 
 I first looked around for small C++ compilers and
 interpreters that I could
-get to work on iOS. Sadly, the research was grim as no compiler
+get to work on iOS, Android, and Windows (iCircuit runs everywhere).
+Sadly, the research was grim as no compiler
 met all my requirements. Some would be nice and small but
 only emit X86 code meaning I would have to write an X86 simulator. Others were so big and had so many dependencies
 that I just gave up trying to get it to compile for iOS.
@@ -67,7 +69,7 @@ so it seemed like a reasonable starting point.
 C is nice because you can actually parse it using
 a *grammar definition* - a file that states the syntax of
 the language. Grammars are great because you can use a code
-generator to create a parser for your language from this 
+generator to automatically create a parser for your language from this 
 definition. This means you can focus on the semantics of
 the language and let the parser generator deal with the syntax.
 
@@ -75,14 +77,14 @@ Back in 1985 someone posted a [YACC grammar definition for C](https://www.lysato
 which served as my starting point.
 I then used the [jay parser generator](https://www.cs.rit.edu/~ats/projects/lp/doc/jay/package-summary.html) (the same tools used to generate the mono C# parser)
 as my parser generator. This tool takes the grammar definition
-and spits out a nasty C# code to parse files. The
+and spits out nasty C# code to parse files. The
 code is nasty because it's fast and eschews standard coding
-conventions for performance.
+conventions for performance. I love it.
 
 The process of creating the parser went very smoothly thanks
 to this. The real work involves creating C# syntax classes
 that mirror the grammar. These classes form the Abstract
-Syntax Tree (AST) of my compiler. You can see the results
+Syntax Tree (AST) of the compiler. You can see the results
 of this work by [looking at my modified grammar](https://github.com/praeclarum/CLanguage/blob/master/CLanguage/Parser/CParser.jay).
 
 I ended up writing a [variety of syntax classes](https://github.com/praeclarum/CLanguage/tree/master/CLanguage/Syntax) such as:
@@ -91,14 +93,9 @@ I ended up writing a [variety of syntax classes](https://github.com/praeclarum/C
 * `BinaryExpression` that handles most math operators such as `+` and `*`
 * `Block` that captures a sequence of statements
 
-And this is the point where I realized C was a bit more complex than I liked to think.
-
-My syntax classes were filled with scary names like "abstract
-specifiers", "type specifier", "type qualifier", "multi declarations", and so on. I knew C type declarations were nutty
-but, oh my, they're a disaster.
-
-
-### Definitions and Types
+And this is the point where I realized C was a bit more complex than I liked to think. My syntax classes were filled with scary names like "abstract
+specifiers", "type specifier", "type qualifier", "multi declarations", and so on. I knew C
+declarations were nutty but, oh my, they're a disaster.
 
 I was scared, but combatted that fear by writing a bunch of unit tests.
 I figured, yes this problem is hard, but it's just big - there was an end in sight. Maximum effort would be needed and would, hopefully, be rewarded.
@@ -107,6 +104,9 @@ And so I pressed on. I just kept writing sample code after sample code until
 I understood how my concept of the language related to this
 grammar. After some time, I was able to wrestle all these "specifiers"
 into more manageable objects.
+
+
+### Definitions and Types
 
 The next step to writing a compiler is
 discovering definitions in code. Variable definitions, function
@@ -155,15 +155,16 @@ Not even the integers are simple in C...
 
 Now it's time for the compiler to earn its keep and emit
 executable code. Most C compilers would emit X86 or ARM assembly.
-
 However, there was no point in doing that as I can't natively
-execute code on iOS. I decided to instead devise my own
-byte code that would be easy to interpret.
+execute code on iOS.
+
+I decided to instead devise my own
+virtual machine and byte code that would be easy to interpret.
 I figured that if I controlled the compiler and the byte code
 then I could arrange things to make the interpreter simple
 and yet still expressive.
 
-This was a bit of a gmable as it increased the number of
+This was a bit of a gamble as it increased the number of
 decisions I had to make. However, most byte codes I looked into
 were very complex and I knew (I thought) I could keep my code
 small and simple.
@@ -176,8 +177,7 @@ machines like X86 that are *register-based* not stack-based.
 Register-based machines scared me a bit because they reminded
 me of very hard to read chapters of very hard to read books.
 I knew how to implement them, but I lacked experience with them
-and went with the simpler design. I would later regret this
-decision...
+and went with the simpler design.
 
 Now that I had a semi-specified byte code and virtual machine,
 it was only a matter of translating my syntax tree into byte
@@ -235,7 +235,7 @@ problems are just too big for you.
 ## 2018
 
 Eight years is a long time and it's funny how memories distort. 
-I was working on the feature set for iCircuit 2 and Arduino was first on that list.
+I was working on the feature set for iCircuit 2 and Arduino was the first item on that list.
 I knew I had a compiler capable of making an LED blink, and my memory
 told me the compiler was nearly done it just needed a *bit* more work.
 This time I reopened the code reluctantly, without hubris, mostly
@@ -265,33 +265,44 @@ and I set about fixing its most glaring defects.
 
 #### Numbers
 
-All math in the 2010 compiler was done with 32-bit integers. This needed to be fixed
-to support other integer sizes, unsigned math, and floating-point numbers. This
-also means conversions (casts) betweeen all the types would need
+All math in the 2010 compiler was done with 32-bit integers. While the compiler
+was well aware of different data types, my virtual machine was not. It needed to be fixed
+to support other integer sizes, unsigned math, and floating-point numbers.
+
+This
+also meant implementing conversions (casts) betweeen all the types would need
 to be supported. It's unglamorous and terrifyingly boring code to write
 but it needed to be done.
 
 I have since concluded that 95% of a C compiler's job is to convert between data types.
+
 
 #### Pointers and Arrays
 
 Pointers and array support exposed the most glaring defect in my virtual machine -
 the use of separate memory spaces.
 
+C++ naturally has several memory spaces: global data, heap data, local variables, and function arguments. My interpreter dutifully kept those spaces separate. However,
+this meant that I had to track several "types" of pointers - depending on what memory
+regions they pointed into. This greatly increased the complexity of the compiler
+whenever it had to deal with pointers (which was often).
+
 Unfortunately, C++ programmers assume a unified memory space - you can create pointers to
-global data, heap data, local variables, even function arguments and they
+any of these memory spaces and they
 all work they same way. Worse, C supports pointer arithmetic
-and people can do terrible things by casting pointers to integers.
+and people can do terrible things by casting pointers to integers. These tricks
+were not supported *at all* by my virtual machine.
 
 I decided to stop fighting and to unify my memory model. Before, the function call
 stack was separate from the heap and kept its own private memory spaces for
 arguments and local variables. I had to integrate that call stack onto the 
 main memory stack by using a "frame pointer" register that remembers where in memory
 each function's value (computation) stack begins. I also had to emit relative addresses for
-local functions and arguments that got offset by this frame pointer. Such a mess!
+local variables and arguments that got offset by this frame pointer. Such a mess!
 
-But the pain was worth it as my compiler and virtual machine now could
+But the pain was worth it as my compiler and virtual machine could now
 handle pointers and arrays of any variety and acted as the user expects.
+This would also enable me to simulate hardware registers if I should ever need to.
 
 And thanks to C#, all this pointer work is safe. The entire heap for the program
 is stored in a C# array. When a pointer is de-referenced, that array is safely
@@ -316,9 +327,12 @@ does not work on the 2010 compiler. It requires these C++ features:
 2. Member method calls (with `this` pointers)
 3. Function overloading
 
-Each of these posed their own set of hurdles but were implemented, because,
+Each of these posed their own set of hurdles and, in the end, forced me to
+rethink my ABI (Application Binary Interface - how arguments are passed to functions).
+
+I was so relieved when I got that line working because,
 as it turns out, people love printing to the console and I absolutely
-*had* to get it working.
+*had* to have that feature.
 
 I'm very excited to say that Version 1.9.1 of iCircuit shipped with these improvements.
 
@@ -331,10 +345,14 @@ While I love my compiler, I am still overwhelmed by the features it's missing. S
 2. Templates
 3. Constructors and destructors
 4. Inheritance and virtual methods
-5. Editor integration (to provide code completion)
+5. Editor integration (syntax coloring, better errors, code completion)
 
-and I'm sure a million other things if I kept a complete list.
+and I'm sure a million other things could be listed if I dared.
 
 But the truth is, I'm just going to keep listening to users and improving the parts I can.
+
+I am not trying to recreate GCC or LLVM. Instead, I'm trying to provide a fun and
+engaging environment for people to experiment with coding. While it's just a virtual
+LED blinking in iCircuit, it's still gives me a gleeful smile.
 
 
