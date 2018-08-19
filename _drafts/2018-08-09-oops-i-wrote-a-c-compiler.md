@@ -234,8 +234,99 @@ problems are just too big for you.
 
 ## 2018
 
-Eight years is a long time. 
+Eight years is a long time and it's funny how memories distort. 
+I was working on the feature set for iCircuit 2 and Arduino was first on that list.
+I knew I had a compiler capable of making an LED blink, and my memory
+told me the compiler was nearly done it just needed a *bit* more work.
+
+I reopened the code and was pleasantly suprised at how much ground I had covered
+so long ago. I also realized that my memory betrayed me - the compiler had some
+serious defects (no support for strings as a prime example) and that it was
+going to be a lot of work to finish it.
+
+However, I decided that it was still useful and certainly allowed you to use
+the majority of features in Arduino. 
+So much so that I decided to release that compiler in **iCircuit 1.9** to 
+finally provide the most requested feature for the app.
+I built the Arduino component that interfaces with the compiler and simulator,
+fixed a few bugs, and shipped it.
+
+I was nervous, but very pleased to see that the 
+Arduino component quickly became one of the most-used components in the app
+and users seemed to love it.
 
 
+### Back to Work
+
+The enthusiasm for the Arduino component made me want to improve it
+and I set about fixing its most glaring defects:
+
+#### Numbers
+
+All math in the 2010 compiler was done with 32-bit integers. This needed to be fixed
+to support other integer sizes, unsigned math, and floating-point numbers. This
+also means conversions (casts) betweeen all the types would need
+to be supported. It's unglamorous and terrifyingly boring code to write
+but it needed to be done.
+
+I have since concluded that 95% of a C compiler's job is to convert between data types.
+
+#### Pointers and Arrays
+
+Pointers and array support exposed the most glaring defect in my virtual machine -
+the use of a stack-based machine with separate memory spaces.
+
+Unfortunately, C++ assumes a unified memory space - you can create pointers to
+global data, heap data, local variables, even function arguments. Supporting separate
+memory spaces becomes tricky because C++ (annoyingly) supports pointer arithmetic
+and people can do terrible things by casting pointers to integers.
+
+I decided to stop fighting and to unify my memory model. Before, the function call
+stack was separate from the heap and kept its own private memory spaces for
+arguments and local variables. I had to integrate that call stack onto the 
+main memory stack by using a "frame pointer" register that remembers where in memory
+each functions stack begins. I also had to emit relative addresses for function
+locals and arguments that got offset by this frame pointer. Such a mess!
+
+But the pain was again worth it as my compiler and virtual machine now could
+handle pointers and arrays of any variety and acted as the user expects.
+
+#### Classes
+
+While most Arduino programs take advantage of C features, Arduino *libraries*
+tend to take advantage of C++ features, namely, classes.
+
+Everyone's favorite Arduino line:
+
+```c++
+Serial.println("Hello world!");
+```
+
+does not work on the 2010 compiler. It requires these C++ features:
+
+1. Class definitions
+2. Member method calls (with `this` pointers)
+3. Function overloading
+
+Each of these posed their own set of hurdles but were implemented, because,
+as it turns out, people love printing to the console and I absolutely
+*had* to get it working.
+
+I'm very excited to say that Version 1.9.1 of iCircuit shipped with these improvements.
+
+
+## The Future
+
+While I love my compiler, I am still overwhelmed by the features it's missing. Still up for grabs are:
+
+1. `#define`s with arguments
+2. Templates
+3. Constructors and destructors
+4. Inheritance and virtual methods
+5. Editor integration (to provide code completion)
+
+and I'm sure a million other things if I kept a complete list.
+
+But the truth is, I'm just going to keep listening to users and improving the parts I can.
 
 
