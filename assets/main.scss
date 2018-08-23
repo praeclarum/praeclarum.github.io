@@ -26,12 +26,12 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
     margin-top: 0.2em;
 }
 .post-list a>img.post-thumbnail {
-    border: solid 3px $background-color;
+    border: solid 1px #CCC;
     border-radius: 5px;
 }
 
 .post-list a:hover>img.post-thumbnail {
-    border-color: $background-color;
+    border-color: $brand-color;
 }
 
 
