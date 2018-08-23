@@ -5,7 +5,7 @@ date:   2016-07-06 17:52:11 GMT
 redirect_from:
   - /post/147003028753
   - /post/147003028753/continuous-c-and-f-ide-for-the-ipad
-thumbnail: "http://continuous.codes/images/continuous_app.png"
+thumbnail: "/images/2016/continuous_app_thumb.png"
 tags: announcement
 ---
 
@@ -13,7 +13,7 @@ tags: announcement
 
 Over the past six months I have been working on a new .NET IDE for the iPad, and today I am very pleased [to release it on the App Store](https://itunes.apple.com/us/app/continuous-.net-c-and-f-ide/id1095213378?ls=1&mt=8).
 
-<img src="http://continuous.codes/images/continuous_app.png" alt="Continuous IDE on an iPad" />
+<img src="/images/2016/continuous_app.png" alt="Continuous IDE on an iPad" />
 
 [Continuous](http://continuous.codes) gives you the power of a traditional desktop .NET IDE - full C# 6 and F# 4 language support with semantic highlighting and code completion - while also featuring live code execution so you don't have to wait around for code to compile and run. Continuous works completely offline so you get super fast compiles and your code is secure.
 
