@@ -9,7 +9,7 @@ a byte code that it can also interpret. It is used in my
 app [iCircuit](http://icircuitapp.com) to simulate Arduinos.
 You can use it yourself with the nuget package [CLanguage](https://www.fuget.org/packages/CLanguage).
 
-![Arduino code being edited in iCircuit]({{ "/images/2018/cdemo.gif" | absolute_url }})
+![Arduino code being edited in iCircuit](/images/2018/cdemo.gif)
 
 ## Arduino Support for iCircuit
 
