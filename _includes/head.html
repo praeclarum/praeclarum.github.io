@@ -18,6 +18,8 @@
   {% endif %}
   {% if page.thumbnail %}
   <meta property="og:image" content="{{ page.thumbnail | absolute_url }}">
+  {% else %}
+  <meta property="og:image" content="{{ '/assets/me.jpg' | absolute_url }}">
   {% endif %}
   {% if page.date %}
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
