@@ -8,10 +8,12 @@
   <meta name="twitter:creator" content="@praeclarum" />
   <meta property="og:site_name" content="{{ site.title }}">
   {% if page.title %}
+  <title>{{ page.title }}</title>
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:type" content="article">
   <meta property="og:description" content="{{ page.excerpt | strip_html }}"/>
   {% else %}
+  <title>{{ site.title }}</title>
   <meta property="og:title" content="{{ site.title }}">
   <meta property="og:type" content="website">
   <meta property="og:description" content="{{ site.description }}">
