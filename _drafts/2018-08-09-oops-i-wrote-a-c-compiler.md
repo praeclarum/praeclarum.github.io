@@ -19,7 +19,7 @@ I agreed with all my users that it would be an amazing
 feature, but it was also a pretty big request that I wasn't
 sure I could complete.
 
-I could easily add a component that looked like an Arduino -
+I could easily add a component that *looked* like an Arduino -
 had all the right pins, maybe even blinked an LED. However,
 what people really wanted was a *programmable* Arduino
 integrated into the circuit simulator.
@@ -28,11 +28,11 @@ Arduinos are programmed in C++ with a small base library known
 as "Wiring". Therefore, in order to simulate an Arduino, I
 needed a C/C++ compiler and I needed to re-implement Wiring. Oh, and that compiler needs to
 run on iOS, integrate into my circuit simulation, handle
-bad code such as infinite loops and bad pointers, and all
+bad code such as infinite loops and bad pointers, 
 work within the sandbox (which means interpretation instead
-of real execution).
+of real execution), and it has to run on 4 platforms (iOS, Mac, Android, Windows).
 
-Like I said, it was a big request. As tough as all that sounds,
+Like I said, it was a big request! As tough as all that sounds,
 I still personally wanted the feature and decided to find a way
 to make it happen. Way back in 2010, I started work.
 
@@ -61,7 +61,7 @@ the language inside and out. How hard could it be?
 Like I said, hubris.
 
 And so I embarked on writing my C++ compiler in C#
-(the langauge iCircuit is written in).
+(the language iCircuit is written in).
 I started by writing a C compiler because C++ is a monster of a
 language. Most Arduino programs only use C features (I thought),
 so it seemed like a reasonable starting point.
@@ -116,7 +116,7 @@ discovering definitions in code. Variable definitions, function
 definitions, type definitions, all that. C and C++ are a little
 wild because you can declare things multiple times but you can
 only define them once. While C++ is designed to be compiled using
-only a single passs over the AST, I ended up writing a multi-pass
+only a single pass over the AST, I ended up writing a multi-pass
 compiler with separate stages for declaration discovery, resolution,
 and emission.
 
@@ -133,24 +133,15 @@ For example, we all know what this means:
 int foo;
 ```
 
-And we all kinda know what this means:
-
-```c
-long foo;
-```
-
 But what does
 
 ```c
-int long long foo;
+int long long short long foo;
 ```
 
-mean? It's valid C. And how is that different from:
-
-```c
-long int long foo;
-```
-
+mean? Unfortunately, that is valid code according to the grammar
+I'm using, but it's obviously not valid C code. 
+The compiler has to deal with this kind of craziness.
 Not even the integers are simple in C...
 
 
@@ -174,7 +165,7 @@ small and simple.
 
 I settled on a stack-based virtual machine that is very similar
 to how the Common Language Runtime (CLR) works. Every function
-had a stack and computations were performed by pusing and popping
+had a stack and computations were performed by pushing and popping
 numbers to and from that stack. This is different from most real
 machines like X86 that are *register-based* not stack-based.
 Register-based machines scared me a bit because they reminded
@@ -244,7 +235,7 @@ told me the compiler was nearly done it just needed a *bit* more work.
 This time I reopened the code reluctantly, without hubris, mostly
 curious to see what I would find.
 
-I was pleasantly suprised to see how much ground I had covered
+I was pleasantly surprised to see how much ground I had covered
 so long ago. I also realized that my memory betrayed me - the compiler had some
 serious defects (no support for strings as a prime example) and that it was
 going to be a lot of work to finish it. I remembered why I stopped 8 years ago.
@@ -273,7 +264,7 @@ was well aware of different data types, my virtual machine was not. It needed to
 to support other integer sizes, unsigned math, and floating-point numbers.
 
 This
-also meant implementing conversions (casts) betweeen all the types would need
+also meant implementing conversions (casts) between all the types would need
 to be supported. It's unglamorous and terrifyingly boring code to write
 but it needed to be done.
 
@@ -348,14 +339,21 @@ While I love my compiler, I am still overwhelmed by the features it's missing. S
 2. Templates
 3. Constructors and destructors
 4. Inheritance and virtual methods
-5. Editor integration (syntax coloring, better errors, code completion)
+5. Editor integration (better errors, code completion)
 
 and I'm sure a million other things could be listed if I dared.
 
-But the truth is, I'm just going to keep listening to users and improving the parts I can.
+I decided to open source the compiler and interpreter
+to hopefully get a little help from bored compiler authors out there.
+Perhaps too you might have a need for a little embedded C/C++ in your
+apps (not sure why though haha).
 
+I hope you'll check out the [CLanguage package](https://www.fuget.org/packages/CLanguage)
+and [contribute on github](https://github.com/praeclarum/CLanguage) if you have any interest.
+
+But the truth is, I'm just going to keep listening to users and improving the parts I can.
 I am not trying to recreate GCC or LLVM. Instead, I'm trying to provide a fun and
 engaging environment for people to experiment with coding. While it's just a virtual
-LED blinking in iCircuit, it's still gives me a gleeful smile.
+LED blinking in iCircuit, it's still gives me a gleeful smile. I hope it gives you one too. :-)
 
 
