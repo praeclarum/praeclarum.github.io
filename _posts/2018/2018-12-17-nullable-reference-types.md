@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Containing Null with C# 8 Nullable References"
-thumbnail: "/images/2018/NullErrors.png"
+thumbnail: "/images/2018/NullErrorsThumb.png"
 tags: article
 ---
 
