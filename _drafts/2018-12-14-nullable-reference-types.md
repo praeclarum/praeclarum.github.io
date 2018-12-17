@@ -1,19 +1,62 @@
 ---
 layout: post
 title: "Containing Null with C# 8 Nullable References"
-thumbnail: "/images/tumblr/176088256628_5.gif"
+thumbnail: "/images/2018/NullErrors.png"
 tags: article
 ---
 
 C# 8's nullable reference types are designed to help rid your apps of the dreaded `NullReferenceException`. This article walks you through the common errors that you will encounter while updating your app and offers a few of my opinions on how to fix them. It's a long and windy road to update to nullable references, but you will come out at the end more confident in your code and with fewer bugs.
 
-I use [Microsoft's AppCenter]() to collect crashes from my apps. It's a humbling experience. You think you're all smart
-and think that you really have a grip on this programming thing - and then you see it - `NullReferenceException` - the most embarressing of all the bugs.
+I use [Microsoft's AppCenter]() to collect crashes from my apps and it's a humbling experience. You think you're smart
+and you think that you really have a grip on this programming thing - and then you see it - `NullReferenceException` - the most embarressing of all the bugs.
+
+When I was a young programmer, my apps would crash with Access Violations on Windows. That was the OS telling me I'm a bad programmer.
+Later in my career, the OS would tell me with SIGSEGV and core dumps on Unix.
+
+Then C# came around with its amazing managed memory. This technology had the promise of forever preventing silly memory errors such as these,
+and for the most part, it did:
+
+* We could no longer access unallocated objects.
+* We no longer had to worry about someone freeing our objects.
+* We no longer could randomly poke around in object's memory and corrupt them.
+
+That all sounds super safe, but there was a deficiency. The designers decided that `null` objects were still a valuable concept and deserved
+to be representable. We programmers, still believing that we were smart, gleefully agreed that `null` is useful,
+and sure, why not, let's let *every* object be nullable.
+
+For all of C#'s life, we had mostly safe memory access, but my old friends Access Violation and SIGSEGV could still come crashing
+the party. They wore "NullReferenceException" shirts, but I recognized them from under their disguises.
+
+For me, personally, that all changed when I started programming F#. The F# designers shared my hatred of stupid memory errors and decided
+that null just wasn't worth it. The F# language does all it can to convince your not to use null and your programs benefit from it tremendously.
+
+It took 8 versions, but the C# designers have come around and decided to help programmers with this one last memory mistake.
+I have been excited for this enhancement for years and am overjoyed to finally be able to use it.
 
 ## Updating an app to C# 8.0
 
+![Enabling NullableReferenceTypes in a csproj](/images/2018/NullErrors.png)
+
+Since Connect 2018, I have been converting projects (so far, [SolidGeometry](https://github.com/praeclarum/Csg/pull/3) and [CLanguage](https://github.com/praeclarum/CLanguage/pull/3)) to use the new nullable references feature.
+
+Doing so for your projects involves three easy steps:
+
+1. Install [.NET Core 3.0](https://dotnet.microsoft.com/download) which includes C# 8.
+2. Set the language version to 8.0: `<LangVersion>8.0</LangVersion>` to your .csproj file.
+2. Add the property `<NullableReferenceTypes>true</NullableReferenceTypes>`.
+
+Adding that property will change the behavior of the compiler in these ways:
+
+* It will track your usage of null using data-flow analysis
+* It will now assume that null is *not* allowed on any objects (a proper default!)
+* If you want to use null, you will have to explcitely declare variables and fields as nullable.
+* It will signal inconsistent uses of null
+
+While converting the project is easy, you will now receive a variety of errors from the compiler. Working through these
+will take some time, but the effort is worth it.
 
 There are lots of warnings C# 8.0 with Nullable Reference Types can generate. You can see them in the [Roslyn source code](https://github.com/dotnet/roslyn/blob/8b4dd2885568a12e956547037c8b7dbf63569068/src/Compilers/CSharp/Portable/Errors/ErrorCode.cs#L1598-L1626).
+The remainder of this article will be an exploration of these errors and how I go about fixing them.
 
 
 ## Put a "?" wherever you use null
@@ -43,7 +86,7 @@ Now that we have declared our intentions properly, the compiler will be happy an
 If your code, later on, uses that variable without checking its nullness, you will start getting
 **CS8602s**.
 
-#### 🔴  error CS8600: Converting null literal or possible null value to non-nullable type.
+#### 🔴 error CS8600: Converting null literal or possible null value to non-nullable type.
 
 This usually happens when you use `var` to create and initialize a local variable from a non-null reference but then
 later in the code you set it to null.
@@ -74,7 +117,7 @@ while (node != null) {
 
 (Maybe someday, perhaps, we will get [`var?`](https://github.com/dotnet/csharplang/blob/master/proposals/nullable-reference-types-specification.md#type-inference-for-var-1))
 
-#### 🔴  error CS8603: Possible null reference return.
+#### 🔴 error CS8603: Possible null reference return.
 
 You have declared that a method or a property will always return a value (non-null),
 but your code can, in fact, return nulls. A common case of this occurs with properties:
@@ -108,7 +151,7 @@ public class Person
 
 If your fields in your data objects are non-nullable (require values), then you will have to make sure to initialize all of those fields in the object's constructor. These errors will help you:
 
-#### 🔴  error CS8618: Non-nullable property 'Name' is uninitialized.
+#### 🔴 error CS8618: Non-nullable property 'Name' is uninitialized.
 
 This happens when you have declared that a field or a property requires a value (because its type doesn't have a `?`), but you did not initialize that field in a constructor.
 
@@ -201,7 +244,7 @@ It will also expose tricky scenarios in which you will be convinced the object c
 
 So... get some coffee... put on some melodic death metal, and get to fixing these errors.
 
-#### 🔴  error CS8602: Possible dereference of a null reference.
+#### 🔴 error CS8602: Possible dereference of a null reference.
 
 This is the biggest error that you will run into. It can either mean the compiler has found a bug in your code
 or you have done an insufficient job annotating your types. Gotta put your thinking cap on to find out which.
