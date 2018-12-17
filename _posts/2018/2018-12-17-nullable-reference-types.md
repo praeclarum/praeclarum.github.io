@@ -8,7 +8,7 @@ tags: article
 C# 8's nullable reference types are designed to help rid your apps of the dreaded `NullReferenceException`. This article walks you through the common errors that you will encounter while updating your app and offers a few of my opinions on how to fix them. It's a long and windy road to update to nullable references, but you will come out at the end more confident in your code and with fewer bugs.
 
 I use [Microsoft's AppCenter](https://appcenter.ms) to collect crashes from my apps and it's a humbling experience. You think you're smart
-and you think that you really have a grip on this programming thing - and then you see it - `NullReferenceException` - the most embarressing of all the bugs.
+and you think that you really have a grip on this programming thing - and then you see it - `NullReferenceException` - the most embarrassing of all the bugs.
 
 When I was a young programmer, my apps would crash with Access Violations on Windows. That was the OS telling me I'm a bad programmer.
 Later in my career, the OS would tell me with SIGSEGV and core dumps on Unix.
@@ -49,7 +49,7 @@ Adding that property will change the behavior of the compiler in these ways:
 
 * It will track your usage of null using data-flow analysis
 * It will now assume that null is *not* allowed on any objects (a proper default!)
-* If you want to use null, you will have to explcitely declare variables and fields as nullable.
+* If you want to use null, you will have to explicitly declare variables and fields as nullable.
 * It will signal inconsistent uses of null
 
 While converting the project is easy, you will now receive a variety of errors from the compiler. Working through these
@@ -199,7 +199,7 @@ Whether you decide to put the `throw new ArgumentNullException` is up to you sin
 * If the class and method are public and in a library, I do runtime checks for `null`. This ensures that code not using C# 8.0 will still get errors if they pass nulls to your code.
 * In all other cases, I trust the compiler's analysis and elide the checks. Perhaps there is some hubris to this decision, but I am so over runtime null checking.
 
-What if you don't want to create a constructor because it's just a data object and you miss C++ and unitialized memory? Well, my best advice is to still initialized these objects but use special objects that somehow still represent the concept of emptiness. We have a few of these in .NET:
+What if you don't want to create a constructor because it's just a data object and you miss C++ and uninitialized memory? Well, my best advice is to still initialized these objects but use special objects that somehow still represent the concept of emptiness. We have a few of these in .NET:
 
 * `String.Empty`
 * `Array.Empty<T>()`
@@ -294,7 +294,7 @@ to change my code to handle it.
 
 #### Compiler knows less than you
 
-Othertimes, the compiler just isn't sophisticated enough.
+Other times, the compiler just isn't sophisticated enough.
 
 Back to this example:
 
