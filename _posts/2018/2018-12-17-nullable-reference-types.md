@@ -7,7 +7,7 @@ tags: article
 
 C# 8's nullable reference types are designed to help rid your apps of the dreaded `NullReferenceException`. This article walks you through the common errors that you will encounter while updating your app and offers a few of my opinions on how to fix them. It's a long and windy road to update to nullable references, but you will come out at the end more confident in your code and with fewer bugs.
 
-I use [Microsoft's AppCenter]() to collect crashes from my apps and it's a humbling experience. You think you're smart
+I use [Microsoft's AppCenter](https://appcenter.ms) to collect crashes from my apps and it's a humbling experience. You think you're smart
 and you think that you really have a grip on this programming thing - and then you see it - `NullReferenceException` - the most embarressing of all the bugs.
 
 When I was a young programmer, my apps would crash with Access Violations on Windows. That was the OS telling me I'm a bad programmer.
