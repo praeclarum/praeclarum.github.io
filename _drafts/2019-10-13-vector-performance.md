@@ -155,10 +155,10 @@ The two most popular .NET runtimes are .NET Core and mono
 RyuJIT execution engine. You can run apps with the JIT or
 using the "Ready to Run" ahead-of-time compiler.
 In my tests, the AOT didn't perform any better than
-the normal JIT so I don't include it.
+the normal JIT so I didn't include it.
 
 **mono 6.4.0.198** can be run in a variety of ways.
-The default JIT is, well..., not fast so I don't include it here.
+The default JIT is, well..., not fast so I didn't include it here.
 But you can run mono with the `--llvm` command line
 and get a much faster JIT. Mono also supports AOT
 with LLVM 
@@ -313,7 +313,7 @@ exists and then do further analysis to see what C# definitions
 caused that difference.
 
     I didn't do any of that work. So, for now, let's just say
-    that simplicity wins out since my classes are stupid simple.
+    that simplicity wins out since my type is stupid simple.
 
 * **The optimized `System.Numerics.Vector4` is slower than my custom vector**
 This is a very surprising (and sad) result. All I can say is that
@@ -325,7 +325,7 @@ the optimizer took a liking to my code for some reason.
     not limited to a certain set of types. Instead, it figures
     things out on its own and optimizes as it sees fit.
 
-    So why did it optimize my code and not `Vector4`
+    So why did it optimize my code and not `Vector4`,
     presumably with the mono runtime helping it out?
     I have no idea and welcome your thoughts on Twitter.
 
