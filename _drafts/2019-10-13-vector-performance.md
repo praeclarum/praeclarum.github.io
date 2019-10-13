@@ -5,10 +5,13 @@ thumbnail: "/images/2019/vectorperf/core.svg"
 tags: article
 ---
 
-**TLDR;** `System.Numerics.Vector4` and friends
-give good performance across platforms -
-especially for .NET Core apps. For iOS and other mono
-apps, it's best to make your own simple vector types.
+**TLDR;** I wanted to know what the fastest
+vector types were on .NET. Turns out,
+performance varies wildly across platforms.
+`System.Numerics.Vector4` and friends
+give good performance overall,
+especially for .NET Core apps, while homemade vector
+types do not get auto-vectorized.
 Avoid `Vector<T>` like the plague.
 Oh, and iPhone 11s are stupid fast.
 
@@ -401,14 +404,13 @@ Of course everything changed, FML...
 
 * **My custom vector type is now faster than OpenTK**
 What's the deal with optimizers? Why are they so fickle?
-
-    My vector got a big optimization thanks to the AOT
-    while OpenTK's vector did not.
+My vector got a big optimization thanks to the AOT
+while OpenTK's vector did not.
 
 * **`Vector4` didn't change much compared to non-AOT**
 It's good to know that the JIT and the AOT are comparable.
 
-* **`Vector<T>` becomes and even bigger train wreck**
+* **`Vector<T>` becomes an even bigger train wreck**
 It seems to suffer from the same bug we saw on iOS.
 
 
