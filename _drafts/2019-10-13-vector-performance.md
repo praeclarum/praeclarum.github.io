@@ -458,3 +458,4 @@ While the results felt random, they were reliably produced.
 The raw performance numbers can be found in this Google Sheet:
 [https://docs.google.com/spreadsheets/d/1IAT8ApgcugllmfvUy4ly61i1ZslaTGy-plqAGubI-kU](https://docs.google.com/spreadsheets/d/1IAT8ApgcugllmfvUy4ly61i1ZslaTGy-plqAGubI-kU)
 
+Source code is available here: [https://github.com/praeclarum/VectorPerf](https://github.com/praeclarum/VectorPerf)
