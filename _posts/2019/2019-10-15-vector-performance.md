@@ -19,7 +19,7 @@ Oh, and iPhone 11s are stupid fast.
 ## .NET and Vectors
 
 For years .NET didn't ship with any vector types
-(small fixed-size arrays of primitive types)
+(small fixed-size arrays of primitive types),
 and we developers would write our own
 because (a) it isn't all that hard and
 (b) the OS usually provided adequate types.
@@ -148,8 +148,8 @@ is included as a baseline.
 so we have a lot of platforms to choose from when
 measuring performance.
 
-The two most popular .NET runtimes are .NET Core and mono
-(Ima ignore classic .NET framework).
+The two most popular .NET runtimes are .NET Core and Mono
+(Ima ignore classic .NET Framework).
 
 **.NET Core 3.0.100** is newly released and contains the impressive
 RyuJIT execution engine. You can run apps with the JIT or
@@ -157,22 +157,22 @@ using the "Ready to Run" ahead-of-time compiler.
 In my tests, the AOT didn't perform any better than
 the normal JIT so I didn't include it.
 
-**mono 6.4.0.198** can be run in a variety of ways.
+**Mono 6.4.0.198** can be run in a variety of ways.
 The default JIT is, well..., not fast so I didn't include it here.
-But you can run mono with the `--llvm` command line
+But you can run Mono with the `--llvm` command line
 and get a much faster JIT. Mono also supports AOT
 with LLVM 
 (precompile with `--llvm --aot`)
 so that's also included in my analysis.
 
-**Xamarin.iOS 13.2.0.42** is the mono LLVM AOT running on ARM64 chips.
+**Xamarin.iOS 13.2.0.42** is the Mono LLVM AOT running on ARM64 chips.
 I make my living writing apps so this is the most important
 test for me.
 
 
 ### The Machines
 
-The .NET Core and mono tests are run on my
+The .NET Core and Mono tests are run on my
 **3.0 GHz Xeon iMac Pro** from 2017
 running macOS 10.14.6. It's a beast.
 
@@ -309,7 +309,7 @@ This is still a mystery to me. From the data, we can observe
 that my code got optimized while the OpenTK code got less so.
 This is definitely a topic worth pursuing. I would need to
 analyze the actual code generated to see why such a difference
-exists and then do further analysis to see what C# definitions
+exists, and then do further analysis to see what C# definitions
 caused that difference.
 
     I didn't do any of that work. So, for now, let's just say
@@ -336,7 +336,7 @@ It has the same size
 as `Vector4` on ARM64 so you would expect it to perform as well.
 But it doesn't.
 
-    I can guess here. Value-type generics on mono AOT
+    I can guess here. Value-type generics on Mono AOT
     are um... special. They use a lot of tricks to share
     code and those tricks come at a performance cost.
     My guess is that code generator is not recognizing
@@ -355,7 +355,7 @@ is not working as intended and must be avoided.
 
 The iOS chart is so different from the .NET Core one,
 that I think it's time we look at a middle ground.
-Let's see how mono runs on the Mac.
+Let's see how Mono runs on the Mac.
 
 ## Mono LLVM
 
@@ -367,7 +367,7 @@ Let's see how mono runs on the Mac.
 LLVM is fast, but RyuJIT is faster!
 
 * **`System.Numerics.Vector4` is back on top**
-It's good to see that the x64 mono is able to optimize
+It's good to see that the x64 Mono is able to optimize
 the SIMD vector.
 
     Except when it can't. Oddly, it wasn't able to
@@ -390,7 +390,7 @@ vector types depends on the platform.
 Oh, and `Vector<T>` is terrible. That's two things.
 
 In an attempt to bring some order to the chaos, let's
-look at mono again, but this time let's let it
+look at Mono again, but this time let's let it
 compile ahead-of-time.
 
 
