@@ -36,5 +36,4 @@ Or, how big of a machine do you want? This is where you decide how much compute 
 
 ## Services - What do you need?
 
-Now you can add Services to the machine you selected in the Service Plan. There are literally billions of services to choose from. Each one will add their own costs based on usage and daily rates to the credit card on the Subscription.
-
+Now you can add Services to the machine you selected in the Service Plan or to a Resource Group (which one depends on the service). There are literally billions of services to choose from. Each one will add their own costs based on usage and daily rates to the credit card on the Subscription.

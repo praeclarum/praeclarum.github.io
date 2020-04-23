@@ -149,13 +149,15 @@
             <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="32" font-weight="normal">
                 <tspan x="44" y="1272">Now you can add Services </tspan>
                 <tspan x="44" y="1309">to the machine you selected </tspan>
-                <tspan x="44" y="1346">in the Service Plan. There are </tspan>
-                <tspan x="44" y="1383">literally billions of services to </tspan>
-                <tspan x="44" y="1420">choose from. Each one will </tspan>
-                <tspan x="44" y="1457">add their own costs based </tspan>
-                <tspan x="44" y="1494">on usage and daily rates to </tspan>
-                <tspan x="44" y="1531">the credit card on the </tspan>
-                <tspan x="44" y="1568">Subscription.</tspan>
+                <tspan x="44" y="1346">in the Service Plan or to a </tspan>
+                <tspan x="44" y="1383">Resource Group (which one </tspan>
+                <tspan x="44" y="1420">depends on the service). </tspan>
+                <tspan x="44" y="1457">There are literally billions of </tspan>
+                <tspan x="44" y="1494">services to choose from. </tspan>
+                <tspan x="44" y="1531">Each one will add their own </tspan>
+                <tspan x="44" y="1568">costs based on usage and </tspan>
+                <tspan x="44" y="1605">daily rates to the credit card </tspan>
+                <tspan x="44" y="1642">on the Subscription.</tspan>
             </text>
         </g>
         <g id="Arrows" transform="translate(560.000000, 612.000000)" fill="#979797" fill-rule="nonzero">
