@@ -11,7 +11,7 @@ tags: announcement
 
 
 
-**TLDR;** I wrote a [website to share circuits made with my app iCircuit](http://gallery.icircuitapp.com) and I hope you’ll check it out.
+**TL;DR** I wrote a [website to share circuits made with my app iCircuit](http://gallery.icircuitapp.com) and I hope you’ll check it out.
 
 ![image]({{ "/images/tumblr/120625815178_0.png" | absolute_url }})
 

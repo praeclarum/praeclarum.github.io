@@ -12,7 +12,7 @@ tags: announcement video
 
 
 
-**TLDR;** I wrote a new Xamarin Studio add-in that dramatically reduces the number of **Build and Run** cycles you need to perform while developing an app. Please follow the [instructions to install Continuous](https://github.com/praeclarum/Continuous) and let me know what you think!
+**TL;DR** I wrote a new Xamarin Studio add-in that dramatically reduces the number of **Build and Run** cycles you need to perform while developing an app. Please follow the [instructions to install Continuous](https://github.com/praeclarum/Continuous) and let me know what you think!
 
 **UPDATE** I renamed this project from "LiveCode" to "Continuous Coding" or "Continuous" for short because I was being harrassed by a bunch of britishers. Bullying works kids.
 

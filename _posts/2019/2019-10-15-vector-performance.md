@@ -5,7 +5,7 @@ thumbnail: "/images/2019/vectorperf/core.svg"
 tags: article
 ---
 
-**TLDR;** I wanted to know what the fastest
+**TL;DR** I wanted to know what the fastest
 vector types were on .NET. Turns out,
 performance varies wildly across platforms.
 `System.Numerics.Vector4` and friends

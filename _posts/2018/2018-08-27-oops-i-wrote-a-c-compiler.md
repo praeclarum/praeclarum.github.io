@@ -4,7 +4,7 @@ title: "Oops, I Wrote a C++ Compiler"
 thumbnail: "/images/2018/cdemothumb.gif"
 ---
 
-**TLDR;** I wrote a .NET library that can compile C/C++ code into
+**TL;DR** I wrote a .NET library that can compile C/C++ code into
 a byte code that it can also interpret. It is used in my
 app [iCircuit](http://icircuitapp.com) to simulate Arduinos.
 You can use it yourself with the nuget package [CLanguage](https://www.fuget.org/packages/CLanguage).

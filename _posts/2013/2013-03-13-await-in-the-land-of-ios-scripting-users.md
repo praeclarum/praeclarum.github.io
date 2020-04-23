@@ -10,7 +10,7 @@ youtube: TmAOeGToFeE
 tags: article video
 ---
 
-**TLDR;** I show how to use the `await` keyword in C# to build an interactive help system.
+**TL;DR** I show how to use the `await` keyword in C# to build an interactive help system.
 
 
 ### Help!

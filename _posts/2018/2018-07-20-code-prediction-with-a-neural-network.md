@@ -11,7 +11,7 @@ tags: article
 
 
 
-**TLDR;** I used Python to create a neural network that implements an F# function to predict C# code. The network was compiled to a CoreML model and runs on iOS to be used in my app [Continuous](http://continuous.codes) to provide keyboard suggestions.
+**TL;DR** I used Python to create a neural network that implements an F# function to predict C# code. The network was compiled to a CoreML model and runs on iOS to be used in my app [Continuous](http://continuous.codes) to provide keyboard suggestions.
 
 
 ## The Problem
