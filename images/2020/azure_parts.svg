@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3400px" height="2300px" viewBox="0 0 3400 2300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>azure_parts</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#9B9B9B" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-3" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-4" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-5" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-6" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-7" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-8" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-9" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-10" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-11" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-12" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-13" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-14" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-15" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-16" x="0" y="0" width="324" height="166" rx="17"></rect>
+        <rect id="path-17" x="0" y="0" width="324" height="166" rx="17"></rect>
+    </defs>
+    <g id="Diagram" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6" transform="translate(144.000000, 43.000000)" fill="#000000">
+            <text id="Azure-Resource-Organ" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="100" font-style="condensed" font-weight="700">
+                <tspan x="966" y="162">Azure Resource Organization</tspan>
+            </text>
+            <text id="Cheat-Sheet" transform="translate(2280.857350, 185.441651) rotate(-26.000000) translate(-2280.857350, -185.441651) " font-family="Noteworthy-Bold, Noteworthy" font-size="100" font-weight="bold">
+                <tspan x="2021.85735" y="233.441651">Cheat Sheet</tspan>
+            </text>
+            <text id="By-Frank-A.-Krueger" font-family="HelveticaNeue, Helvetica Neue" font-size="50" font-weight="normal">
+                <tspan x="1174" y="255">By Frank A. Krueger (@praeclarum)</tspan>
+            </text>
+        </g>
+        <g id="Explanation" transform="translate(144.000000, 431.000000)">
+            <path d="M508,0.5 L508,1728.5" id="Line-2" stroke="#E6E6E6" stroke-width="6" stroke-linecap="round" stroke-dasharray="25,20" fill-rule="nonzero"></path>
+            <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="191.5995" y="1127">Account</tspan>
+            </text>
+            <text id="Question" opacity="0.5" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="142.771" y="1175">Who are you?</tspan>
+            </text>
+            <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="32" font-weight="normal" fill="#000000">
+                <tspan x="44" y="1272">Or, more specifically, what's </tspan>
+                <tspan x="44" y="1309">your email address? </tspan>
+                <tspan x="44" y="1346">Everything kicks off with a </tspan>
+                <tspan x="44" y="1383">Microsoft account registered </tspan>
+                <tspan x="44" y="1420">through one of their many </tspan>
+                <tspan x="44" y="1457">services. You probably have </tspan>
+                <tspan x="44" y="1494">one already.</tspan>
+            </text>
+        </g>
+        <g id="Explanation" transform="translate(652.000000, 431.000000)">
+            <path d="M508,0.5 L508,1728.5" id="Line-2" stroke="#E6E6E6" stroke-width="6" stroke-linecap="round" stroke-dasharray="25,20" fill-rule="nonzero"></path>
+            <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="132.085" y="1127">Active Directory</tspan>
+            </text>
+            <text id="Question" opacity="0.5" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="36.5255" y="1175">Who are you working with?</tspan>
+            </text>
+            <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="32" font-weight="normal" fill="#000000">
+                <tspan x="44" y="1272">Active Directory is used for </tspan>
+                <tspan x="44" y="1309">authentication - especially </tspan>
+                <tspan x="44" y="1346">authentication for Microsoft </tspan>
+                <tspan x="44" y="1383">services. One was probably </tspan>
+                <tspan x="44" y="1420">created for you when you </tspan>
+                <tspan x="44" y="1457">setup Azure with your </tspan>
+                <tspan x="44" y="1494">Account. If you ever see all </tspan>
+                <tspan x="44" y="1531">your Subscriptions or </tspan>
+                <tspan x="44" y="1568">Services disappear, it's </tspan>
+                <tspan x="44" y="1605">probably because you have </tspan>
+                <tspan x="44" y="1642">selected the wrong AD.</tspan>
+            </text>
+        </g>
+        <g id="Explanation" transform="translate(1192.000000, 431.000000)">
+            <path d="M508,0.5 L508,1728.5" id="Line-2" stroke="#E6E6E6" stroke-width="6" stroke-linecap="round" stroke-dasharray="25,20" fill-rule="nonzero"></path>
+            <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="156.986" y="1127">Subscription</tspan>
+            </text>
+            <text id="Question" opacity="0.5" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="42.649" y="1175">How are you going to pay?</tspan>
+            </text>
+            <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="32" font-weight="normal" fill="#000000">
+                <tspan x="44" y="1272">This is how you tell Microsoft </tspan>
+                <tspan x="44" y="1309">how you're going to pay for </tspan>
+                <tspan x="44" y="1346">all the goodies in the next </tspan>
+                <tspan x="44" y="1383">sections. If you want to split </tspan>
+                <tspan x="44" y="1420">Services over multiple </tspan>
+                <tspan x="44" y="1457">payment methods, you're </tspan>
+                <tspan x="44" y="1494">going to need multiple </tspan>
+                <tspan x="44" y="1531">Subscriptions.</tspan>
+            </text>
+        </g>
+        <g id="Explanation" transform="translate(1716.000000, 431.000000)">
+            <path d="M508,0.5 L508,1728.5" id="Line-2" stroke="#E6E6E6" stroke-width="6" stroke-linecap="round" stroke-dasharray="25,20" fill-rule="nonzero"></path>
+            <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="132.64" y="1127">Resource Group</tspan>
+            </text>
+            <text id="Question" opacity="0.5" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="45.9975" y="1175">How do you group things?</tspan>
+            </text>
+            <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="32" font-weight="normal" fill="#000000">
+                <tspan x="44" y="1272">This is your moment to </tspan>
+                <tspan x="44" y="1309">impose order on the chaos </tspan>
+                <tspan x="44" y="1346">and create groupings of your </tspan>
+                <tspan x="44" y="1383">own desire. Resource </tspan>
+                <tspan x="44" y="1420">Groups are convenient for </tspan>
+                <tspan x="44" y="1457">moving many Services from </tspan>
+                <tspan x="44" y="1494">one Subscription (payment </tspan>
+                <tspan x="44" y="1531">method) to another or to </tspan>
+                <tspan x="44" y="1568">delete several Services.</tspan>
+            </text>
+        </g>
+        <g id="Explanation" transform="translate(2240.000000, 431.000000)">
+            <path d="M508,0.5 L508,1728.5" id="Line-2" stroke="#E6E6E6" stroke-width="6" stroke-linecap="round" stroke-dasharray="25,20" fill-rule="nonzero"></path>
+            <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="159.132" y="1127">Service Plan</tspan>
+            </text>
+            <text id="Question" opacity="0.5" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="5.5935" y="1175">How much do you want to pay?</tspan>
+            </text>
+            <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="32" font-weight="normal" fill="#000000">
+                <tspan x="44" y="1272">Or, how big of a machine do </tspan>
+                <tspan x="44" y="1309">you want? This is where you </tspan>
+                <tspan x="44" y="1346">decide how much compute </tspan>
+                <tspan x="44" y="1383">power, storage space, </tspan>
+                <tspan x="44" y="1420">memory, and bandwidth </tspan>
+                <tspan x="44" y="1457">you're willing to pay for. </tspan>
+                <tspan x="44" y="1494">Prices range from free for </tspan>
+                <tspan x="44" y="1531">dev and test to much much </tspan>
+                <tspan x="44" y="1568">more. You also need to </tspan>
+                <tspan x="44" y="1605">choose where in the world </tspan>
+                <tspan x="44" y="1642">the server will be located.</tspan>
+            </text>
+        </g>
+        <g id="Explanation-Right" transform="translate(2764.000000, 431.000000)" fill="#000000">
+            <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700">
+                <tspan x="188.954" y="1127">Services</tspan>
+            </text>
+            <text id="Question" opacity="0.5" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700">
+                <tspan x="100.887" y="1175">What do you need?</tspan>
+            </text>
+            <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="32" font-weight="normal">
+                <tspan x="44" y="1272">Now you can add Services </tspan>
+                <tspan x="44" y="1309">to the machine you selected </tspan>
+                <tspan x="44" y="1346">in the Service Plan. There are </tspan>
+                <tspan x="44" y="1383">literally billions of services to </tspan>
+                <tspan x="44" y="1420">choose from. Each one will </tspan>
+                <tspan x="44" y="1457">add their own costs based </tspan>
+                <tspan x="44" y="1494">on usage and daily rates to </tspan>
+                <tspan x="44" y="1531">the credit card on the </tspan>
+                <tspan x="44" y="1568">Subscription.</tspan>
+            </text>
+        </g>
+        <g id="Arrows" transform="translate(560.000000, 612.000000)" fill="#979797" fill-rule="nonzero">
+            <path id="Line" d="M158.444444,5 L0,5 C-2.209139,5 -4,3.209139 -4,1 C-4,-1.209139 -2.209139,-3 0,-3 L158.444444,-3 L158.444444,-18.3753517 C158.444444,-19.8249049 159.619539,-21 161.069093,-21 C161.476556,-21 161.878424,-20.9051318 162.242871,-20.7229085 L200.993,-1.34784425 C202.289519,-0.699584343 202.815038,0.876971108 202.166778,2.17349091 C201.912807,2.68143227 201.500941,3.09329862 200.993,3.3472693 L162.242871,22.7223336 C160.946351,23.3705935 159.369796,22.845075 158.721536,21.5485552 C158.539313,21.1841085 158.444444,20.7822406 158.444444,20.3747768 L158.444444,5 Z"></path>
+            <path id="Line-Copy" d="M158.434236,245.403472 C128.6057,241.181938 104.606118,228.21409 86.6270551,206.549319 C61.3280514,176.06402 31.2833422,108.075498 -3.79679621,2.2587051 C-4.49195984,0.161792452 -3.35561774,-2.10163258 -1.2587051,-2.79679621 C0.838207548,-3.49195984 3.10163258,-2.35561774 3.79679621,-0.258705098 C38.5694807,104.630674 68.328217,171.972065 92.7832815,201.440418 C109.241979,221.273148 131.072258,233.218082 158.458015,237.322636 L158.501581,222.502574 C158.505842,221.053027 159.684386,219.881391 161.133933,219.885652 C161.541395,219.88685 161.942982,219.982899 162.306892,220.166193 L200.999897,239.655085 C202.294506,240.307153 202.815387,241.885247 202.163319,243.179855 C201.907856,243.687048 201.494781,244.097702 200.986095,244.350178 L162.179178,263.611247 C160.880759,264.255693 159.305755,263.725542 158.661309,262.427123 C158.480158,262.062142 158.386471,261.659997 158.387669,261.252535 L158.43426,245.403475 Z" opacity="0.5"></path>
+        </g>
+        <g id="Group-5" transform="translate(236.000000, 530.000000)">
+            <g id="Block">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="71.44" y="113">alice@gmail.com</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="99.0995" y="39">Account</tspan>
+                </text>
+            </g>
+            <g id="Block" opacity="0.5" transform="translate(0.000000, 242.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-3"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-3"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="74.128" y="113">alice@work.com</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="99.0995" y="39">Account</tspan>
+                </text>
+            </g>
+            <g id="Dots" transform="translate(156.000000, 467.000000)" fill="#E8E8E8" fill-rule="nonzero">
+                <circle id="Oval" cx="10" cy="10" r="10"></circle>
+                <circle id="Oval-Copy" cx="10" cy="50" r="10"></circle>
+                <circle id="Oval-Copy-2" cx="10" cy="90" r="10"></circle>
+            </g>
+        </g>
+        <g id="Arrows-Copy" transform="translate(1084.000000, 611.000000)" fill="#979797" fill-rule="nonzero">
+            <path id="Line" d="M158.444444,5 L0,5 C-2.209139,5 -4,3.209139 -4,1 C-4,-1.209139 -2.209139,-3 0,-3 L158.444444,-3 L158.444444,-18.3753517 C158.444444,-19.8249049 159.619539,-21 161.069093,-21 C161.476556,-21 161.878424,-20.9051318 162.242871,-20.7229085 L200.993,-1.34784425 C202.289519,-0.699584343 202.815038,0.876971108 202.166778,2.17349091 C201.912807,2.68143227 201.500941,3.09329862 200.993,3.3472693 L162.242871,22.7223336 C160.946351,23.3705935 159.369796,22.845075 158.721536,21.5485552 C158.539313,21.1841085 158.444444,20.7822406 158.444444,20.3747768 L158.444444,5 Z"></path>
+            <path id="Line-Copy" d="M158.434236,245.403472 C128.6057,241.181938 104.606118,228.21409 86.6270551,206.549319 C61.3280514,176.06402 31.2833422,108.075498 -3.79679621,2.2587051 C-4.49195984,0.161792452 -3.35561774,-2.10163258 -1.2587051,-2.79679621 C0.838207548,-3.49195984 3.10163258,-2.35561774 3.79679621,-0.258705098 C38.5694807,104.630674 68.328217,171.972065 92.7832815,201.440418 C109.241979,221.273148 131.072258,233.218082 158.458015,237.322636 L158.501581,222.502574 C158.505842,221.053027 159.684386,219.881391 161.133933,219.885652 C161.541395,219.88685 161.942982,219.982899 162.306892,220.166193 L200.999897,239.655085 C202.294506,240.307153 202.815387,241.885247 202.163319,243.179855 C201.907856,243.687048 201.494781,244.097702 200.986095,244.350178 L162.179178,263.611247 C160.880759,264.255693 159.305755,263.725542 158.661309,262.427123 C158.480158,262.062142 158.386471,261.659997 158.387669,261.252535 L158.43426,245.403475 Z"></path>
+        </g>
+        <g id="Arrows-Copy-7" transform="translate(2656.000000, 854.000000)" fill="#979797" fill-rule="nonzero">
+            <path id="Line" d="M158.444444,5 L0,5 C-2.209139,5 -4,3.209139 -4,1 C-4,-1.209139 -2.209139,-3 0,-3 L158.444444,-3 L158.444444,-18.3753517 C158.444444,-19.8249049 159.619539,-21 161.069093,-21 C161.476556,-21 161.878424,-20.9051318 162.242871,-20.7229085 L200.993,-1.34784425 C202.289519,-0.699584343 202.815038,0.876971108 202.166778,2.17349091 C201.912807,2.68143227 201.500941,3.09329862 200.993,3.3472693 L162.242871,22.7223336 C160.946351,23.3705935 159.369796,22.845075 158.721536,21.5485552 C158.539313,21.1841085 158.444444,20.7822406 158.444444,20.3747768 L158.444444,5 Z"></path>
+            <path id="Line-Copy" d="M158.434236,245.403472 C128.6057,241.181938 104.606118,228.21409 86.6270551,206.549319 C61.3280514,176.06402 31.2833422,108.075498 -3.79679621,2.2587051 C-4.49195984,0.161792452 -3.35561774,-2.10163258 -1.2587051,-2.79679621 C0.838207548,-3.49195984 3.10163258,-2.35561774 3.79679621,-0.258705098 C38.5694807,104.630674 68.328217,171.972065 92.7832815,201.440418 C109.241979,221.273148 131.072258,233.218082 158.458015,237.322636 L158.501581,222.502574 C158.505842,221.053027 159.684386,219.881391 161.133933,219.885652 C161.541395,219.88685 161.942982,219.982899 162.306892,220.166193 L200.999897,239.655085 C202.294506,240.307153 202.815387,241.885247 202.163319,243.179855 C201.907856,243.687048 201.494781,244.097702 200.986095,244.350178 L162.179178,263.611247 C160.880759,264.255693 159.305755,263.725542 158.661309,262.427123 C158.480158,262.062142 158.386471,261.659997 158.387669,261.252535 L158.43426,245.403475 Z"></path>
+            <path id="Line-Copy-2" d="M158.426938,489.923902 C127.981858,481.466835 103.864203,455.324136 86.0060841,411.924319 C60.9715434,351.083954 31.0305443,214.437294 -3.9470313,1.64880193 C-4.30535471,-0.531083257 -2.82868713,-2.58870788 -0.648801935,-2.9470313 C1.53108326,-3.30535471 3.58870788,-1.82868713 3.9470313,0.351198065 C38.8222786,212.517169 68.684725,348.805325 93.4042525,408.880127 C109.974883,449.151016 131.68631,473.2581 158.475586,481.598697 L158.558328,467.433626 C158.566795,465.984097 159.748734,464.815886 161.198262,464.824353 C161.605719,464.826733 162.007026,464.923947 162.370402,465.108296 L201.006697,484.709375 C202.299408,485.365197 202.815709,486.944796 202.159887,488.237507 C201.902953,488.743956 201.488688,489.153409 200.979272,489.404409 L162.116632,508.552797 C160.816347,509.193473 159.242889,508.658754 158.602213,507.35847 C158.422121,506.992965 158.329602,506.59055 158.331982,506.183093 L158.426956,489.923907 Z"></path>
+        </g>
+        <g id="Group-3" transform="translate(760.000000, 530.000000)">
+            <g id="Block" opacity="0.5" transform="translate(0.000000, 241.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-4"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-4"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="20.344" y="113">app1_ad.onmicrosoft.com</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="39.585" y="39">Active Directory</tspan>
+                </text>
+            </g>
+            <g id="Block">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-5"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-5"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="42.592" y="113">alice.onmicrosoft.com</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="39.585" y="39">Active Directory</tspan>
+                </text>
+            </g>
+            <g id="Dots" transform="translate(152.000000, 467.000000)" fill="#E8E8E8" fill-rule="nonzero">
+                <circle id="Oval" cx="10" cy="10" r="10"></circle>
+                <circle id="Oval-Copy" cx="10" cy="50" r="10"></circle>
+                <circle id="Oval-Copy-2" cx="10" cy="90" r="10"></circle>
+            </g>
+        </g>
+        <g id="Arrows-Copy-2" transform="translate(1608.000000, 611.000000)" fill="#979797" fill-rule="nonzero">
+            <path id="Line" d="M158.444444,5 L0,5 C-2.209139,5 -4,3.209139 -4,1 C-4,-1.209139 -2.209139,-3 0,-3 L158.444444,-3 L158.444444,-18.3753517 C158.444444,-19.8249049 159.619539,-21 161.069093,-21 C161.476556,-21 161.878424,-20.9051318 162.242871,-20.7229085 L200.993,-1.34784425 C202.289519,-0.699584343 202.815038,0.876971108 202.166778,2.17349091 C201.912807,2.68143227 201.500941,3.09329862 200.993,3.3472693 L162.242871,22.7223336 C160.946351,23.3705935 159.369796,22.845075 158.721536,21.5485552 C158.539313,21.1841085 158.444444,20.7822406 158.444444,20.3747768 L158.444444,5 Z"></path>
+        </g>
+        <g id="Arrows-Copy-4" transform="translate(1608.000000, 855.000000)" fill="#979797" fill-rule="nonzero">
+            <path id="Line" d="M158.444444,5 L0,5 C-2.209139,5 -4,3.209139 -4,1 C-4,-1.209139 -2.209139,-3 0,-3 L158.444444,-3 L158.444444,-18.3753517 C158.444444,-19.8249049 159.619539,-21 161.069093,-21 C161.476556,-21 161.878424,-20.9051318 162.242871,-20.7229085 L200.993,-1.34784425 C202.289519,-0.699584343 202.815038,0.876971108 202.166778,2.17349091 C201.912807,2.68143227 201.500941,3.09329862 200.993,3.3472693 L162.242871,22.7223336 C160.946351,23.3705935 159.369796,22.845075 158.721536,21.5485552 C158.539313,21.1841085 158.444444,20.7822406 158.444444,20.3747768 L158.444444,5 Z"></path>
+            <path id="Line-Copy" d="M158.434236,245.403472 C128.6057,241.181938 104.606118,228.21409 86.6270551,206.549319 C61.3280514,176.06402 31.2833422,108.075498 -3.79679621,2.2587051 C-4.49195984,0.161792452 -3.35561774,-2.10163258 -1.2587051,-2.79679621 C0.838207548,-3.49195984 3.10163258,-2.35561774 3.79679621,-0.258705098 C38.5694807,104.630674 68.328217,171.972065 92.7832815,201.440418 C109.241979,221.273148 131.072258,233.218082 158.458015,237.322636 L158.501581,222.502574 C158.505842,221.053027 159.684386,219.881391 161.133933,219.885652 C161.541395,219.88685 161.942982,219.982899 162.306892,220.166193 L200.999897,239.655085 C202.294506,240.307153 202.815387,241.885247 202.163319,243.179855 C201.907856,243.687048 201.494781,244.097702 200.986095,244.350178 L162.179178,263.611247 C160.880759,264.255693 159.305755,263.725542 158.661309,262.427123 C158.480158,262.062142 158.386471,261.659997 158.387669,261.252535 L158.43426,245.403475 Z" opacity="0.5"></path>
+        </g>
+        <g id="Arrows-Copy-5" transform="translate(2132.000000, 854.000000)" fill="#979797" fill-rule="nonzero">
+            <path id="Line" d="M158.444444,5 L0,5 C-2.209139,5 -4,3.209139 -4,1 C-4,-1.209139 -2.209139,-3 0,-3 L158.444444,-3 L158.444444,-18.3753517 C158.444444,-19.8249049 159.619539,-21 161.069093,-21 C161.476556,-21 161.878424,-20.9051318 162.242871,-20.7229085 L200.993,-1.34784425 C202.289519,-0.699584343 202.815038,0.876971108 202.166778,2.17349091 C201.912807,2.68143227 201.500941,3.09329862 200.993,3.3472693 L162.242871,22.7223336 C160.946351,23.3705935 159.369796,22.845075 158.721536,21.5485552 C158.539313,21.1841085 158.444444,20.7822406 158.444444,20.3747768 L158.444444,5 Z"></path>
+            <path id="Line-Copy" d="M158.434236,245.403472 C128.6057,241.181938 104.606118,228.21409 86.6270551,206.549319 C61.3280514,176.06402 31.2833422,108.075498 -3.79679621,2.2587051 C-4.49195984,0.161792452 -3.35561774,-2.10163258 -1.2587051,-2.79679621 C0.838207548,-3.49195984 3.10163258,-2.35561774 3.79679621,-0.258705098 C38.5694807,104.630674 68.328217,171.972065 92.7832815,201.440418 C109.241979,221.273148 131.072258,233.218082 158.458015,237.322636 L158.501581,222.502574 C158.505842,221.053027 159.684386,219.881391 161.133933,219.885652 C161.541395,219.88685 161.942982,219.982899 162.306892,220.166193 L200.999897,239.655085 C202.294506,240.307153 202.815387,241.885247 202.163319,243.179855 C201.907856,243.687048 201.494781,244.097702 200.986095,244.350178 L162.179178,263.611247 C160.880759,264.255693 159.305755,263.725542 158.661309,262.427123 C158.480158,262.062142 158.386471,261.659997 158.387669,261.252535 L158.43426,245.403475 Z" opacity="0.5"></path>
+        </g>
+        <g id="Group-4" transform="translate(1284.000000, 530.000000)">
+            <g id="Block" transform="translate(0.000000, 242.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-6"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-6"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="88.144" y="113">business_sub</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="64.486" y="39">Subscription</tspan>
+                </text>
+            </g>
+            <g id="Block">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-7"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-7"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="89.488" y="113">personal_sub</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="64.486" y="39">Subscription</tspan>
+                </text>
+            </g>
+            <g id="Dots" transform="translate(152.000000, 467.000000)" fill="#E8E8E8" fill-rule="nonzero">
+                <circle id="Oval" cx="10" cy="10" r="10"></circle>
+                <circle id="Oval-Copy" cx="10" cy="50" r="10"></circle>
+                <circle id="Oval-Copy-2" cx="10" cy="90" r="10"></circle>
+            </g>
+        </g>
+        <g id="Arrows-Copy-3" transform="translate(2132.000000, 611.000000)" fill="#979797" fill-rule="nonzero">
+            <path id="Line" d="M158.444444,5 L0,5 C-2.209139,5 -4,3.209139 -4,1 C-4,-1.209139 -2.209139,-3 0,-3 L158.444444,-3 L158.444444,-18.3753517 C158.444444,-19.8249049 159.619539,-21 161.069093,-21 C161.476556,-21 161.878424,-20.9051318 162.242871,-20.7229085 L200.993,-1.34784425 C202.289519,-0.699584343 202.815038,0.876971108 202.166778,2.17349091 C201.912807,2.68143227 201.500941,3.09329862 200.993,3.3472693 L162.242871,22.7223336 C160.946351,23.3705935 159.369796,22.845075 158.721536,21.5485552 C158.539313,21.1841085 158.444444,20.7822406 158.444444,20.3747768 L158.444444,5 Z"></path>
+        </g>
+        <g id="Arrows-Copy-6" transform="translate(2656.000000, 613.000000)" fill="#979797" fill-rule="nonzero">
+            <path id="Line" d="M158.444444,5 L0,5 C-2.209139,5 -4,3.209139 -4,1 C-4,-1.209139 -2.209139,-3 0,-3 L158.444444,-3 L158.444444,-18.3753517 C158.444444,-19.8249049 159.619539,-21 161.069093,-21 C161.476556,-21 161.878424,-20.9051318 162.242871,-20.7229085 L200.993,-1.34784425 C202.289519,-0.699584343 202.815038,0.876971108 202.166778,2.17349091 C201.912807,2.68143227 201.500941,3.09329862 200.993,3.3472693 L162.242871,22.7223336 C160.946351,23.3705935 159.369796,22.845075 158.721536,21.5485552 C158.539313,21.1841085 158.444444,20.7822406 158.444444,20.3747768 L158.444444,5 Z"></path>
+        </g>
+        <g id="Group-2" transform="translate(1808.000000, 530.000000)">
+            <g id="Block">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-8"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-8"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="100.384" y="113">blog_group</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="40.14" y="39">Resource Group</tspan>
+                </text>
+            </g>
+            <g id="Block" transform="translate(0.000000, 242.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-9"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-9"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="96.592" y="113">app1_group</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="40.14" y="39">Resource Group</tspan>
+                </text>
+            </g>
+            <g id="Block" opacity="0.5" transform="translate(0.000000, 484.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-10"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-10"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="96.592" y="113">app2_group</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="40.14" y="39">Resource Group</tspan>
+                </text>
+            </g>
+            <g id="Dots" transform="translate(152.000000, 708.000000)" fill="#E8E8E8" fill-rule="nonzero">
+                <circle id="Oval" cx="10" cy="10" r="10"></circle>
+                <circle id="Oval-Copy" cx="10" cy="50" r="10"></circle>
+                <circle id="Oval-Copy-2" cx="10" cy="90" r="10"></circle>
+            </g>
+        </g>
+        <g id="Group-2-Copy" transform="translate(2856.000000, 530.000000)">
+            <g id="Block">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-11"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-11"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="37.516" y="113">blog.azurewebsites.net</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="67.298" y="39">Web Service</tspan>
+                </text>
+            </g>
+            <g id="Block" transform="translate(0.000000, 242.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-12"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-12"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="33.724" y="113">app1.azurewebsites.net</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="67.298" y="39">Web Service</tspan>
+                </text>
+            </g>
+            <g id="Block" transform="translate(0.000000, 484.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-13"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-13"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="104.368" y="113">app1_data</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="40.917" y="39">Storage Service</tspan>
+                </text>
+            </g>
+            <g id="Block" transform="translate(0.000000, 726.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-14"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-14"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="17.5" y="113">app1api.azurewebsites.net</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="33.702" y="39">Function Service</tspan>
+                </text>
+            </g>
+        </g>
+        <g id="Group" transform="translate(2332.000000, 530.000000)">
+            <g id="Block">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-15"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-15"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="109.048" y="113">blog_plan</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="66.632" y="39">Service Plan</tspan>
+                </text>
+            </g>
+            <g id="Block" transform="translate(0.000000, 242.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-16"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-16"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="41.02" y="113">app1_production_plan</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="66.632" y="39">Service Plan</tspan>
+                </text>
+            </g>
+            <g id="Block" opacity="0.5" transform="translate(0.000000, 484.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="#D8D8D8" xlink:href="#path-17"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-17"></use>
+                </g>
+                <text id="Description" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                    <tspan x="79.696" y="113">app1_dev_plan</tspan>
+                </text>
+                <text id="Title" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="37" font-style="condensed" font-weight="700" fill="#000000">
+                    <tspan x="66.632" y="39">Service Plan</tspan>
+                </text>
+            </g>
+            <g id="Dots" transform="translate(152.000000, 715.000000)" fill="#E8E8E8" fill-rule="nonzero">
+                <circle id="Oval" cx="10" cy="10" r="10"></circle>
+                <circle id="Oval-Copy" cx="10" cy="50" r="10"></circle>
+                <circle id="Oval-Copy-2" cx="10" cy="90" r="10"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
