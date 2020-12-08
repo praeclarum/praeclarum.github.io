@@ -12,7 +12,8 @@ The work was easily ported to run on Wilderness Labs' Meadow IoT hardware.
 <img src="/images/2020/motor_hardware.jpg" alt="Photograph of the constructed hardware" />
 
 In this blog I would like to implement a simple but robust control theory that was taught to me in college.
-This blog post is one in a series of "F# Advent" posts so only naturally will I implement it all
+This blog post is one in a series of ["F# Advent" posts](https://sergeytihon.com/2020/10/22/f-advent-calendar-in-english-2020/)
+coordinated by Sergey Tihon so I will be implementing it all
 using my favorite programming language F#. 
 
 Embedded controls such as these are often implemented in imperative languages like C with a lot
