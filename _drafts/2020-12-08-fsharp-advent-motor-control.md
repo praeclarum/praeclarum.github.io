@@ -1,36 +1,43 @@
 ---
 layout: post
 title:  "F# Advent - Functional Motor Control"
-thumbnail: "/images/2020/catalyst_thumb.jpg"
+thumbnail: "/images/2020/motor_thumb.jpg"
 tags: article
 ---
 
-# FS Advent Functional Motor Controller
+**TL;DR** I implemented a proportional-integral feedback controller to control the speed of a DC motor using a gyroscope.
+I wrote it in F# using a functional programming style.
+The work was easily ported to run on Wilderness Labs' Meadow IoT hardware.
 
-What does it mean to optimally control something?
+<img src="/images/2020/motor_hardware.jpg" alt="Photograph of the constructed hardware" />
 
-You may be interested to know that there is a whole discipline of engineering called “control theory”. It’s a science and practice devoted to answering the question “how do I make machines do what I want?”
+In this blog I would like to implement a simple but robust control theory that was taught to me in college.
+This blog post is one in a series of "F# Advent" posts so only naturally will I implement it all
+using my favorite programming language F#. 
 
-Obviously there are many answers to that question ranging from trial and error, to machine learning, to formal mathematical proofs of optimality.
+Embedded controls such as these are often implemented in imperative languages like C with a lot
+of variable mutation.
 
-With the advent of affordable small electronics there is a new surge of programmers getting into the field of control theory (knowingly or unknowingly) and facing that question.
+I want to explore implementing a DC motor control algorithm in functional style instead of the imperative style.
+I also want to do it while embracing F#'s strong type checking and units of measure support.
 
-In this blog I would like to show one answer to the question using control theory taught to me in college implemented with my favorite programming language F#. I will try to spare you the heavy math but this is definitely going to be a nerdy post. Enjoy!
+I will try to spare you the heavy math but this is definitely going to be a nerdy post. Enjoy!
 
 
 
 ## Motor control
 
-As a simple example, let’s try to control the speed of a toy car with motors for wheels. Motors are some of the simplest but most entertaining devices out there to play with. You can use them to make cars, clocks, drones, and automatic fidget spinners.
+Motors are some of the simplest but most entertaining devices out there to play with. You can use them to make cars, clocks, drones, and automatic fidget spinners.
 
-The technique I’m going to describe is a three step process:
+The technique I’m going to describe here is a general one that can be applied to a variety of control tasks, not just motors.
+
+It's a three step process:
 
 1. We look at the inputs and outputs 
 2. We compare the output to what we want
 3. We modify the input to get us closer to the output
 
-And we’ll do it all with F#
-
+Easy peasy! That's the general outline. There is of course a million ways to accomplish all of the above. So let's start with the easy stuff: inputs.
 
 
 
@@ -61,7 +68,7 @@ type MotorInput =
 let makeMotorInput (cw : float<percent>) (ccw : float<percent>) =
     {
         ClockwiseDutyCycle = max (min cw 100.0<percent>) 0.0<percent>
-        CounterClockwiseDutyCycle = max (min ccw 100.0<percent>) 0.0<percent>        
+        CounterClockwiseDutyCycle = max (min ccw 100.0<percent>) 0.0<percent>
     }
 
 ```
@@ -100,9 +107,9 @@ We have a lot of good code now to work with inputs, let's look at the outputs of
 
 When it comes to motors we can control any of these things:
 
-* It's **position**
-* It's **speed**
-* It's **acceleration**
+* Its **position**
+* Its **speed**
+* Its **acceleration**
 
 But we can only control them if we can *measure* them. If we want to control the position of a motor, to control, say, a door, then we need a way to measure its position. In that case, either its angular position or the position of a part of the door.
 
@@ -110,7 +117,7 @@ You can also control its acceleration or the force it produces against an object
 
 Controlling the speed of a motor is probably the most common scenario. There are multiple sensors you can use to measure the speed: you could use the same position sensors and do some math, you can use rotary encoders, you can measure minor fluctuation is voltages produced by the motor, you can use potentiometers, ... There are a lot of options.
 
-I'm going to use a less common sensor to measure the rotation of the motor: a gyroscope. Gyroscopes measure angular velocity, just what I want. They're more complicated to use than the other options, but I think they're fun so I'm going to use them in this project.
+I'm going to use a less common sensor to measure the rotation of the motor: a gyroscope. Gyroscopes measure angular velocity, just what I want. They're more complicated to use than the other options, but I think they're fun so I'm going to use them in this project. I will be using an MPU6050 that is capable of measuring linear accelerations and angular velocities on all three axes. I'll just be monitoring the one rotational axis.
 
 
 ```fsharp
@@ -395,7 +402,7 @@ let controlMotor (maxIterations : int) (integralIterations : int)
     
 ```
 
-We can now run a test to see if we can control the test hardware. Let's try to get it up to `100.0<rad/s>`.
+We can now run a test to see if we can control the test hardware. Let's try to get it up to `100.0<rpm>`.
 
 
 ```fsharp
@@ -403,6 +410,8 @@ let testGoals (t : float<s>) = if t < 1.5<s> then 100.0<rpm> else 0.0<rpm>
 
 controlMotor 30 3 (new TestHardware (0.0<rpm>)) 0.002<_> 0.0002<_> testGoals
 ```
+
+<img src="/images/2020/motor_graph.png" alt="Graph of controller reaching desired RPM" />
 
     Test Speed: 0.000 RPM
     Test Speed: 11.000 RPM
