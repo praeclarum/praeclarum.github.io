@@ -10,7 +10,7 @@ organized and how exactly I'm paying for things.
 I summarized what I know into a handy little cheat sheet
 that I hope will help you if you're as confused as I was.
 
-<a href="/images/2020/azure_parts.png"><img src="/images/2020/azure_parts.png" alt="Appstat screenshot" /></a>
+<a href="/images/2020/azure_parts.png"><img src="/images/2020/azure_parts.png" alt="Azure parts" /></a>
 
 <a href="/images/2020/azure_parts.pdf">Azure Resource Organization Cheat Sheet PDF</a>
 
