@@ -17,7 +17,7 @@ No huge revelations here, just hard-earned advice.
 
 4. Create a function for each of those steps and `throw new NotImplementedException()` in each of them. Their names should be long and explanatory and there should be no question about what’s expected of them. It’s *really* OK if you don’t actually know how to write 'em.
 
-5. Now, go implement a few of those functions. You know they’re not *all* hard. Some may even be fun! Build up your confidence and implement the easy ones. It feels good to make progress and it lets the analytical part of your brain run in the background for a bit while you focus on nitty grid number types and file IO.
+5. Now, go implement a few of those functions. You know they’re not *all* hard. Some may even be fun! Build up your confidence and implement the easy ones. It feels good to make progress and it lets the analytical part of your brain run in the background for a bit while you focus on nitty-gritty number types and file IO.
 
 6. Time to tackle some of those harder functions. Go into each of those and break the problem down into steps just like you did before. You’re right, I’m gonna say it: Rinse and repeat. Keep breaking those hard problems down into steps. Turn each of those steps into a function with a clear name. Implement the easy ones. Then break the hard ones down into steps again. Do this over and over again. You'll be surprised how much you can actually get done.
 
