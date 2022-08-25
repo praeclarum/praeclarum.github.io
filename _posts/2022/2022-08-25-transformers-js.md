@@ -98,16 +98,33 @@ That's it! In about 5 lines of code we executed a neural translation algorithm t
 
 ### Demo
 
-my static website: [https://transformers-js.praeclarum.org](https://transformers-js.praeclarum.org)
+I put the code above together into a little web app to demonstrate the library.
+
+[https://transformers-js.praeclarum.org](https://transformers-js.praeclarum.org)
+
+It's a little translation app that is able to go from English to French, German, and Romanian.
+
+When you run it the first time, it will take some time to download the neural network. After that, the browser can cache it and subsequent reloads will be faster.
+
+It's hosted on [Azure Static Web Apps](https://azure.microsoft.com/en-us/services/app-service/static/) to demonstrate that no logic is running on the server. The server merely provides the neural network data to be downloaded and run on the browser. Pretty cool, huh?
 
 
 
 
 ## Optimizing Models for the Browser
 
-Now, let's talk one last detail to make networks in the browser run *well*.
+Now, let's talk about a few last details to make networks in the browser run *well*.
+
+Because I'm using the WASM version of ONNX, the neural network is executed on the CPU. It's therefore beneficial to optimize it to run there. The best optimization right now is to use *quantized 8-bit* weights. This converts what are otherwise 32-bit floats into 8-bit integers. This is done carefully to preserve as much accuracy as possible and is honestly a bit of a dark art.
+
+Fortunately, there are lots of dark art practitioners and we can stand on their shoulders. The [fastT5](https://github.com/Ki6an/fastT5) library converts T5 models from Hugging Face 🤗 to quantized 8-bit models ready to run in the browser. I wrapped that library in a script as I hope to support other model types in the future. 
+
+Lastly, I highly recommend running this code in a background web worker. This will prevent the browser from locking up while it's executing. I didn't implement that feature in the demo web site but I would say it's worth the effort in a production app.
+
 
 
 ## Conclusion
 
+While there will always be some big networks out there that need big servers to run them, a surprsing number of neural networks work just fine in the browser. Doing so is good for economic, environmental, and security reasons.
 
+[Transformers-js](https://github.com/praeclarum/transformers-js) was written to make running language models in the browser simple. I hope you will find it enjoyable to use and I hope you will use it to make cool things.
