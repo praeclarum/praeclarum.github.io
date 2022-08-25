@@ -1,12 +1,13 @@
 ---
 layout: post
 title:  "Transformers-js - Neural Networks in the Browser"
-thumbnail: "/images/2022/hard_problems_thumb.jpg"
+thumbnail: "/images/2022/transformersjs_thumb.png"
 tags: announcement
 ---
 
 **TL;DR** I wrote a javascript library that lets you run modern transformer neural networks from Hugging Face 🤗 in the browser. It works on mobile browsers, desktop browsers, pretty much everywhere. Check out [transformers-js on GitHub](https://github.com/praeclarum/transformers-js) to see how it works and checkout out the live translation demo running on my static website: [https://transformers-js.praeclarum.org](https://transformers-js.praeclarum.org).
 
+<a href="https://transformers-js.praeclarum.org"><img src="/images/2022/transformersjs.png" alt="Screenshot of the transformer-js demo translation web site" /></a>
 
 ## Introduction
 
@@ -29,7 +30,7 @@ And you know these networks from their friendly household names: GPT-3, Copilot,
 
 In fact, it was that demo fail that got me to thinking, “why can’t I just run this thing in the browser?” That thought led me to 3 days of programming. Those 3 days produced a javascript library. And that javascript library produces some kick-ass neural translations.
 
-I wrote transformers-js to make running transformers from Hugging Face 🤗 in the browser just as easy as running them in Python land. To do this, I leverage the amazing ONNX runtime in order to run the network. ONNX offers a browser-compatible runtime using WASM compiled from the complete ONNX opset code. That’s very powerful because it means that, if you can get your net running in ONNX, you can get it running in the browser. (ONNX also offers a webgl backend that is much faster than their WASM backend. But you lose so much precision in webgl that I have yet to see a network work correctly using that engine.)
+I wrote [transformers-js](https://github.com/praeclarum/transformers-js) to make running transformers from Hugging Face 🤗 in the browser just as easy as running them in Python land. To do this, I leverage the amazing ONNX runtime in order to run the network. ONNX offers a browser-compatible runtime using WASM compiled from the complete ONNX opset code. That’s very powerful because it means that, if you can get your net running in ONNX, you can get it running in the browser. (ONNX also offers a webgl backend that is much faster than their WASM backend. But you lose so much precision in webgl that I have yet to see a network work correctly using that engine.)
 
 But running the neural network is only half the battle. Running transformers requires more software than just the neural net. You also need text tokenization software to convert your text to tokens (symbols) and you need sampling software to convert the neural net’s output probabilities back to symbols. Transformers-js takes care of all that for you. 
 
@@ -50,7 +51,7 @@ const tokenizer = await AutoTokenizer.fromPretrained("t5-small", "/models");
 
 That loads a tokenizer. Currently, I only support Sentence Piece Unigram models (good enough for most nets). I hope to support Byte Pair Encoding in the future (GPT’s preferred tokenization).
 
-With that tokenizer, you can convert strings into symbol lists:
+With that tokenizer, you can convert strings into token lists:
 
 ```js
 // Tokenize "Hello, world!"
@@ -94,11 +95,17 @@ The output is "Bonjour monde!" which makes sense given our input of "Hello World
 
 That's it! In about 5 lines of code we executed a neural translation algorithm that ran completely in the browser.
 
-Now, let's talk one last detail to make networks in the browser run *well*.
+
+### Demo
+
+my static website: [https://transformers-js.praeclarum.org](https://transformers-js.praeclarum.org)
+
+
 
 
 ## Optimizing Models for the Browser
 
+Now, let's talk one last detail to make networks in the browser run *well*.
 
 
 ## Conclusion

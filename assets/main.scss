@@ -54,7 +54,7 @@ a:hover { color: $hover-fg-color; }
     margin-top: 0.2em;
 }
 .post-list a>img.post-thumbnail {
-    border: solid 1px #CCC;
+    border: solid 1px $bg-color;
     border-radius: 5px;
 }
 
@@ -115,6 +115,9 @@ h1 code, h2 code, h3 code, h4 code {
     .post-link:visited { color: $brand-color-dark; }
     .home .content a:visited { color: $brand-color-dark !important; }
     .home .content a:hover { color: $brand-color-dark !important; }
+    .post-list a>img.post-thumbnail {
+        border: solid 1px $bg-color-dark;
+    }
     .post-list a:hover>img.post-thumbnail {
         border-color: $brand-color-dark;
     }
