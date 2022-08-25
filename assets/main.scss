@@ -2,12 +2,40 @@
 ---
 
 $brand-color:      #be4767;
+$fg-color:         rgb(10, 10, 10);
+$bg-color:         rgb(252, 252, 252);
+$border-color:     rgb(212, 212, 212);
+$strong-fg-color:  rgb(0, 0, 0);
+$hover-fg-color:   #111;
+$code-bg-color:    rgb(242, 242, 242);
+
+$brand-color-dark:      #d73963;
+$fg-color-dark:         rgb(200, 200, 200);
+$bg-color-dark:         rgb(20, 20, 20);
+$border-color-dark:     rgb(64, 64, 64);
+$strong-fg-color-dark:  rgb(222, 222, 222);
+$hover-fg-color-dark:   #eee;
+$code-bg-color-dark:    rgb(10, 10, 10);
+
 
 @import "minima";
 
-h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Black", Gadget, sans-serif }
+body { background-color: $bg-color; color: $fg-color; }
 
-.site-header { border-top: none; }
+h1, h2, h3, h4, h5, h6 {
+    font-family: "HelveticaNeue-CondensedBold", "Arial Black", Gadget, sans-serif;
+    color: $strong-fg-color;
+}
+strong {
+    color: $strong-fg-color;
+}
+a:visited { color: $brand-color; }
+a:hover { color: $hover-fg-color; }
+
+.site-header {
+    border-top: none;
+    border-bottom: 1px solid $border-color;
+}
 .site-header .site-title { color: $brand-color !important; }
 
 .site-nav .page-link { background-color: $brand-color; padding: 0.5em; color: white; border-radius: 5px; }
@@ -34,7 +62,6 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
     border-color: $brand-color;
 }
 
-
 .post-list li {
     clear: both;
     margin-bottom: 2em;
@@ -43,19 +70,20 @@ h1, h2, h3, h4, h5, h6 { font-family: "HelveticaNeue-CondensedBold", "Arial Blac
 .post-content img { border-radius: 5px; }
 .post-content h2 { margin-top: 1em; margin-bottom: 0.25em; }
 
-.home .content { background-color: rgb(242, 242, 242); border-radius: 10px; padding: 1em 2em 0.5em 2em; margin-bottom: 2em; text-align: center; font-family: "Georgia"; font-size: 125%; }
+.home .content { background-color: $bg-color; border-radius: 10px; padding: 1em 2em 0.5em 2em; margin-bottom: 2em; text-align: center; font-family: "Georgia"; font-size: 125%; }
 .home .content img { width: 128px; clip-path: circle(64px at center); -webkit-clip-path: circle(64px at center); }
 .home .content a { font-weight: bold; font-family: $base-font-family; }
 .home .content a:visited { color: $brand-color !important; }
+.home .content a:hover { color: $brand-color !important; }
 
 
 code {
-    background-color: rgb(242, 242, 242);
+    background-color: $code-bg-color;
     border: none;
 }
 
 .highlighter-rouge .highlight, .highlighter-rouge pre.highlight code {
-    background-color: rgb(242, 242, 242);
+    background-color: $code-bg-color;
     border: none;
     border-radius: 5px;
 }
@@ -67,4 +95,37 @@ code {
 
 h1 code, h2 code, h3 code, h4 code {
     font-size: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    body { background-color: $bg-color-dark; color: $fg-color-dark; }
+    .site-header {
+        border-bottom: 1px solid $border-color-dark;
+    }
+    .site-header .site-title { color: $brand-color-dark !important; }
+    h1, h2, h3, h4, h5, h6 {
+        color: $strong-fg-color-dark;
+    }
+    strong {
+        color: $strong-fg-color-dark;
+    }    
+    a:visited { color: $brand-color-dark; }
+    a:hover { color: $hover-fg-color-dark; }
+    .site-nav .page-link { background-color: $brand-color-dark; }
+    .post-link:visited { color: $brand-color-dark; }
+    .home .content a:visited { color: $brand-color-dark !important; }
+    .home .content a:hover { color: $brand-color-dark !important; }
+    .post-list a:hover>img.post-thumbnail {
+        border-color: $brand-color-dark;
+    }
+    .home .content { background-color: $bg-color-dark; }
+    code {
+        background-color: $code-bg-color-dark;
+    }
+    .highlight .s2 {
+        color: $brand-color-dark;
+    }
+    .highlighter-rouge .highlight, .highlighter-rouge pre.highlight code {
+        background-color: $code-bg-color-dark;
+    }
 }
