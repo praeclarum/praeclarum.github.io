@@ -17,7 +17,9 @@ I’m a big fan of running neural nets on everyday hardware. It makes sense to l
 
 Let’s fight the big-iron trend. Let’s run neural networks in the browser!
 
-Announcing [transformers-js](https://github.com/praeclarum/transformers-js): a library to make running translation and other language neural nets in the browser simple.
+Announcing <strikethrough>[transformers-js](https://github.com/praeclarum/transformers-js)</strikethrough>: a library to make running translation and other language neural nets in the browser simple.
+
+**Update (Feb 7, 2023):** I've re-released the library as [web-transformers](https://github.com/praeclarum/web-transformers) with full NPM and webpack support.
 
 
 ## Hugging Face 🤗 Transformers with transformers-js
