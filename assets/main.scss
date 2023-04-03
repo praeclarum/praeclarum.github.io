@@ -16,6 +16,8 @@ $border-color-dark:     rgb(64, 64, 64);
 $strong-fg-color-dark:  rgb(222, 222, 222);
 $hover-fg-color-dark:   #eee;
 $code-bg-color-dark:    rgb(10, 10, 10);
+$code-nt-fg-color-dark: rgb(103, 207, 255);
+$code-na-fg-color-dark: rgb(205, 205, 205);
 
 
 @import "minima";
@@ -128,8 +130,26 @@ h1 code, h2 code, h3 code, h4 code {
     pre {
         border-color: $border-color-dark;
     }
+    table {
+        color: $fg-color-dark;
+    }
+    table tr:nth-child(even) {
+        background-color: $border-color-dark;
+    }
+    table th {
+        background-color: $border-color-dark;
+    }
     .highlight .s2 {
         color: $brand-color-dark;
+    }
+    .highlight .s {
+        color: $brand-color-dark;
+    }
+    .highlight .nt {
+        color: $code-nt-fg-color-dark;
+    }
+    .highlight .na {
+        color: $code-na-fg-color-dark;
     }
     .highlighter-rouge .highlight, .highlighter-rouge pre.highlight code {
         background-color: $code-bg-color-dark;
