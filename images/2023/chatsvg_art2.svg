@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF009C; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E00EFF; stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FFC7; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00CFFF; stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <g>
+    <path d="M150,30 Q152,39 160,40 L140,40 Q148,39,150,30" fill="url(#gradient1)" />
+    <path d="M80,90 Q100,40 150,30 T220,90 Q190,100 170,130 L130,130 Q110,100 80,90" fill="url(#gradient1)" />
+    <path d="M80,90 C100,90 100,80 120,60 C140,80 140,90 160,90 Q150,110 150,150 L150,200 Q150,210 142,210 L108,210
+Q100,210 100,200 L100,190 L80,190" fill="url(#gradient1)" />
+    <path d="M220,90 C200,90 200,80 180,60 C160,80 160,90 140,90 Q150,110 150,150 L150,200 Q150,210 142,210 L108,210
+Q100,210 100,200 L100,190 L80,190" fill="url(#gradient2)" />
+    <path d="M100,190 L100,200 L150,230 L200,200 L200,190" fill="url(#gradient1)" />
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+    <defs>
+        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#5FD5FF; stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#1B5AE5; stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="120" height="120" fill="url(#bg-gradient)" />
+    <g id="sine-wave-icon" transform="translate(20, 52)">
+        <path d="M0,28 Q15,-28,30,28 Q45,-28,60,28 Q75,-28,90,28" fill="none" stroke="#FFFFFF" stroke-width="5" />
+    </g>
+    <rect x="0" y="0" width="120" height="120" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+</svg>
