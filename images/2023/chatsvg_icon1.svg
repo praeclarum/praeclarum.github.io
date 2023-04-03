@@ -1,0 +1,10 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+   <g transform="translate(2 1)">
+      <path d="M7.5 0.5a7.5 7.5 0 10.5-0.5,7.5 7.5 0 11-.5 0.5zM5 5v5l5-2.5z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="10" cy="10" r="3" stroke="#000" stroke-width="1.5"/>
+   </g>
+   <g transform="translate(15 6) scale(0.7)">
+      <path d="M7.5 0.5a7.5 7.5 0 10.5-0.5,7.5 7.5 0 11-.5 0.5zM5 5v5l5-2.5z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="10" cy="10" r="3" stroke="#000" stroke-width="1.5"/>
+   </g>
+</svg>

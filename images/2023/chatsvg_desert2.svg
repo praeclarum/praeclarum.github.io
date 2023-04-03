@@ -1,0 +1,39 @@
+<svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky gradient -->
+  <defs>
+    <linearGradient id="sky-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:deepskyblue;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:skyblue;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="300" height="150" x="0" y="0" fill="url(#sky-gradient)" />
+  
+  <!-- Sun -->
+  <circle cx="270" cy="30" r="20" fill="yellow" />
+  
+  <!-- Ground gradient -->
+  <defs>
+    <linearGradient id="ground-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:sandybrown;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:peru;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Ground -->
+  <rect width="300" height="50" x="0" y="100" fill="url(#ground-gradient)" />
+  
+  <!-- Cactus gradient -->
+  <defs>
+    <linearGradient id="cactus-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:darkgreen;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:forestgreen;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cactus -->
+  <path d="M130,150 L160,150 L160,70 Q150,60 160,50 L160,30 L130,40 L130,70 Q140,80 130,90 Z" fill="url(#cactus-gradient)" />
+  <path d="M110,80 L120,80 L120,60 Q110,50 100,50 L90,70 Q100,80 110,90 Z" fill="url(#cactus-gradient)" />
+  <path d="M170,80 L180,80 L190,70 Q180,50 170,50 L170,60 Q170,70 180,80 Z" fill="url(#cactus-gradient)" />
+</svg>
