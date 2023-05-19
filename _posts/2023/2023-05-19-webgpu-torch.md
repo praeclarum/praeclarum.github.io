@@ -5,7 +5,7 @@ thumbnail: "/images/2023/webgpu-torch.jpg"
 tags: article
 ---
 
-**TL;DR** I've been working on a WebGPU optimized inference and autograd library called [webgpu-torch](https://github.com/praeclarum/webgpu-torch) with an API that matches PyTorch. The goal is to run neural networks at CUDA speeds in the browser. Many kernels have been implemented and its design is easily extensible. It's [available on NPM now](https://www.npmjs.com/package/webgpu-torch) and works in both the browser and Node.js!
+**TL;DR** I've been working on a WebGPU optimized inference and autograd library called [webgpu-torch](https://github.com/praeclarum/webgpu-torch) with an API that matches PyTorch. The goal is to run neural networks in the browser at speeds comparable to a Linux workstation. Many kernels have been implemented and its design is easily extensible. It's [available on NPM now](https://www.npmjs.com/package/webgpu-torch) and works in both the browser and Node.js!
 
 ## Neural Networks in the Browser
 
