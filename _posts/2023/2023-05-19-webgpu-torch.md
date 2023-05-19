@@ -41,9 +41,9 @@ WebGPU is the new standard for accessing GPUs from the browser. It supports gene
 
 This is perfect for the web since JavaScript is single threaded and not optimized for doing heavy computation. The GPU is a perfect fit for this since it's designed to do heavy computation in parallel.
 
-## How to Re-implement PyTorch using TypeScript
+## Writing Optimized WebGPU Kernels
 
-PyTorch is very mature now and supports a huge variety of operations. It's also very well optimized for CUDA. So how do you go about re-implementing it for WebGPU?
+PyTorch is very mature now and supports a huge variety of operations. It's also very well optimized for CUDA and CUDNN (NVIDIA's compute libraries). So how do you go about re-implementing all of those for WebGPU?
 
 Well, you start with the basics. You implement the basic operations like element-wise operations, matrix multiplication, convolutions, reductions, etc. But there is a tremendous amount of similarity between these operations.
 
