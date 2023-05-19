@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "How and Why I Re-implemented PyTorch for WebGPU"
+title:  "How I Re-implemented PyTorch for WebGPU"
 thumbnail: "/images/2023/webgpu-torch.jpg"
 tags: article
 ---
 
-**TL;DR** I've been working on a WebGPU optimized inference and autograd library called [webgpu-torch](https://github.com/praeclarum/webgpu-torch) with an API that matches PyTorch. The goal is to reach CUDA speeds in the browser. Many kernels have been implemented and it's been designed to be easily extensible. It's [available on NPM now](https://www.npmjs.com/package/webgpu-torch)!
+**TL;DR** I've been working on a WebGPU optimized inference and autograd library called [webgpu-torch](https://github.com/praeclarum/webgpu-torch) with an API that matches PyTorch. The goal is to run neural networks at CUDA speeds in the browser. Many kernels have been implemented and its design is easily extensible. It's [available on NPM now](https://www.npmjs.com/package/webgpu-torch) and works in both the browser and Node.js!
 
 ## Neural Networks in the Browser
 
-Nine months ago, I got huggingface transformers (Large Language Models like GPT but a wee bit smaller) working in the browsers thanks to the ONNX web runtime and some painfully hand coded tokenizers.
+[Nine months ago](https://github.com/praeclarum/transformers-js), I got huggingface transformers (Large Language Models like GPT but a wee bit smaller) working in the browsers thanks to the ONNX web runtime and some painfully hand-coded tokenizers.
 
 It's quite liberating running these nets in the browser since the web is best software distribution platform ever created. You can just send someone a link and they can run your code. No need to install anything. No need to worry about what OS they're running. No need to worry about what hardware they have. It's all just there.
 
