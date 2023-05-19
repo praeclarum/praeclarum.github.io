@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How I Re-implemented PyTorch for WebGPU in TypeScript"
+title:  "How and Why I Re-implemented PyTorch for WebGPU"
 thumbnail: "/images/2023/webgpu-torch.jpg"
 tags: article
 ---
