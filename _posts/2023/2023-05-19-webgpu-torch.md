@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How I Re-implemented PyTorch for WebGPU"
-thumbnail: "/images/2023/webgpu-torch.jpg"
+thumbnail: "/images/2023/webgpu-torch_thumb.png"
 tags: article
 ---
 
