@@ -9,9 +9,9 @@ tags: article
 
 ## Neural Networks in the Browser
 
-[Nine months ago](https://github.com/praeclarum/transformers-js), I got huggingface transformers (Large Language Models like GPT but a wee bit smaller) working in the browsers thanks to the ONNX web runtime and some painfully hand-coded tokenizers.
+[Nine months ago](https://github.com/praeclarum/transformers-js), I got Hugging Face Transformers (Large Language Models like GPT but a wee bit smaller) working in the browsers thanks to the ONNX web runtime and some painfully hand-coded tokenizers.
 
-It's quite liberating running these nets in the browser since the web is best software distribution platform ever created. You can just send someone a link and they can run your code. No need to install anything. No need to worry about what OS they're running. No need to worry about what hardware they have. It's all just there.
+It's quite liberating running these nets in the browser since the web is the best software distribution platform ever created. You can just send someone a link and they can run your code. No need to install anything. No need to worry about what OS they're running. No need to worry about what hardware they have. It's all just there.
 
 The only problem is that ONNX is a wee bit, shall we say, slow.
 
@@ -39,7 +39,7 @@ Doesn't sound so hard to re-implement right? And so I did.
 
 WebGPU is the new standard for accessing GPUs from the browser. It supports generic compute shaders and is designed to be a low level API that can be used to build higher level libraries. The compute shaders are able to break work up into a 3D grid and, so long as you can reformulate your code to take advantage of that 3D grid, you can benefit from dedicated hardware doing the computations.
 
-This is perfect for the web since JavaScript is single threaded and not optimized for doing heavy computation. The GPU is a perfect fit for this since it's designed to do heavy computation in parallel.
+This is perfect for the web since JavaScript is single-threaded and not optimized for doing heavy computation. The GPU is a perfect fit for this since it's designed to do heavy computation in parallel.
 
 ## Writing Optimized WebGPU Kernels
 
@@ -88,6 +88,6 @@ This has produced a silly but fun web page to go visit. If you go to [https://pr
 
 ## Goals
 
-I like to train imaging networks and to that end my goal is to get Stable Diffusion and similar nets running under this library. Once that's accomplished I will focus on the many huggingface transformer networks. I'm hoping to get all of them running in the browser at CUDA speeds.
+I like to train imaging networks and to that end my goal is to get Stable Diffusion and similar nets running under this library. Once that's accomplished I will focus on the many Hugging Face transformer networks. I'm hoping to get all of them running in the browser at CUDA speeds.
 
 I have a set of TODOs in the README of the project. If you're interested in helping out, please take a look!
