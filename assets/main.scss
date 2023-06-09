@@ -19,6 +19,11 @@ $code-bg-color-dark:    rgb(10, 10, 10);
 $code-nt-fg-color-dark: rgb(103, 207, 255);
 $code-na-fg-color-dark: rgb(205, 205, 205);
 
+$table-alt-row-color: rgb(240, 240, 240);
+$table-head-color:    rgb(230, 230, 230);
+$table-alt-row-color-dark: rgb(32, 32, 32);
+$table-head-color-dark:    rgb(50, 50, 50);
+
 
 @import "minima";
 
@@ -99,6 +104,19 @@ h1 code, h2 code, h3 code, h4 code {
     font-size: 100%;
 }
 
+table {
+    color: $fg-color;
+}
+table tr:nth-child(even) {
+    background-color: $table-alt-row-color;
+}
+table th {
+    background-color: $table-head-color;
+}
+table th, table td {
+    padding: 6px 8px;
+}
+
 @media (prefers-color-scheme: dark) {
     body { background-color: $bg-color-dark; color: $fg-color-dark; }
     .site-header {
@@ -134,10 +152,14 @@ h1 code, h2 code, h3 code, h4 code {
         color: $fg-color-dark;
     }
     table tr:nth-child(even) {
-        background-color: $border-color-dark;
+        background-color: $table-alt-row-color-dark;
+    }
+    table td {
+        border-color: $border-color-dark;
     }
     table th {
-        background-color: $border-color-dark;
+        background-color: $table-head-color-dark;
+        border-color: $border-color-dark;
     }
     .highlight .s2 {
         color: $brand-color-dark;
