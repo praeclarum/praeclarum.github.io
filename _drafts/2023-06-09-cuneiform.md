@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  "I Built the World's Largest Translated Cuneiform Corpus"
+title:  "I Built the World's Largest Translated Cuneiform Corpus using AI"
 thumbnail: "/images/2023/webgpu-torch_thumb.png"
 tags: article
 ---
 
 **TL;DR** I used a custom-trained Large Language Model (T5) to
 create the world's largest online corpus of translated cuneiform
-texts. It's [available now](https://cuneiform.pages.dev) and contains
-over 30,000 translated texts from the [CDLI](https://cdli.ucla.edu/)
+texts. It's called the [AICC (AI Cuneiform Corpus)](https://aicuneiform.com) and contains
+130,000 AI translated texts from the [CDLI](https://cdli.ucla.edu/)
 and [ORACC](http://oracc.org/) projects.
+
 
 ## Cuneiform
 
@@ -19,28 +20,96 @@ write Sumerian, Akkadian, and other languages. Written on clay,
 it has survived the millennia and is now being translated by
 scholars around the world.
 
-Sadly, we have more clay tablets than scholars. Fortunately,
-we have computers.
+Sadly, we have more clay tablets than scholars.
+Fortunately, we have computers.
 
-## A Need for Machine Translations
 
+## Introducing the AICC
+
+I'm proud to introduce the [AICC](https://aicuneiform.com) - a collection of 130,000
+cuneiform texts translated from ancient Sumerian and Akkadian
+to English using a neural network. It is the largest collection
+of translated cuneiform texts in the world.
+
+This is the 2nd edition of the translated corpus I released last summer.
+The 1st edition contained about 30,000 texts but this new edition
+boasts 130,000 texts. The corpus is growing fast!
+
+How good are the translations? Well, they're decent. :-) I hope you'll
+go browse the site and see for yourself.
+
+Judging the quality of cuneiform translations has a rich history.
+Indulge me in a story.
+
+### Can it Translate Tiglath-Pileser?
+
+In 1857 a new cylinder inscribed with cuneiform text
+and the name Tiglath-Pileser was found (dated 1150 BC).
+At this time, cuneiform was just being relearned and
+there was a question as to how good various translation methods were.
+
+The Royal Asiatic Society decided to perform an experiment
+(that was later published as the book
+[Inscription of Tiglath Pilser I., King of Assyria](https://books.google.com/books/about/Inscription_of_Tiglath_Pileser_I_King_of.html?id=GGI-AAAAcAAJ)).
+They would give the same inscription to three different translators
+and see how well they did. The idea was that if the translations
+were similar, then the current understanding of cuneiform was also good.
+
+Here is a page from the book showing the beginning of two of the three translations:
+
+![Tiglath-Pileser Translations](/images/2023/tiglath-pileser.jpg)
+
+We can see that although the translations are different,
+they convey the same meaning. The experiment was a success.
+
+I am pleased to now add my own (well, my AI's) translation to the mix.
+Just one problem, my corpus contains [many objects](https://aicuneiform.com/search?q=tigl)
+with similar inscriptions and I'm not sure which one is this specific Tiglath-Pileser cylinder.
+There's 
+[P393923](https://aicuneiform.com/p/p393.html#P393923),
+[P463064](https://aicuneiform.com/p/p463.html#P463064) (newly translated),
+[P463510](https://aicuneiform.com/p/p463.html#P463510) (newly translated),
+[P467316](https://aicuneiform.com/p/p467.html#P467316) (newly translated),
+[Q005926](https://aicuneiform.com/p/q005.html#Q005926),
+[Q006021](https://aicuneiform.com/p/q006.html#Q006021) and more.
+
+I decided in fairness and in the spirit of the competition to translate
+one that had no previous translation. I chose [P467316](https://aicuneiform.com/p/p467.html#P467316)
+as its beginning seemed to match the other translations.
+
+### AI Translation of Tiglath-Pileser
+
+> Ashur, great lord, who makes the totality of the gods submit, who gives scepter and crown, who establishes kingship; Enlil, lord, king of all the Anunnaku gods, father of the gods, lord of the lands; Sin, wise one, lord of the crown, saqu-worthy; Magur, Shamash, judge of heaven and underworld, who carries out the slander of the enemy, who breaks up the foe; Adad, hero, conqueror of the four quarters of the lands, the four quarters; Ninurta, hero, villainous sacrificial spirit and enemy, who destroys the heart of the people; Ishtar, foremost among the gods, lady of battle;
+>
+> The great gods, who make the heavens and earth a lordly place, whose utterances are a scepter and a scepter, who make kingship supreme, Tiglath-Pileser, beloved prince, your beloved, your shepherd, who by your true heart you have entrusted to me, this exalted one, you have established for the sovereignty of the land of the great Enlil, you have granted him a scepter.
+>
+> (continued in [P467316](https://aicuneiform.com/p/p467.html#P467316))
+
+While stilted in places, it is a decent translation, and I deem this experiment a success!
+
+
+## Why AI Translations?
+
+Existing online repositories ([CDLI](https://cdli.ucla.edu/), [Oracc](http://oracc.org/))
+contain many *transliterations* of ancient cuneiform texts
+(a transliteration is a rewriting of a text from one writing system
+to another without changing the language), but they are very lacking
+in the *translations* department.
+ 
 While I am not a cuneiform expert, I am an expert at neural networks
 and have a deep passion for languages and writing systems.
-
-Nine months ago I decided that I was in a unique position to make a large
-contribution to the world of cuneiform translations. While there are
-existing online repositories that contain many transliterations
-(a transliteration is simply a rewriting of a text from one writing system
-to another without changing the language), they are very lacking
-in the translation department.
-
-For example, consider Sumerian (spoken by the builders of the zigurauts).
-There are currently 116,060 texts published. 104,151 of these have
-been transliterated from cuneiform symbols to a jumble of latin letters.
-But only 6,636 of these texts have publicly available translations online.
-That is a mere 6% of texts available to a lay person such as myself. 
+I want any person to have access to the archives of
+the ancients.
+A grandiose goal for sure, but also a very achievable one thanks to
+modern engineering advancements.
 
 #### Sumerian
+
+Consider Sumerian (spoken by the creators of cuneiform).
+There are currently 103,075 texts published with
+transliterations from cuneiform symbols to (mostly) latin letters.
+But only 4,583 of these texts have publicly available translations online.
+That is a mere 4% of texts available to a lay person such as myself. 
 
 |Publications|Count|
 |---|---|
@@ -70,18 +139,21 @@ and Ashurbanipal).
 We can see that 21,678 works are all set to be translated but have
 not been. 
 
-I decided that it was time to unleash
-the power of the machines and make my own contribution to Assyriology. My goal was to publish the world's largest corpus of
-translated cuneiform texts. I want any person to have access to the archives of
-the ancients. A grandiose goal for sure, but also a very achievable one thanks to
-modern engineering advancements.
+### The First Edition
 
-## Large Language Models
+Last summer, I decided that I was in a unique position to make a large
+contribution to the world of cuneiform translations.
+While I didn't know cuneiform, but I did know how to train neural networks.
+I decided to use my skills to create an AI that could translate cuneiform.
+In about a week's time, I was able to release 30,000 AI translated texts.
+
+
+## Training a Large Language Model
 
 The modern advancement of large language models (LLMs) has affected and
 will continue to affect nearly every human endeavor.
 
-The current architecture that is heralding this new age of knowledge is the humble Transformer architecture. It was designed specifically to be very good at translating text from one language to another using the innovative "attention mechanism". It's a little funny that this network designed for translation is now broaching the realm of artificial general intelligence (AGI), but I digress.
+The current architecture that is heralding this new age of knowledge is the Transformer architecture. It was designed specifically to be very good at translating text from one language to another using the innovative "attention mechanism". It's a little funny that this network designed for translation is now broaching the realm of artificial general intelligence (AGI), but I digress.
 
 Ignoring the absurdly large LLMs that are dominating the field now (GPT-4 and friends), the humble smaller transformers are still quite powerful and have made the problem of translation a somewhat trivial.
 
@@ -92,14 +164,14 @@ Knowing this I set about building a training
 set that the network could use to learn 
 these ancient languages.
 
-## Building the Dataset
+### Building the Dataset
 
 Thankfully there has been a push to digitize acquired artifacts and to publish their cuneiform on the web.
 
 The two great projects are the CDLI (Cuneiform Digital Library Initiative) and ORACC (Oriental XXX). I owe a large debt
 to these projects.
 
-As any machine learning expert will tell you, 90% of the problem is collecting a good training dataset (the other 10% is justifying the compute bill). Building the cunefirom datset presented its own uniqe set of challenges.
+As any machine learning expert will tell you, 90% of the problem is collecting a good training dataset (the other 10% is justifying the compute bill). Building the cuneiform dataset presented its own unique set of challenges.
 
 ### Inconsistent Transliterations
 

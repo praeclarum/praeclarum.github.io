@@ -1,7 +1,7 @@
 ---
 ---
 
-$brand-color:      #be4767;
+$brand-color:      #d32476;
 $fg-color:         rgb(10, 10, 10);
 $bg-color:         rgb(252, 252, 252);
 $border-color:     rgb(212, 212, 212);
@@ -9,7 +9,7 @@ $strong-fg-color:  rgb(0, 0, 0);
 $hover-fg-color:   #111;
 $code-bg-color:    rgb(242, 242, 242);
 
-$brand-color-dark:      #d73963;
+$brand-color-dark:      #ff2d87;
 $fg-color-dark:         rgb(200, 200, 200);
 $bg-color-dark:         rgb(20, 20, 20);
 $border-color-dark:     rgb(64, 64, 64);
@@ -129,8 +129,10 @@ table th, table td {
     strong {
         color: $strong-fg-color-dark;
     }    
-    a:visited { color: $brand-color-dark; }
+    a { color: $brand-color-dark; }
+    a:visited { color: $brand-color !important; }
     a:hover { color: $hover-fg-color-dark; }
+    a.page-link { color: #fff !important; }
     .site-nav .page-link { background-color: $brand-color-dark; }
     .post-link:visited { color: $brand-color-dark; }
     .home .content a:visited { color: $brand-color-dark !important; }
