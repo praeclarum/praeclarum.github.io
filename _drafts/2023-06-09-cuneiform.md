@@ -80,6 +80,7 @@ as its beginning seemed to match the other translations.
 ### AI Translation of Tiglath-Pileser
 
 <div style="background-color:#fff;color:#000;padding:1em 4em;font-family:georiga serif;border-radius:0.25em">
+<p style='text-align:center'><em>AI Translation.</em></p>
 <p>Ashur, great lord, who makes the totality of the gods submit, who gives scepter and crown, who establishes kingship; Enlil, lord, king of all the Anunnaku gods, father of the gods, lord of the lands; Sin, wise one, lord of the crown, saqu-worthy; Magur, Shamash, judge of heaven and underworld, who carries out the slander of the enemy, who breaks up the foe; Adad, hero, conqueror of the four quarters of the lands, the four quarters; Ninurta, hero, villainous sacrificial spirit and enemy, who destroys the heart of the people; Ishtar, foremost among the gods, lady of battle;
 </p>
 <p>
