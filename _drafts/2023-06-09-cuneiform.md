@@ -205,17 +205,65 @@ of just translating single lines.
 
 ### Training Process
 
-#### Pre-trained Translator
+I started with a pre-trained a [T5 base model from Hugging Face](https://huggingface.co/t5-base) and fine-tuned it on my dataset.
+This model has 220 million parameters and is capable of translating 
+sequences of up to 512 tokens.
+
+I trained it on a dataset of 210,247 translation examples
+for 30 epochs. It took about 48 hours on my RTX3090.
+
+While starting with a pre-trained model saves me a lot of compute time,
+it has drawbacks. The pre-trained model was trained to translate
+from English to French or German. Ideally, I would have a model
+that was pre-trained to translate *to* English.
+
+Also, I used its default tokenizer which does not support all the
+characters I need and performs poorly on the transliterated cuneiform.
 
 #### Learning Sumerian and Akkadian Simultaneously
 
+Since my datasets are small in size, I decided to combine learning
+Sumerian and Akkadian simultaneously. This has the benefit of
+increasing the training size and exposing the network to more
+cuneiform symbols. Interestingly, Akkadian often uses some Sumerian
+intermixed with its own language so it's not a bad idea to train
+on both.
+
 #### Bidirectional Translation
+
+The network was having a hard time converging on a good solution.
+It would train well enough for many epochs, and then it would
+fall apart.
+
+I found a regularization strategy that helped a lot. I would
+train it to also translate *from* English to Sumerian and Akkadian.
+Doing this helped the network to always converge.
+I assume this is an affect of using the pre-trained network.
+
+While translating from English to Akkadian or Sumerian is not
+a useful task, it is a "fun party trick" as my friend put it.
 
 
 ## Future Work
 
+I want to continue to improve the translations and hope to take these
+steps in the future:
+
+1. Fine-tune the model for specific translation tasks like Akkadian to English.
+2. Pre-train a new model from scratch using a better tokenizer.
+3. Train a larger model like T5 large.
+4. Add more training data.
+
 
 ## Conclusion
 
+I hope you enjoyed this deep dive into neural networks and ancient languages.
 
+When I started this project, I had no idea whether it would work or not.
+I was delighted that it did, and I am extremely delighted
+to be able to introduce the [AICC](https://aicuneiform.com) to the world. Now amateur Assyriologists
+like myself can read and read to their heart's content.
 
+**Side note:** If you are an academic and would like to collaborate on this project,
+please reach out to me by [filing issues on GitHub](https://github.com/praeclarum/CuneiformTranslators/issues/new). I have a million questions about cuneiform
+that I would love to ask you.
