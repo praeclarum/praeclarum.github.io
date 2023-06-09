@@ -79,11 +79,15 @@ as its beginning seemed to match the other translations.
 
 ### AI Translation of Tiglath-Pileser
 
-> Ashur, great lord, who makes the totality of the gods submit, who gives scepter and crown, who establishes kingship; Enlil, lord, king of all the Anunnaku gods, father of the gods, lord of the lands; Sin, wise one, lord of the crown, saqu-worthy; Magur, Shamash, judge of heaven and underworld, who carries out the slander of the enemy, who breaks up the foe; Adad, hero, conqueror of the four quarters of the lands, the four quarters; Ninurta, hero, villainous sacrificial spirit and enemy, who destroys the heart of the people; Ishtar, foremost among the gods, lady of battle;
->
-> The great gods, who make the heavens and earth a lordly place, whose utterances are a scepter and a scepter, who make kingship supreme, Tiglath-Pileser, beloved prince, your beloved, your shepherd, who by your true heart you have entrusted to me, this exalted one, you have established for the sovereignty of the land of the great Enlil, you have granted him a scepter.
->
-> (continued in [P467316](https://aicuneiform.com/p/p467.html#P467316))
+<div style="background-color:#fff;color:#000;padding:1em 4em;font-family:georiga serif;border-radius:0.25em">
+<p>Ashur, great lord, who makes the totality of the gods submit, who gives scepter and crown, who establishes kingship; Enlil, lord, king of all the Anunnaku gods, father of the gods, lord of the lands; Sin, wise one, lord of the crown, saqu-worthy; Magur, Shamash, judge of heaven and underworld, who carries out the slander of the enemy, who breaks up the foe; Adad, hero, conqueror of the four quarters of the lands, the four quarters; Ninurta, hero, villainous sacrificial spirit and enemy, who destroys the heart of the people; Ishtar, foremost among the gods, lady of battle;
+</p>
+<p>
+The great gods, who make the heavens and earth a lordly place, whose utterances are a scepter and a scepter, who make kingship supreme, Tiglath-Pileser, beloved prince, your beloved, your shepherd, who by your true heart you have entrusted to me, this exalted one, you have established for the sovereignty of the land of the great Enlil, you have granted him a scepter.
+</p>
+</div>
+
+Continued in [P467316](https://aicuneiform.com/p/p467.html#P467316).
 
 While stilted in places, it is a decent translation, and I deem this experiment a success!
 
