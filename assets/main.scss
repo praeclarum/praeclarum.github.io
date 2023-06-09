@@ -40,9 +40,9 @@ a:hover { color: $hover-fg-color; }
 }
 .site-header .site-title { color: $brand-color !important; }
 
-.site-nav .page-link { background-color: $brand-color; padding: 0.5em; color: white; border-radius: 5px; }
+.site-nav .page-link { background-color: $brand-color; padding: 0.333em 0.5em; color: white; border-radius: 5px; }
 .site-nav .page-link:hover { text-decoration: none; background-color: $grey-color-dark; }
-.site-nav .page-link:not(:last-child) { margin-right: 0.5em; }
+.site-nav .page-link:not(:last-child) { margin-right: 0.333em; }
 
 .post-link:visited { color: $brand-color; }
 .post-list h3 { margin-bottom: 0.1em; }
