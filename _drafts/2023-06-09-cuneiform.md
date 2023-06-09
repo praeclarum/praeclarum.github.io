@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "I Built the World's Largest Translated Cuneiform Corpus using AI"
-thumbnail: "/images/2023/webgpu-torch_thumb.png"
+thumbnail: "/images/2023/aicc_thumb.jpg"
 tags: article
 ---
 
