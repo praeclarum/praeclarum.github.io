@@ -144,14 +144,6 @@ and Ashurbanipal).
 We can see that 21,678 works are all set to be translated but have
 not been. 
 
-### The First Edition
-
-Last summer, I decided that I was in a unique position to make a large
-contribution to the world of cuneiform translations.
-While I didn't know cuneiform, but I did know how to train neural networks.
-I decided to use my skills to create an AI that could translate cuneiform.
-In about a week's time, I was able to release 30,000 AI translated texts.
-
 
 ## Training a Large Language Model
 
@@ -173,12 +165,12 @@ these ancient languages.
 
 Thankfully there has been a push to digitize acquired artifacts and to publish their cuneiform on the web.
 
-The two great projects are the CDLI (Cuneiform Digital Library Initiative) and ORACC (Oriental XXX). I owe a large debt
+The two great projects are the [CDLI (Cuneiform Digital Library Initiative)](https://cdli.ucla.edu/) and [Oracc](http://oracc.org/). I owe a large debt
 to these projects.
 
 As any machine learning expert will tell you, 90% of the problem is collecting a good training dataset (the other 10% is justifying the compute bill). Building the cuneiform dataset presented its own unique set of challenges.
 
-### Inconsistent Transliterations
+#### Inconsistent Transliterations
 
 Sadly, Assyriologists took some time to settle on a consistent transliteration system. When works were first transliterated to a digital form, only ASCII characters were available and the researchers made due using funny characters like # to denote demonstratives, numbers to disambiguate symbols, and ALL CAPS whenever they were in the mood (just kidding, but the use is so random it might as well be).
 
@@ -186,11 +178,44 @@ When other character encodings became available, researchers adapted. They start
 
 While neural networks are powerful and can certainly handle these inconsistencies, it's not ideal. If you want the network to properly learn the language it's best not to distract it with also learning the histrionics of human computer interface systems.
 
-### Languages Change
+A wrote a variety of cuneiform and english normalizers to help with this problem. They're not perfect, but they do a decent job.
 
-Languages change over time. The language I speak compared to my parents is already different and that is a mere 30 difference in ages. Sumerian was used for millennia. It changed. Even after being supplanted by Akkadian, it continued to change as scribes from Akkad would keep Sumerian words alive by incorporating them into Akkadian texts.
+#### Paragraph Wrapping and Unwrapping
 
-### Learning Sumerian and Akkadian Simultaneously
+Cuneiform texts are usually written line by line in a column and are read
+from top to bottom.
 
-### Long and Short Translations
+These lines are often short and, when translated, contain even fewer words.
+If I train the network on just these lines (and, surprise, I did for the 1st edition),
+the translations it produces are also short and choppy. They're not great.
+
+To work around this problem, I automatically "unwrap" lines into paragraphs
+to be translated all together. This way the network can learn to translate
+longer sentences and paragraphs.
+
+The network, however, has its own limitations and can only translate
+sentences up to 512 tokens long. To work around this problem,
+I "wrap" the paragraphs into chunks of up to 512 tokens and translate
+those. I then stitch the translations back together to form the final
+translation.
+
+This "unwrap" then "wrap" process is not perfect and can lead to
+some strange translations, but it's better than the alternative
+of just translating single lines.
+
+### Training Process
+
+#### Pre-trained Translator
+
+#### Learning Sumerian and Akkadian Simultaneously
+
+#### Bidirectional Translation
+
+
+## Future Work
+
+
+## Conclusion
+
+
 
