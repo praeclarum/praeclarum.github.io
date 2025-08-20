@@ -10,6 +10,6 @@ bundle exec jekyll serve --drafts
 
 ```bash
 xcode-select --install
-sudo gem install bundler
+sudo gem install bundler -v 2.4.22
 bundle install
 ```
