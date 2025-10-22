@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Many Ways to Deploy iOS Apps in 2025"
-thumbnail: "/images/2025/deploy_ios_thumb.png"
+thumbnail: "/images/2025/deploy_ios_thumb.jpg"
 tags: article
 ---
 
