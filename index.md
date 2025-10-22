@@ -8,6 +8,6 @@ list_title: "All Posts"
 
 ![Selfie of Frank](/assets/me.jpg)
 
-Hi! I'm Frank - a software developer in Seattle specializing in mobile apps that do nerdy things. My blog is a collection of [technical articles](/tag/article), [presentations](/tag/presentation), and [app and library announcements](/tag/announcement).
+Hi! I'm Frank - a software developer living on an island specializing in mobile apps that do nerdy things. My blog is a collection of [technical articles](/tag/article), [presentations](/tag/presentation), and [app and library announcements](/tag/announcement).
 
 
