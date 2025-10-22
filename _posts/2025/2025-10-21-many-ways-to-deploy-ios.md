@@ -11,25 +11,25 @@ tags: article
 
 Just a couple years ago, I didn't know *any* of the ways to deploy my .NET/MAUI iOS apps to a physical device. I only knew how to use Visual Studio for Mac's built-in run button, which worked fine for me. Until they killed it.
 
-At present, there are only two IDEs for macOS that support .NET MAUI iOS development: JetBrains Rider, and Visual Studio Code. Rider *should* be nice but has terrible bugs where it will sometimes try to deploy `iossimulator` builds to the device, or that persistence bug where it fails to rebuild apps when dependencies change, or it just doesn't detect devices at all. It's not at all reliable. Visual Studio Code *should* be nice too, but it basically requires that you write MAUI apps for anything to work. If you're like me and prefer to build native UIs, then you're out of luck.
+At present, there are only two IDEs for macOS that support .NET MAUI iOS development: JetBrains Rider and Visual Studio Code. Rider *should* be nice, but has terrible bugs where it will sometimes try to deploy `iossimulator` builds to the device, or that persistence bug where it fails to rebuild apps when dependencies change, or it just doesn't detect devices at all. It's not at all reliable. Visual Studio Code *should* be nice too, but it basically requires that you write MAUI apps for anything to work. If you're like me and prefer to build native UIs, then you're out of luck.
 
 But there is good news, and I am here to deliver it. There's not one but *four* different ways you can deploy your iOS app to a physical device for testing, none of which require an IDE. Here they are, in order of my preference with my own heart-felt pros and cons.
 
 ## 1. `dotnet build -t:Run`
 
-It turns out, good old msbuild has a built in task to do exactly what we want. You can use the `dotnet build` command with the `-t:Run` target to build and deploy your app to a connected device in one step. How is this different from `dotnet run`, I don't know. Don't ask me, ask Microsoft.
+It turns out, good old MSBuild has a built-in task to do exactly what we want. You can use the `dotnet build` command with the `-t:Run` target to build and deploy your app to a connected device in one step. How is this different from `dotnet run`? I don't know. Don't ask me, ask Microsoft.
 
 You can read all about `dotnet build -t:Run` in the official ["Launch the app on a device" documentation](https://learn.microsoft.com/en-us/dotnet/maui/ios/cli?view=net-maui-9.0#launch-the-app-on-a-device).
 
 Just run:
 
 ```bash
-dotnet build -t:Run -f net8.0-ios -p:RuntimeIdentifier=ios-arm64 -p:_DeviceName=MY_SPECIFIC_UDID MyApp.csproj
+dotnet build -t:Run -f net9.0-ios -p:RuntimeIdentifier=ios-arm64 -p:_DeviceName=MY_SPECIFIC_UDID MyApp.csproj
 ```
 
-and replace `MY_SPECIFIC_UDID` with your device's UDID and `MyApp.csproj` with the name of your project file (or elide it if you're in the project's directory).
+and replace `MY_SPECIFIC_UDID` with your device's UDID and `MyApp.csproj` with the name of your project file (or elide it if you're in the project's directory). Adjust the `-f` target framework to match your project (for example, `net8.0-ios`).
 
-A UDID is a Universal Device Identifier, a unique string that identifies your iOS device. It's like a UUID, but there's a D instead of a U.
+A UDID is a Unique Device Identifier, a unique string that identifies your iOS device. It's like a UUID, but there's a D instead of a U.
 
 ### How to Find Your Device's UDID
 
@@ -42,7 +42,6 @@ Don't you worry, here are 4 easy ways to find your device's UDID:
     ```
     Output will look something like this:
     ```
-
     Name                    UDID                     
     ---------------------   -------------------------
     Precious XXIII          00008030-000E409C0E10802E
@@ -50,7 +49,7 @@ Don't you worry, here are 4 easy ways to find your device's UDID:
     Precious XXVII          00008140-000A0DC83013C01C
     Precious XXVIII         00008150-001C2C3E0EFB801C
     ```
-    The only problem is that it will only report modern devices with their modern UDIDs. If you iOS 15 and older devices, then Apple doesn't support you and you have to use one of the other methods.
+    The only problem is that it will only report modern devices with their modern UDIDs. If you have devices running iOS 15 or earlier, Apple doesn't support them with `devicectl`, so you'll have to use one of the other methods.
 3. **mlaunch**: Buried so deeply in the .NET iOS workloads that you'll need an oxygen mask to find it, is another wonderful tool called `mlaunch`. You can use it to list connected devices and their UDIDs with this command:
     ```bash
     mlaunch --listdev
@@ -63,7 +62,7 @@ Don't you worry, here are 4 easy ways to find your device's UDID:
     Precious XXVIII: 00008150-001C2C3E0EFB801C
     Precious XVIV: c52a6fd19cc179aad6696abe67cce53705bf22d0
     ```
-    (along with a bunch of errors) This works for all devices, old and new. Don't make fun of the XVIV, Roman numerals are hard.
+    (along with a bunch of errors). This works for all devices, old and new. Don't make fun of the XVIV, Roman numerals are hard.
 4. **ios-deploy**: Thanks to a few saints masquerading as software developers, there is the `ios-deploy` tool available one agonizing `brew install ios-deploy` away. You can use it to list connected devices and their UDIDs with this command:
     ```bash
     ios-deploy --detect
@@ -109,7 +108,7 @@ That's it, you're now a pro `mlaunch` user!
 
 ## 3. `xcrun`
 
-If you are not in the mood to dig through the .NET SDK installation to find `mlaunch`, you can use the `xcrun` command line tool that comes with Xcode. It has a subcommand called `devicectl` that you can use to install and launch your app on a connected device.
+If you are not in the mood to dig through the .NET SDK installation to find `mlaunch`, you can use the `xcrun` command-line tool that comes with Xcode. It has a subcommand called `devicectl` that you can use to install and launch your app on a connected device.
 
 Build your app, and then run this command to install it:
 
@@ -131,7 +130,7 @@ You've made it this far, you are truly a command line iOS hacker dev. But there'
 
 ## 4. `ios-deploy`
 
-If you are not satisfied with 1st and 3rd party tools, and want to dabble with 4th party greatness, then you can use the `ios-deploy` command line tool. This tool is not officially supported by Apple or Microsoft, but it is widely used by the iOS development community.
+If you aren't satisfied with first- or third‑party tools, and want to dabble with “fourth‑party” greatness, then you can use the `ios-deploy` command-line tool. This tool is not officially supported by Apple or Microsoft, but it is widely used by the iOS development community.
 
 First, make sure you have `ios-deploy` installed. If you haven't done this yet, you can install it using Homebrew:
 
@@ -151,4 +150,4 @@ And that's it! You've now deployed your app using `ios-deploy`. Check out the [i
 
 ## Conclusion
 
-There you have it, four different ways to deploy your iOS app to a physical device for testing. No IDEs needed. My personal favorite is `dotnet build -t:Run` because it's the simplest and most reliable method. But knowing the alternatives can be useful in certain situations, when showing off to your mom, looking cool at parties, or when you just want to feel like a true command line iOS hacker dev.
+There you have it, four different ways to deploy your iOS app to a physical device for testing. No IDE needed. My personal favorite is `dotnet build -t:Run` because it's the simplest and most reliable method. But knowing the alternatives can be useful in certain situations, when showing off to your mom, looking cool at parties, or when you just want to feel like a true command‑line iOS hacker dev.
