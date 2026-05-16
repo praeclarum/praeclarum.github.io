@@ -7,6 +7,8 @@ tags: article
 
 **TL;DR** Running coding agents on local machines has never been easier. This article gives easy setup instructions for running Qwen 3.6 27B on an RTX 3090 in Linux. I then show how to use the model in VS Code using the LLM Gateway extension. By the end of this guide, you'll be free of service providers and able to run a variety of OSS models.
 
+**Update (May 16, 2026)**: Over a week has gone by since posting this, so of course everything has changed. Well not *everything* but MTP is the new performance hotness and I've added a section about how I use it at the end.
+
 ## Overview
 
 There are roughly two steps to running a local coding agent:
@@ -107,6 +109,7 @@ Congratulations. You're now an AI service provider. I recommend getting some see
 
 But before you do that...
 
+
 ## Install LLM Gateway in VS Code
 
 I rock VS Code for all my coding needs, and I want to be able to use my local model in its AI agent chat window thingy. To do that, I need to install an extension that connects VS Code to the standard chat API. (Why VS Code doesn't support the API standard that literally *every* LLM server provides is beyond me.)
@@ -118,6 +121,38 @@ ANYWAY, I like the [LLM Gateway extension](https://marketplace.visualstudio.com/
 3. Test the connection with the "GitHub Copilot LLM Gateway: Test Server Connection" command. It should say "Found 1 model(s)" if everything is working. (If it's not working, email James Montemagno and ask him for help.)
 4. Open the "Chat: Manage Language Models" UI from the command palette. You should see your model listed but it will probably be grayed out for some reason. Click it, click the eye ball (gross!), and it should now be active and ready to use in the chat window.
 5. Open the chat window, and click the model selector. Choose "Other Models", scroll, and scroll, looking for your model. It's there somewhere. I promise. You might doubt it, but have faith. When in doubt, keep scrolling. You can do it. You found it! Click it, and now you can use your local model in the chat window!
+
+
+## MTP for Speed
+
+(Added May 16, 2026)
+
+Since posting this article, Multi-Token Prediction (MTP) has been released, and it is a game changer for performance. MTP is a new parallelism method that *somehow* makes things faster by doing more work. Weird, I know. Instead of the purely serial operation of (1) generate a token, (2) add it to the context, (3) GOTO 1, MTP uses a much smaller model to *quickly* do the 1-2-3 dance for a few tokens and then uses the real model **to verify the results**. Given the nature of these beasts, the smaller model takes up very little wall time but still has OK-ish accuracy. The big model, instead of being just a generator, is used to verify the probabilities of these new tokens. It can do that quickly because it doesn't need to test them one at a time, but can test them all in parallel (vs serial). Since modern LLMs are memory bandwidth bound, not compute bound, this parallel execution is "free". The result is a huge speed boost, about 1.4x-1.8x. It's a crazy hack, and I'm here for it.
+
+As of this writing, MTP is still a work-in-progress for llama.cpp, but it is available in PRs and forks. I'm compiling using [am17an's fork](https://github.com/am17an/llama.cpp/tree/mtp-clean).
+
+```bash
+./build/bin/llama-server -hf unsloth/Qwen3.6-27B-MTP-GGUF:UD-Q4_K_XL --host 0.0.0.0 -c 150000 -ngl 99 -fa on --cache-type-k q4_0 --cache-type-v q4_0 --temp 0.6 --top-p 0.95 --top-k 20 --presence-penalty 0.0 --min-p 0.00 --spec-type draft-mtp --spec-draft-n-max 2
+```
+
+The important new args are:
+
+| Argument | Description |
+| --- | --- |
+| `--spec-type draft-mtp` | This tells the server to use the MTP parallelism method. |
+| `--spec-draft-n-max 2` | This sets the maximum number of tokens to predict in parallel. 2 is a very conservative choice. |
+
+I've also modified a few other sampling parameters based on recommendations for coding environments:
+
+| Argument | Description |
+| --- | --- |
+| `--temp 0.6` | This sets the temperature to 0.6, which is a good choice for coding tasks as it encourages more deterministic outputs while still allowing for some creativity. |
+| `--top-p 0.95` | This sets the nucleus sampling parameter to 0.95, which helps to ensure that the model generates more relevant and coherent code by focusing on the most probable tokens. |
+| `--top-k 20` | This sets the top-k sampling parameter to 20, which limits the number of tokens considered at each step to the 20 most likely, further improving the relevance of the generated code. |
+| `--presence-penalty 0.0` | This sets the presence penalty to 0.0, which means that the model will not be penalized for generating tokens that have already appeared in the context, which can be beneficial for coding tasks where repetition of certain tokens (e.g., variable names, function names) is common. |
+| `--min-p 0.00` | This sets the minimum probability threshold to 0.00, which means that the model will consider all tokens regardless of their probability, allowing for a wider range of potential outputs. |
+
+I also switched to the `Qwen3.6-27B-MTP-GGUF` model, which includes the smaller MTP model needed for the parallel token prediction. And I switched to the `UD-Q4_K_XL` quantization format, because guessing which quantization format to use is half the fun of self-hosting models.
 
 
 ## Is it Worth It?
@@ -141,6 +176,7 @@ In a typical day, I burn through about 50,000,000 tokens. 500,000 output tokens,
 Right now, you can use DeepSeek for $3.48 per 1,000,000 output tokens, $1.74 for inputs, and $0.0145 for cache hits. So my daily cost would be `(500,000 / 1,000,000) * 3.48 + (1,750,000 / 1,000,000) * 1.74 + (47,750,000 / 1,000,000) * 0.0145 = $5.48` per day. That's about $1,400 per year (five day work weeks). So in about 2 years, I would recoup the cost of running my own local agent. Hmmm...
 
 So you might not want to run out and buy your own server. But, if you do have an over-provisioned gaming rig, well you might as well put it to use doing something useful. ;-)
+X
 
 ## Conclusion
 
